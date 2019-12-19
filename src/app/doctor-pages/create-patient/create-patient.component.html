@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="col-12">
+        <h3> Create a new patient profile</h3>
+        <div class="row form-group">
+            <label class="text-right col-form-label col-2">
+                <span class="align-top color-red">*</span>Name:
+            </label>
+            <div class="col-7 mt-1">
+                <input type="text" [(ngModel)]="patient.name" />
+            </div>
+        </div>
+        <div class="row form-group ">
+            <label class="text-right col-form-label col-2">
+                <span class="align-top color-red">*</span>Last name:
+            </label>
+            <div class="col-7 mt-1">
+                <input type="text" [(ngModel)]="patient.lastname" />
+            </div>
+        </div>
+
+        <div class="row form-group ">
+            <label class="text-right col-form-label col-2">
+                <span class="align-top color-red">*</span>Address Line 1:
+            </label>
+            <div class="col-7 mt-1">
+                <input type="text" [(ngModel)]="address.addressLine1" />
+            </div>
+        </div>
+        <div class="row form-group ">
+            <label class="text-right col-form-label col-2">
+                Address Line 2:
+            </label>
+            <div class="col-7 mt-1">
+                <input type="text" [(ngModel)]="address.addressLine2" />
+            </div>
+        </div>
+        <div class="row form-group ">
+            <label class="text-right col-form-label col-2">
+                <span class="align-top color-red">*</span>Zip Code:
+            </label>
+            <div class="col-7 mt-1">
+                <input type="text" [(ngModel)]="address.zipCode" />
+            </div>
+        </div>
+        <div class="row form-group ">
+            <label class="text-right col-form-label col-2">
+                <span class="align-top color-red">*</span>City:
+            </label>
+            <div class="col-7 mt-1">
+                <input type="text" [(ngModel)]="address.city" />
+            </div>
+        </div>
+        <div class="row form-group ">
+            <label class="text-right col-form-label col-2">
+                <span class="align-top color-red">*</span> Country:
+            </label>
+            <div class="col-7 mt-1">
+                <input type="text" [(ngModel)]="address.country" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="text-right col-form-label col-2">
+                <span class="align-top color-red">*</span>Birthdate:
+            </label>
+            <div class="col-7 mt-1">
+                <p-calendar [(ngModel)]="patient.birthdate" name="date" [showIcon]="true" icon="fa fa-calendar"
+                    dateFormat="dd/mm/yy"></p-calendar>
+            </div>
+        </div>
+        <div class="row offset-4 ">
+            <button class="btn btn-primary" (click)="save()">Save
+            </button>
+        </div>
+    </div>
+</div>

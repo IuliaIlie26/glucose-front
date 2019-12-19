@@ -1,0 +1,67 @@
+<ng-container>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand">GluM</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="['/doctor-home']" routerLinkActive="current-item"
+                            [routerLinkActiveOptions]="{exact: false}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Patients
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" [routerLink]="['/create-patient']" routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">Create new patient profile</a>
+
+                            <a class="dropdown-item" [routerLink]="['/patients-list']" routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">My patients</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Calendar
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" [routerLink]="['/calendar']" routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">Calendar</a>
+                            <a class="dropdown-item" [routerLink]="['/create-consultation']"
+                                routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">Create a new
+                                consultation</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="['/patient-alerts']" routerLinkActive="current-item"
+                            [routerLinkActiveOptions]="{exact: false}"> Patient Alerts <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search for patients..."
+                        aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav my-2 my-sm-0">
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Account Settings
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" [routerLink]="['/settings']" routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" [routerLink]="['/login']" routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</ng-container>
