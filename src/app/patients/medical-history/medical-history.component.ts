@@ -10,10 +10,10 @@ export class MedicalHistoryComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
-  patientId : number;
-  
+  patientId: string;
+
   ngOnInit() {
-    this.activatedRoute.queryParams.subscribe(param => this.patientId=param['patientId'])
+    this.patientId = this.activatedRoute.snapshot.paramMap.get('patientId');
   }
 
 }

@@ -31,8 +31,8 @@ export class CreatePatientComponent implements OnInit {
       this.patient.doctor = doc;
 
       this.patient.birthdate = this.pipe.transform(this.patient.birthdate, "shortDate");
-      this.patientApi.savePatient(this.patient).subscribe(patientId => 
-        this.router.navigate(['create-patient', 'create-medical-chart', patientId])
+      this.patientApi.savePatient(this.patient).subscribe(patientId =>
+        this.router.navigate(['patient', 'create-patient', 'create-medical-chart', patientId])
       );
     }
     else {
