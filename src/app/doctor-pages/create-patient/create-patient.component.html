@@ -17,7 +17,22 @@
                 <input type="text" [(ngModel)]="patient.lastname" />
             </div>
         </div>
-
+        <div class="row form-group ">
+            <label class="text-right col-form-label col-2">
+                <span class="align-top color-red">*</span>Email:
+            </label>
+            <div class="col-7 mt-1">
+                <input type="text" [(ngModel)]="patient.email" />
+            </div>
+        </div>
+        <div class="row form-group ">
+            <label class="text-right col-form-label col-2">
+                <span class="align-top color-red">*</span>Phone Number:
+            </label>
+            <div class="col-7 mt-1">
+                <input type="text" [(ngModel)]="patient.phone" />
+            </div>
+        </div>
         <div class="row form-group ">
             <label class="text-right col-form-label col-2">
                 <span class="align-top color-red">*</span>Address Line 1:
@@ -48,6 +63,14 @@
             </label>
             <div class="col-7 mt-1">
                 <input type="text" [(ngModel)]="address.city" />
+            </div>
+        </div>
+        <div class="row form-group ">
+            <label class="text-right col-form-label col-2">
+                <span class="align-top color-red">*</span>Region:
+            </label>
+            <div class="col-7 mt-1">
+                <input type="text" [(ngModel)]="address.region" />
             </div>
         </div>
         <div class="row form-group ">

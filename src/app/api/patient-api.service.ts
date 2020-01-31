@@ -11,9 +11,7 @@ export class PatientApiService {
 
   constructor(private http: HttpClient) { }
 
-  save(dto: PatientDto): Observable<PatientDto> {
-    return this.http.post<PatientDto>(endpoint + 'save', dto, {}).pipe(
-      map(response => Object.assign(new PatientDto, response))
-    );
+  savePatient(dto: PatientDto): Observable<number> {
+    return this.http.post<number>(endpoint + 'savePatient', dto, {})
   }
 }

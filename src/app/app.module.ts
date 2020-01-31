@@ -23,6 +23,7 @@ import { ButtonModule } from 'primeng/primeng';
 import { RadioButtonModule } from 'primeng/primeng';
 import { AccordionModule } from 'primeng/accordion';
 import { ToastrModule } from 'ngx-toastr';
+import { MedicalHistoryComponent } from './medical-history/medical-history.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ToastrModule } from 'ngx-toastr';
     CreateConsultationComponent,
     PatientSearchComponent,
     PatientsAllComponent,
-    CreatePatientComponent
+    CreatePatientComponent,
+    MedicalHistoryComponent
   ],
   imports: [
     BrowserModule,

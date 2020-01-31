@@ -5,7 +5,8 @@ export class PatientDto{
  name : string;
  lastname : string;
  address : AddressDto;
- primaryDoctor: DoctorDto;
- secondaryDoctors: DoctorDto[];
+ doctor: DoctorDto;
  birthdate: string;
+ phone: string;
+ email: string
 }

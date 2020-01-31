@@ -4,4 +4,5 @@ export class AddressDto{
     city: string;
     country: string;
     zipCode: number;
+    region: string
 }
