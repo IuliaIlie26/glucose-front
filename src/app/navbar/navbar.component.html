@@ -5,7 +5,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" [routerLink]="['/doctor-home']" routerLinkActive="current-item"
+                        <a class="nav-link" [routerLink]="['doctor/doctor-home']" routerLinkActive="current-item"
                             [routerLinkActiveOptions]="{exact: false}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown active">
@@ -14,10 +14,10 @@
                             Patients
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" [routerLink]="['/create-patient']" routerLinkActive="current-item"
+                            <a class="dropdown-item" [routerLink]="['patient/create-patient']" routerLinkActive="current-item"
                                 [routerLinkActiveOptions]="{exact: false}">Create new patient profile</a>
 
-                            <a class="dropdown-item" [routerLink]="['/patients-list']" routerLinkActive="current-item"
+                            <a class="dropdown-item" [routerLink]="['patient/patients-list']" routerLinkActive="current-item"
                                 [routerLinkActiveOptions]="{exact: false}">My patients</a>
                         </div>
                     </li>
@@ -27,15 +27,15 @@
                             Calendar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" [routerLink]="['/calendar']" routerLinkActive="current-item"
+                            <a class="dropdown-item" [routerLink]="['consultation/calendar']" routerLinkActive="current-item"
                                 [routerLinkActiveOptions]="{exact: false}">Calendar</a>
-                            <a class="dropdown-item" [routerLink]="['/create-consultation']"
+                            <a class="dropdown-item" [routerLink]="['consultation/create-consultation']"
                                 routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">Create a new
                                 consultation</a>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" [routerLink]="['/patient-alerts']" routerLinkActive="current-item"
+                        <a class="nav-link" [routerLink]="['patient/patient-alerts']" routerLinkActive="current-item"
                             [routerLinkActiveOptions]="{exact: false}"> Patient Alerts <span
                                 class="sr-only">(current)</span></a>
                     </li>
@@ -53,7 +53,7 @@
                             Account Settings
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" [routerLink]="['/settings']" routerLinkActive="current-item"
+                            <a class="dropdown-item" [routerLink]="['doctor/settings']" routerLinkActive="current-item"
                                 [routerLinkActiveOptions]="{exact: false}">Settings</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" [routerLink]="['/login']" routerLinkActive="current-item"

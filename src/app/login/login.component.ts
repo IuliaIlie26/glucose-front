@@ -17,6 +17,6 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     sessionStorage.setItem("username", this.username);
-    this.route.navigate(['/doctor-home']);
+    this.route.navigate(['/doctor/doctor-home']);
   }
 }
