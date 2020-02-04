@@ -7,10 +7,11 @@ import { CreatePatientComponent } from './create-patient/create-patient.componen
 import { MedicalHistoryComponent } from './medical-history/medical-history.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { CalendarModule, ButtonModule, RadioButtonModule, AccordionModule } from 'primeng/primeng';
+import { CalendarModule, ButtonModule, RadioButtonModule, AccordionModule, DropdownModule, CheckboxModule } from 'primeng/primeng';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { PatientsRoutingModule } from './patients-routing.module';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { PatientsRoutingModule } from './patients-routing.module';
     MedicalHistoryComponent
   ],
   imports: [
-    
+    CommonModule,
     HttpClientModule,
     FormsModule,
     CalendarModule,
@@ -33,7 +34,9 @@ import { PatientsRoutingModule } from './patients-routing.module';
     RadioButtonModule,
     AccordionModule,
     ToastrModule.forRoot(),
-    PatientsRoutingModule
+    PatientsRoutingModule,
+    DropdownModule,
+    CheckboxModule
   ]
 })
 export class PatientsModule { }

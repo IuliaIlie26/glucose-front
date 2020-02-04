@@ -1,1 +1,44 @@
-<p>medical-history-component works! {{patientId}}</p>
+<div class="col-10">
+    <h3>Risk Factors</h3>
+        <div class="col-6">
+            <div>
+                <label class="mr-2">Age: </label>
+                <input type="text" readonly='true' value="{{patient.age}}">
+            </div>
+            <div>
+                <label class="mr-2">Height: </label>
+                <input type="number" (ngModel)="patient.height">
+            </div>
+            <div>
+                <label class="mr-2">Weight: </label>
+                <input type="number" (ngModel)="patient.height">
+            </div>
+            <div class="ui-g" style="width: 350px;margin-bottom:10px" *ngFor="let risk of risks">
+                <label class="mr-2">{{risk.name}}: </label>
+                <div class="ui-g-12">
+                    <p-radioButton name="Yes" value="true" label="Yes" [(ngModel)]="risk.selected"></p-radioButton>
+                    <p-radioButton name="No" value="false" label="No" [(ngModel)]="risk.selected"></p-radioButton>
+                </div>
+            </div>
+            <div>
+                <div class="ui-grid ui-grid-responsive">
+                    <div class="ui-grid-row">
+                        <label class="mr-2">Racial origin:</label>
+                        <p-dropdown [options]="races" [(ngModel)]="patient.race" optionLabel='label'></p-dropdown>
+                    </div>
+                </div>
+                <div class="ui-grid ui-grid-responsive">
+                    <div class="ui-grid-row">
+                        <label class="mr-2">Conception method:</label>
+                        <p-dropdown [options]="conceptions" [(ngModel)]="patient.conception" optionLabel='label'></p-dropdown>
+                    </div>
+                </div>
+                <div class="ui-grid ui-grid-responsive">
+                    <div class="ui-grid-row">
+                        <label class="mr-2">Family history of diabetes:</label>
+                        <p-dropdown [options]="familyHistory" [(ngModel)]="patient.diabetesHistory" optionLabel='label'></p-dropdown>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
