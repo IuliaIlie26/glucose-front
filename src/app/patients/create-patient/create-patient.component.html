@@ -1,44 +1,54 @@
 <div class="container-fluid">
     <div class="col-12">
-        <h3> Create a new patient profile</h3>
+        <h4> Create a new patient profile</h4>
         <div class="row form-group">
             <label class="text-right col-form-label col-2">
-                <span class="align-top color-red">*</span>Name:
+                <sup>*</sup>Name:
             </label>
             <div class="col-7 mt-1">
-                <input type="text" [(ngModel)]="patient.name" />
+                <input type="text" [(ngModel)]="patient.name" pInputText/>
             </div>
         </div>
         <div class="row form-group ">
             <label class="text-right col-form-label col-2">
-                <span class="align-top color-red">*</span>Last name:
+                <sup>*</sup>Last name:
             </label>
             <div class="col-7 mt-1">
-                <input type="text" [(ngModel)]="patient.lastname" />
+                <input type="text" [(ngModel)]="patient.lastname" pInputText />
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="text-right col-form-label col-2">
+                <sup>*</sup>Birthdate:
+            </label>
+            <div class="ui-g-12 ui-md-6">
+                <p-calendar class="ui-calendar" [(ngModel)]="patient.birthdate" name="date" [showIcon]="true" icon="fa fa-calendar"
+                    [monthNavigator]="true" [yearNavigator]="true" yearRange="1950:2030" [dateFormat]="dd/mm/yyyy">
+                </p-calendar>
             </div>
         </div>
         <div class="row form-group ">
             <label class="text-right col-form-label col-2">
-                <span class="align-top color-red">*</span>Email:
+                <sup>*</sup>E-mail:
             </label>
             <div class="col-7 mt-1">
-                <input type="text" [(ngModel)]="patient.email" />
+                <input type="text" [(ngModel)]="patient.email" pInputText />
             </div>
         </div>
         <div class="row form-group ">
             <label class="text-right col-form-label col-2">
-                <span class="align-top color-red">*</span>Phone Number:
+                <sup>*</sup>Phone Number:
             </label>
             <div class="col-7 mt-1">
-                <input type="text" [(ngModel)]="patient.phone" />
+                <input type="text" [(ngModel)]="patient.phone" pInputText />
             </div>
         </div>
         <div class="row form-group ">
             <label class="text-right col-form-label col-2">
-                <span class="align-top color-red">*</span>Address Line 1:
+                <sup>*</sup>Address Line 1:
             </label>
             <div class="col-7 mt-1">
-                <input type="text" [(ngModel)]="address.addressLine1" />
+                <input type="text" [(ngModel)]="address.addressLine1" pInputText />
             </div>
         </div>
         <div class="row form-group ">
@@ -46,20 +56,20 @@
                 Address Line 2:
             </label>
             <div class="col-7 mt-1">
-                <input type="text" [(ngModel)]="address.addressLine2" />
+                <input type="text" [(ngModel)]="address.addressLine2" pInputText />
             </div>
         </div>
         <div class="row form-group ">
             <label class="text-right col-form-label col-2">
-                <span class="align-top color-red">*</span>Zip Code:
+                <sup>*</sup>Zip Code:
             </label>
             <div class="col-7 mt-1">
-                <input type="text" [(ngModel)]="address.zipCode" />
+                <input type="text" [(ngModel)]="address.zipCode" pInputText />
             </div>
         </div>
         <div class="row form-group ">
             <label class="text-right col-form-label col-2">
-                <span class="align-top color-red">*</span>City:
+                <sup>*</sup>City:
             </label>
             <div class="col-7 mt-1">
                 <input type="text" [(ngModel)]="address.city" />
@@ -67,31 +77,22 @@
         </div>
         <div class="row form-group ">
             <label class="text-right col-form-label col-2">
-                <span class="align-top color-red">*</span>Region:
+                <sup>*</sup>Region:
             </label>
             <div class="col-7 mt-1">
-                <input type="text" [(ngModel)]="address.region" />
+                <input type="text" [(ngModel)]="address.region" pInputText />
             </div>
         </div>
         <div class="row form-group ">
             <label class="text-right col-form-label col-2">
-                <span class="align-top color-red">*</span> Country:
+                <sup>*</sup>Country:
             </label>
             <div class="col-7 mt-1">
-                <input type="text" [(ngModel)]="address.country" />
+                <input type="text" [(ngModel)]="address.country" pInputText />
             </div>
         </div>
-        <div class="row form-group">
-            <label class="text-right col-form-label col-2">
-                <span class="align-top color-red">*</span>Birthdate:
-            </label>
-            <div class="col-7 mt-1">
-                <p-calendar [(ngModel)]="patient.birthdate" name="date" [showIcon]="true" icon="fa fa-calendar"
-                    dateFormat="dd/mm/yy"></p-calendar>
-            </div>
-        </div>
-        <div class="row offset-4 ">
-            <button class="btn btn-primary" (click)="save()">Save
+        <div class="row offset-4 mb-5">
+            <button class="btn btn-outline-success my-2 my-sm-0" (click)="save()">Save
             </button>
         </div>
     </div>
