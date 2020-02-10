@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RiskFactors } from 'src/app/model/RiskFactors';
-import { RiskFactorsPatientDto } from 'src/app/model/RiskFactorsPatientDto';
+import { PatientRiskFactorsDto } from 'src/app/model/PatientRiskFactorsDto';
+import { PatientApiService } from 'src/app/api/patient-api.service';
 
 @Component({
   selector: 'app-medical-history',
@@ -10,29 +11,34 @@ import { RiskFactorsPatientDto } from 'src/app/model/RiskFactorsPatientDto';
 })
 export class MedicalHistoryComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private patientApi: PatientApiService, private activatedRoute: ActivatedRoute) { }
 
-  patient = new RiskFactorsPatientDto();
+  patientRiskFactors = new PatientRiskFactorsDto();
+  patientId: string;
+  age: string;
+
   risks: RiskFactors[] = [
     { name: 'Smoker', selected: false },
-    { name: 'Previous delivery of macrosomic baby', selected: false },
+    { name: 'Previous macrosomic baby', selected: false },
     { name: 'Previous GDM', selected: false }
   ]
-  patientId: string;
+
   races = [
     { label: 'African/Black' },
-    { label: 'African Caribbran' },
+    { label: 'African Caribbean' },
     { label: 'Caucasian/White' },
     { label: 'East Asian' },
     { label: 'Middle Eastern' },
     { label: 'Mixed' },
     { label: 'South Asian' }
   ]
+
   conceptions = [
     { label: 'Spontaneus' },
     { label: 'Ovulation drugs' },
     { label: 'In vitro fertilization' }
   ]
+
   familyHistory = [
     { label: 'None' },
     { label: '1st degree' },
@@ -42,6 +48,11 @@ export class MedicalHistoryComponent implements OnInit {
 
   ngOnInit() {
     this.patientId = this.activatedRoute.snapshot.paramMap.get('patientId');
+    this.patientApi.getFullFormatAgeById(+this.patientId).subscribe(age => this.age = age);
+  }
+
+  save() {
+
   }
 
 }

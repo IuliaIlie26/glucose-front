@@ -1,6 +1,6 @@
 import { RiskFactors } from './RiskFactors';
 
-export class RiskFactorsPatientDto {
+export class PatientRiskFactorsDto {
     riskFactors: RiskFactors[];
     patientId: number;
     age: string;
