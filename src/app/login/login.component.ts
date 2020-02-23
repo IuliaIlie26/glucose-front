@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { DoctorApiService } from '../api/doctor-api.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    sessionStorage.setItem("username", this.username);
+    
+    sessionStorage.setItem("loggedDoctor", this.username);
     this.route.navigate(['/doctor/doctor-home']);
   }
 }

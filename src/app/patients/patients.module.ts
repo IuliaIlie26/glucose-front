@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { PatientSearchComponent } from './patient-search/patient-search.component';
-import { PatientsAllComponent } from './patients-all/patients-all.component';
-import { PatientListComponent } from './patient-list/patient-list.component';
-import { PatientAlertsComponent } from './patient-alerts/patient-alerts.component';
-import { CreatePatientComponent } from './create-patient/create-patient.component';
-import { MedicalHistoryComponent } from './medical-history/medical-history.component';
+import { PatientSearchComponent } from './components/patient-search/patient-search.component';
+import { PatientsAllComponent } from './components/patients-all/patients-all.component';
+import { PatientListComponent } from './components/patient-list/patient-list.component';
+import { PatientAlertsComponent } from './components/patient-alerts/patient-alerts.component';
+import { CreatePatientComponent } from './components/create-patient/create-patient.component';
+import { MedicalHistoryComponent } from './components/medical-history/medical-history.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CalendarModule, ButtonModule, RadioButtonModule, AccordionModule, DropdownModule, CheckboxModule, InputTextModule } from 'primeng/primeng';

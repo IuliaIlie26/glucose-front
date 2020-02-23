@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PatientAlertsComponent } from './patient-alerts/patient-alerts.component';
-import { PatientListComponent } from './patient-list/patient-list.component';
-import { MedicalHistoryComponent } from './medical-history/medical-history.component';
-import { CreatePatientComponent } from './create-patient/create-patient.component';
-import { PatientSearchComponent } from './patient-search/patient-search.component';
+import { PatientAlertsComponent } from './components/patient-alerts/patient-alerts.component';
+import { PatientListComponent } from './components/patient-list/patient-list.component';
+import { MedicalHistoryComponent } from './components/medical-history/medical-history.component';
+import { CreatePatientComponent } from './components/create-patient/create-patient.component';
+import { PatientSearchComponent } from './components/patient-search/patient-search.component';
 
 
 const routes: Routes = [

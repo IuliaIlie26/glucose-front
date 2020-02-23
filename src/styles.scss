@@ -52,3 +52,9 @@ input[type=number] {
 body .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button{
     width: 3em;
 }
+
+.ui-label-active{
+    .ui-radiobutton-icon{
+    color: green
+    }
+}

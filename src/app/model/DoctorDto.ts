@@ -5,6 +5,7 @@ export class DoctorDto{
 
     name: string;
     lastname: string;
-    speciality: MedicalAreaDto;
-    patients: PatientDto[];
+    speciality: string;
+    patients: PatientDto[] =[];
+    username: string;
 }

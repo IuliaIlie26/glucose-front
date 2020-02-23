@@ -1,0 +1,17 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { DoctorDto } from '../model/DoctorDto';
+const endpoint = 'http://localhost:8080/api/doctor/';
+@Injectable({
+  providedIn: 'root'
+})
+export class DoctorApiService {
+
+  constructor(private http: HttpClient) { }
+
+  getDoctorByUsername(username: string): Observable<DoctorDto> {
+    return this.http.get<DoctorDto>(endpoint + 'getDoctorByUsername?username='+username, {})
+  }
+
+}

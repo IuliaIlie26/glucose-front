@@ -18,6 +18,8 @@ import { PatientsModule } from './patients/patients.module';
 import { DoctorModule } from './doctor/doctor.module';
 import { ConsultationsModule } from './consultations/consultations.module';
 import { HttpRequestsInterceptor } from './common/service/http-interceptor';
+import { PatientApiService } from './api/patient-api.service';
+import { DoctorApiService } from './api/doctor-api.service';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { HttpRequestsInterceptor } from './common/service/http-interceptor';
   ],
   bootstrap: [AppComponent],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpRequestsInterceptor, multi: true }]
+    { provide: HTTP_INTERCEPTORS, useClass: HttpRequestsInterceptor, multi: true },
+    PatientApiService,
+    DoctorApiService]
 })
 export class AppModule { }
