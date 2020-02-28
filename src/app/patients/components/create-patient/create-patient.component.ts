@@ -24,7 +24,7 @@ export class CreatePatientComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit() {
+  save() {
 
     this.patient.address = this.address;
     this.patient.birthdate = this.pipe.transform(this.patient.birthdate, 'yyyy-MM-dd');
