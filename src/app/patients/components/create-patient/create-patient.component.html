@@ -1,11 +1,11 @@
 <div class="container-fluid">
-    <h5 class="titleLabel"> Create a new patient profile: </h5>
+    <h5 class="titleLabel">{{"patient.create.title" | translate}} </h5>
     <div class="row">
         <div class="col-11 panel">
             <p-panel header="Personal Information">
                 <div class="row form-group">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>Name:
+                        <sup>*</sup>{{"patient.create.name" | translate}}
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]="patient.name" />
@@ -13,7 +13,7 @@
                 </div>
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>Last name:
+                        <sup>*</sup>{{"patient.create.lastname" | translate}}
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]=" patient.lastname" />
@@ -21,7 +21,7 @@
                 </div>
                 <div class="row form-group">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>Birthdate:
+                        <sup>*</sup>{{"patient.create.birthdate" | translate}}
                     </label>
                     <div class="ui-g-12 ui-md-6">
                         <p-calendar class="ui-calendar" [(ngModel)]="patient.birthdate" [showIcon]="true"
@@ -38,7 +38,7 @@
             <p-panel header="Contact Information">
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>E-mail:
+                        <sup>*</sup>{{"patient.create.email" | translate}}
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]="patient.email" />
@@ -46,7 +46,7 @@
                 </div>
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>Phone Number:
+                        <sup>*</sup>{{"patient.create.phone.number" | translate}}
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]="patient.phone" />
@@ -61,7 +61,7 @@
             <p-panel header="Address">
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>Address Line 1:
+                        <sup>*</sup>{{"patient.create.address.line.1" | translate}}
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]="address.addressLine1" />
@@ -69,7 +69,7 @@
                 </div>
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        Address Line 2:
+                        {{"patient.create.address.line.2" | translate}}
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]="address.addressLine2" />
@@ -78,7 +78,7 @@
 
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>City:
+                        <sup>*</sup>{{"patient.create.city" | translate}}
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]="address.city" />
@@ -86,7 +86,7 @@
                 </div>
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>Zip Code:
+                        <sup>*</sup>{{"patient.create.zip.code" | translate}}
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]="address.zipCode" />
@@ -94,7 +94,7 @@
                 </div>
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>Region:
+                        <sup>*</sup>{{"patient.create.region" | translate}}
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]="address.region" />
@@ -102,7 +102,7 @@
                 </div>
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>Country:
+                        <sup>*</sup>{{"patient.create.country" | translate}}
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]="address.country" />
@@ -113,7 +113,7 @@
     </div>
     <div class="row">
         <div class="col-12 offset-5 mt-2 mb-5">
-            <button class="btn btn-outline-success my-2 my-sm-0" (click)="save()">Save
+            <button class="btn btn-outline-success my-2 my-sm-0" (click)="save()">{{"patient.create.save" | translate}}
             </button>
         </div>
     </div>

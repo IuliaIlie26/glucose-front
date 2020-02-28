@@ -5,7 +5,6 @@ import { PatientApiService } from 'src/app/api/patient-api.service';
 import { ToastrService } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
-import { DoctorApiService } from 'src/app/api/doctor-api.service';
 import { SavePatientDto } from '../../model/SavePatientDto';
 
 @Component({

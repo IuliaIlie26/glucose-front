@@ -14,11 +14,13 @@
                             Patients
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" [routerLink]="['patient/create-patient']" routerLinkActive="current-item"
-                                [routerLinkActiveOptions]="{exact: false}">Create new patient profile</a>
+                            <a class="dropdown-item" [routerLink]="['patient/create-patient']"
+                                routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">Create new
+                                patient profile</a>
 
-                            <a class="dropdown-item" [routerLink]="['patient/patients-list']" routerLinkActive="current-item"
-                                [routerLinkActiveOptions]="{exact: false}">My patients</a>
+                            <a class="dropdown-item" [routerLink]="['patient/patients-list']"
+                                routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">My
+                                patients</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown active">
@@ -27,8 +29,8 @@
                             Calendar
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" [routerLink]="['consultation/calendar']" routerLinkActive="current-item"
-                                [routerLinkActiveOptions]="{exact: false}">Calendar</a>
+                            <a class="dropdown-item" [routerLink]="['consultation/calendar']"
+                                routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">Calendar</a>
                             <a class="dropdown-item" [routerLink]="['consultation/create-consultation']"
                                 routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">Create a new
                                 consultation</a>
@@ -41,6 +43,8 @@
                     </li>
 
                 </ul>
+                <button class="btn btn-outline-success my-2 my-sm-0 mr-1" (click)="useLanguage('en')">EN</button>
+                <button class="btn btn-outline-success my-2 my-sm-0 mr-1" (click)="useLanguage('ro')">RO</button>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search for patients..."
                         aria-label="Search">

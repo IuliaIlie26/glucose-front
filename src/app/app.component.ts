@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,9 @@ export class AppComponent implements OnInit {
   isLoggedIn = false;
   title: string;
 
-  constructor() {
-  }
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('en');
+}
 
   ngOnInit(){
     this.isLoggedIn = true;

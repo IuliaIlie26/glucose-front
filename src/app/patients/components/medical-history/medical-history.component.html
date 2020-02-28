@@ -1,7 +1,7 @@
 <div class="container-fluid">
-    <div class="col-10">
-        <h4>Risk Factors</h4>
-        <div class="col-10">
+    <h5 class="titleLabel">Risk Factors</h5>
+    <div class="col-11 panel">
+        <p-panel header="Factors">
             <div class="row form-group">
                 <label class="text-right col-form-label col-3">Age:</label>
                 <div class="col-7">
@@ -10,15 +10,15 @@
             </div>
 
             <div class="row form-group">
-                <label class="text-right col-form-label col-3">Weight: </label>
+                <label class="text-right col-form-label col-3">Height (cm): </label>
                 <div class="col-7">
-                    <input type="number" (ngModel)="patientRiskFactors.height">
+                    <input type="text" maxLength="3" [(ngModel)]="patientRiskFactors.height">
                 </div>
             </div>
             <div class="row form-group">
-                <label class="text-right col-form-label col-3">Height: </label>
+                <label class="text-right col-form-label col-3">Weight (kg): </label>
                 <div class="col-7">
-                    <input type="number" (ngModel)="patientRiskFactors.height">
+                    <input type="text" [(ngModel)]="patientRiskFactors.weight" maxLength="3">
                 </div>
             </div>
             <div class="row form-group">
@@ -54,7 +54,9 @@
                     </p-radioButton>
                 </div>
             </div>
-            <div class="row offset-4 mb-5">
+        </p-panel>
+        <div class="row">
+            <div class="col-12 offset-5 mt-2 mb-5">
                 <button class="btn btn-outline-success my-2 my-sm-0" (click)="save()">Save
                 </button>
             </div>

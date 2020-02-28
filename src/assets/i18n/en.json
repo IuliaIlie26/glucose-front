@@ -1,0 +1,22 @@
+{
+    "patient": {
+        "create": {
+            "title": "Create a new patient profile:",
+            "header.personal": "Personal Information",
+            "header.contact": "Contact Information",
+            "header.address": "Address",
+            "save": "Save",
+            "name": "Name:",
+            "lastname": "Last name:",
+            "birthdate": "Birthdate:",
+            "email": "E-Mail:",
+            "phone.number": "Phone Number:",
+            "address.line.1": "Address Line 1:",
+            "address.line.2": "Address Line 2:",
+            "city": "City:",
+            "region": "Region:",
+            "country": "Country:",
+            "zip.code": "Zip Code"
+        }
+    }
+}

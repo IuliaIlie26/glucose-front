@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -20,6 +20,8 @@ import { ConsultationsModule } from './consultations/consultations.module';
 import { HttpRequestsInterceptor } from './commons/service/http-interceptor';
 import { PatientApiService } from './api/patient-api.service';
 import { DoctorApiService } from './api/doctor-api.service';
+import { TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,14 @@ import { DoctorApiService } from './api/doctor-api.service';
     ToastrModule.forRoot(),
     DoctorModule,
     ConsultationsModule,
-    PatientsModule
+    PatientsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
 
   ],
   bootstrap: [AppComponent],
@@ -53,3 +62,8 @@ import { DoctorApiService } from './api/doctor-api.service';
     DoctorApiService]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+
+}
