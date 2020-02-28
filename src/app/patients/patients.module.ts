@@ -6,8 +6,8 @@ import { PatientAlertsComponent } from './components/patient-alerts/patient-aler
 import { CreatePatientComponent } from './components/create-patient/create-patient.component';
 import { MedicalHistoryComponent } from './components/medical-history/medical-history.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { CalendarModule, ButtonModule, RadioButtonModule, AccordionModule, DropdownModule, CheckboxModule, InputTextModule } from 'primeng/primeng';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CalendarModule, ButtonModule, RadioButtonModule, AccordionModule, DropdownModule, CheckboxModule, InputTextModule, PanelModule } from 'primeng/primeng';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { PatientsRoutingModule } from './patients-routing.module';
@@ -37,7 +37,9 @@ import { CommonModule } from '@angular/common';
     PatientsRoutingModule,
     DropdownModule,
     CheckboxModule,
-    InputTextModule
+    InputTextModule,
+    PanelModule,
+    ReactiveFormsModule
   ]
 })
 export class PatientsModule { }

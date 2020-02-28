@@ -17,7 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { PatientsModule } from './patients/patients.module';
 import { DoctorModule } from './doctor/doctor.module';
 import { ConsultationsModule } from './consultations/consultations.module';
-import { HttpRequestsInterceptor } from './common/service/http-interceptor';
+import { HttpRequestsInterceptor } from './commons/service/http-interceptor';
 import { PatientApiService } from './api/patient-api.service';
 import { DoctorApiService } from './api/doctor-api.service';
 

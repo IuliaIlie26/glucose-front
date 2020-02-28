@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RiskFactors } from 'src/app/model/RiskFactors';
-import { PatientRiskFactorsDto } from 'src/app/model/PatientRiskFactorsDto';
+import { RiskFactors } from 'src/app/commons/models/RiskFactors';
+import { PatientRiskFactorsDto } from 'src/app/commons/models/PatientRiskFactorsDto';
 import { PatientApiService } from 'src/app/api/patient-api.service';
 
 @Component({
