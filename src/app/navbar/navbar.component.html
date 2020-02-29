@@ -45,10 +45,13 @@
                     </li>
 
                 </ul>
-                <button class="btn btn-outline-success my-2 my-sm-0 mr-1" (click)="useLanguage('en')">EN</button>
-                <button class="btn btn-outline-success my-2 my-sm-0 mr-1" (click)="useLanguage('ro')">RO</button>
+                <fa-icon class="fa fa-globe fa-lg"></fa-icon>
+                <button class="btn mr-1"
+                    (click)="changeLanguage()">{{language}}</button>
+
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" [placeholder]="'menu.patients.search.placeholder' | translate" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="search"
+                        [placeholder]="'menu.patients.search.placeholder' | translate" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0"
                         type="submit">{{"menu.search" | translate}}</button>
                 </form>

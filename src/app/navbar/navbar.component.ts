@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html'
 })
 export class NavbarComponent implements OnInit {
+
+  language = 'RO';
+  browserLang = 'en';
 
   constructor(private translate: TranslateService) {
   }
@@ -12,7 +15,18 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  useLanguage(language: string) {
-    this.translate.use(language);
+  changeLanguage() {
+
+    if (this.browserLang === 'en') {
+      this.translate.use('ro');
+      this.language = "EN";
+      this.browserLang = 'ro';
+    } else {
+      this.translate.use('en');
+      this.language = "RO";
+
+      this.browserLang = 'en';
+    }
+
   }
 }

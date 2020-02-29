@@ -1,7 +1,7 @@
 {
     "patient": {
         "create": {
-            "title": "Create a new patient profile:",
+            "title": "Create a new patient profile",
             "header.personal": "Personal Information",
             "header.contact": "Contact Information",
             "header.address": "Address",

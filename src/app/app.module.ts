@@ -20,8 +20,9 @@ import { ConsultationsModule } from './consultations/consultations.module';
 import { HttpRequestsInterceptor } from './commons/service/http-interceptor';
 import { PatientApiService } from './api/patient-api.service';
 import { DoctorApiService } from './api/doctor-api.service';
-import { TranslateLoader, TranslateModule, TranslatePipe } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     DoctorModule,
     ConsultationsModule,
     PatientsModule,
+    FontAwesomeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
