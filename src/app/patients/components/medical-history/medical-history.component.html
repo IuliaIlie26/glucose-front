@@ -1,28 +1,28 @@
 <div class="container-fluid">
-    <h5 class="titleLabel">Risk Factors</h5>
+    <h5 class="titleLabel">{{'patient.medical.history.risk.factors' | translate}}</h5>
     <div class="col-11 panel">
-        <p-panel header="Factors">
+        <p-panel [header]="'patient.medical.history.risk.factors' | translate">
             <div class="row form-group">
-                <label class="text-right col-form-label col-3">Age:</label>
+                <label class="text-right col-form-label col-3">{{'patient.medical.history.age' | translate}}</label>
                 <div class="col-7">
                     <input type="text" readonly='true' value="{{age}}">
                 </div>
             </div>
 
             <div class="row form-group">
-                <label class="text-right col-form-label col-3">Height (cm): </label>
+                <label class="text-right col-form-label col-3">{{'patient.medical.history.height' | translate}}</label>
                 <div class="col-7">
                     <input type="text" maxLength="3" [(ngModel)]="patientRiskFactors.height">
                 </div>
             </div>
             <div class="row form-group">
-                <label class="text-right col-form-label col-3">Weight (kg): </label>
+                <label class="text-right col-form-label col-3">{{'patient.medical.history.weight' | translate}} </label>
                 <div class="col-7">
                     <input type="text" [(ngModel)]="patientRiskFactors.weight" maxLength="3">
                 </div>
             </div>
             <div class="row form-group">
-                <label class="text-right col-form-label col-3">Racial origin:</label>
+                <label class="text-right col-form-label col-3">{{'patient.medical.history.racial.origin' | translate}}</label>
                 <div class="col-7">
                     <p-dropdown [style]="{'width':'50%'}" [options]="races" [(ngModel)]="patientRiskFactors.race"
                         optionLabel='label'>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="row form-group">
-                <label class="text-right col-form-label col-3">Conception method:</label>
+                <label class="text-right col-form-label col-3">{{'patient.medical.history.conception.method' | translate}}</label>
                 <div class="col-7">
                     <p-dropdown [style]="{'width':'50%'}" [options]="conceptions"
                         [(ngModel)]="patientRiskFactors.conception" optionLabel='label'>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="row form-group">
-                <label class="text-right col-form-label col-3">Family history of diabetes:</label>
+                <label class="text-right col-form-label col-3">{{'patient.medical.history.family.history.diabetes' | translate}}</label>
                 <div class="col-7">
                     <p-dropdown [style]="{'width':'50%'}" [options]="familyHistory"
                         [(ngModel)]="patientRiskFactors.diabetesHistory" optionLabel='label'>
@@ -57,7 +57,7 @@
         </p-panel>
         <div class="row">
             <div class="col-12 offset-5 mt-2 mb-5">
-                <button class="btn btn-outline-success my-2 my-sm-0" (click)="save()">Save
+                <button class="btn btn-outline-success my-2 my-sm-0" (click)="save()">{{'patient.create.save' | translate}}
                 </button>
             </div>
         </div>

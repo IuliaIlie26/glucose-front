@@ -17,6 +17,32 @@
             "region": "Region:",
             "country": "Country:",
             "zip.code": "Zip Code"
+        },
+        "medical.history": {
+            "risk.factors": "Risk Factors",
+            "age": "Age:",
+            "height": "Height (cm):",
+            "weight": "Weight (kg):",
+            "racial.origin": "Racial Origin:",
+            "conception.method": "Conception method",
+            "family.history.diabetes": "Family history of diabetes:"
         }
+    },
+    "menu": {
+        "home": "Home",
+        "patients": "Patients",
+        "my.patients": "My Patients",
+        "calendar": "Calendar",
+        "create.consultation": "Create a new consultation",
+        "patients.alerts": "Patient Alerts",
+        "search": "Search",
+        "settings": "Settings",
+        "logout": "Logout",
+        "patients.search.placeholder": "Search for patients..."
+    },
+    "login": {
+        "login": "Login",
+        "username": "Username:",
+        "password": "Password:"
     }
 }

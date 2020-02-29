@@ -17,6 +17,7 @@ export class MedicalHistoryComponent implements OnInit {
   patientId: string;
   age: string;
 
+  // to be retrieved from the db
   risks: RiskFactors[] = [
     { name: 'Smoker', selected: false },
     { name: 'Previous macrosomic baby', selected: false },

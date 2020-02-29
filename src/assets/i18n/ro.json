@@ -17,6 +17,32 @@
             "region": "Judet:",
             "country": "Tara:",
             "zip.code": "Cod postal"
+        },
+        "medical.history":{
+            "risk.factors":"Factori de risc",
+            "age":"Varsta:",
+            "height":"Inaltime (cm):",
+            "weight":"Greutate (kg):",
+            "racial.origin":"Origine rasiala:",
+            "conception.method":"Metoda de conecptie",
+            "family.history.diabetes":"Istoric de diabet in familie:"
         }
+    },
+    "menu": {
+        "home": "Acasa",
+        "patients": "Pacienti",
+        "my.patients": "Pacientii mei",
+        "calendar": "Calendar",
+        "create.consultation": "Creeaza o noua consultatie",
+        "patients.alerts": "Alerte de pacienti",
+        "search": "Cauta",
+        "settings": "Setari",
+        "logout": "Delogare",
+        "patients.search.placeholder": "Cauta pacienti..."
+    },
+    "login": {
+        "login": "Logheaza-te",
+        "username": "Utilizator:",
+        "password": "Parola:"
     }
 }

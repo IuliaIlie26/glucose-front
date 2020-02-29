@@ -6,39 +6,41 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" [routerLink]="['doctor/doctor-home']" routerLinkActive="current-item"
-                            [routerLinkActiveOptions]="{exact: false}">Home <span class="sr-only">(current)</span></a>
+                            [routerLinkActiveOptions]="{exact: false}">{{"menu.home" | translate}} <span
+                                class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            Patients
+                            {{"menu.patients" | translate}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" [routerLink]="['patient/create-patient']"
-                                routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">Create new
-                                patient profile</a>
+                                routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">{{"patient.create.title" | translate}}</a>
 
                             <a class="dropdown-item" [routerLink]="['patient/patients-list']"
-                                routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">My
-                                patients</a>
+                                routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">{{"menu.my.patients" | translate}}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            Calendar
+                            {{"menu.calendar" | translate}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" [routerLink]="['consultation/calendar']"
-                                routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">Calendar</a>
+                                routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">{{"menu.calendar" | translate}}</a>
                             <a class="dropdown-item" [routerLink]="['consultation/create-consultation']"
-                                routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">Create a new
-                                consultation</a>
+                                routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">{{"menu.create.consultation" | translate}}</a>
                         </div>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" [routerLink]="['patient/patient-alerts']" routerLinkActive="current-item"
-                            [routerLinkActiveOptions]="{exact: false}"> Patient Alerts <span
+                            [routerLinkActiveOptions]="{exact: false}"> {{"menu.patients.alerts" | translate}} <span
                                 class="sr-only">(current)</span></a>
                     </li>
 
@@ -46,22 +48,22 @@
                 <button class="btn btn-outline-success my-2 my-sm-0 mr-1" (click)="useLanguage('en')">EN</button>
                 <button class="btn btn-outline-success my-2 my-sm-0 mr-1" (click)="useLanguage('ro')">RO</button>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search for patients..."
-                        aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control mr-sm-2" type="search" [placeholder]="'menu.patients.search.placeholder' | translate" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0"
+                        type="submit">{{"menu.search" | translate}}</button>
                 </form>
                 <ul class="navbar-nav my-2 my-sm-0">
                     <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            Account Settings
+                            {{"menu.settings" | translate}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" [routerLink]="['doctor/settings']" routerLinkActive="current-item"
-                                [routerLinkActiveOptions]="{exact: false}">Settings</a>
+                                [routerLinkActiveOptions]="{exact: false}">{{"menu.settings" | translate}}</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" [routerLink]="['/login']" routerLinkActive="current-item"
-                                [routerLinkActiveOptions]="{exact: false}">Logout</a>
+                                [routerLinkActiveOptions]="{exact: false}">{{"menu.logout" | translate}}</a>
                         </div>
                     </li>
                 </ul>

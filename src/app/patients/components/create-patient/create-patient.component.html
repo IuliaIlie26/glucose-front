@@ -2,7 +2,7 @@
     <h5 class="titleLabel">{{"patient.create.title" | translate}} </h5>
     <div class="row">
         <div class="col-11 panel">
-            <p-panel header="Personal Information">
+            <p-panel [header]="'patient.create.header.personal' | translate">
                 <div class="row form-group">
                     <label class="text-right col-form-label col-2">
                         <sup>*</sup>{{"patient.create.name" | translate}}
@@ -35,7 +35,7 @@
     </div>
     <div class="row">
         <div class="col-11 panel">
-            <p-panel header="Contact Information">
+            <p-panel [header]="'patient.create.header.contact' | translate">
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
                         <sup>*</sup>{{"patient.create.email" | translate}}
@@ -58,7 +58,7 @@
     </div>
     <div class="row">
         <div class="col-11 panel">
-            <p-panel header="Address">
+            <p-panel [header]="'patient.create.header.address' |translate">
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
                         <sup>*</sup>{{"patient.create.address.line.1" | translate}}
