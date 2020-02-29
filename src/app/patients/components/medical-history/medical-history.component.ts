@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { RiskFactors } from 'src/app/commons/models/RiskFactors';
 import { PatientRiskFactorsDto } from 'src/app/commons/models/PatientRiskFactorsDto';
 import { PatientApiService } from 'src/app/api/patient-api.service';
+import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-medical-history',
@@ -11,7 +13,7 @@ import { PatientApiService } from 'src/app/api/patient-api.service';
 })
 export class MedicalHistoryComponent implements OnInit {
 
-  constructor(private patientApi: PatientApiService, private activatedRoute: ActivatedRoute) { }
+  constructor(private patientApi: PatientApiService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, private translateService: TranslateService) { }
 
   patientRiskFactors = new PatientRiskFactorsDto();
   patientId: string;
@@ -53,7 +55,21 @@ export class MedicalHistoryComponent implements OnInit {
   }
 
   save() {
-
+    if (this.validated()) { }
   }
 
+
+  validated() {
+
+    if (isNaN(this.patientRiskFactors.height)) {
+      this.toastr.error(this.translateService.instant("error.height.nan"));
+      return false;
+    }
+
+    if (isNaN(this.patientRiskFactors.weight)) {
+      this.toastr.error(this.translateService.instant("error.weight.nan"));
+      return false;
+    }
+    return true;
+  }
 }

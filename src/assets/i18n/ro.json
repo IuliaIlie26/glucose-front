@@ -44,5 +44,9 @@
         "login": "Logheaza-te",
         "username": "Utilizator:",
         "password": "Parola:"
+    },
+    "error":{
+        "height.nan":"Inaltimea este numerica!",
+        "weight.nan":"Greutatea este numerica!"
     }
 }

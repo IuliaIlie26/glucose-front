@@ -44,5 +44,9 @@
         "login": "Login",
         "username": "Username:",
         "password": "Password:"
+    },
+    "error":{
+        "height.nan":"Height must be numerical!",
+        "weight.nan":"Weight must be numerical!"
     }
 }
