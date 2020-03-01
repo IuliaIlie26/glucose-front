@@ -48,7 +48,7 @@
     "error":{
         "height.nan":"Height must be numerical!",
         "weight.nan":"Weight must be numerical!",
-        "fields.required":"Please fill all required fields!"
+        "fields.required":"Please fill out all required fields!"
     },
     "info.required.fields" : "Fields with * are required."
 }

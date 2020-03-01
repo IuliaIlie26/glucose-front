@@ -60,6 +60,11 @@ export class MedicalHistoryComponent implements OnInit {
 
 
   validated() {
+    if (!(this.patientRiskFactors.race && this.patientRiskFactors.height && this.patientRiskFactors.weight &&
+      this.patientRiskFactors.conception && this.patientRiskFactors.diabetesHistory)) {
+      this.toastr.error(this.translateService.instant("error.fields.required"))
+      return false;
+    }
 
     if (isNaN(this.patientRiskFactors.height)) {
       this.toastr.error(this.translateService.instant("error.height.nan"));
@@ -70,6 +75,7 @@ export class MedicalHistoryComponent implements OnInit {
       this.toastr.error(this.translateService.instant("error.weight.nan"));
       return false;
     }
+
     return true;
   }
 }
