@@ -16,7 +16,7 @@
             "city": "Oras:",
             "region": "Judet:",
             "country": "Tara:",
-            "zip.code": "Cod postal"
+            "zip.code": "Cod postal:"
         },
         "medical.history":{
             "risk.factors":"Factori de risc",
@@ -47,6 +47,8 @@
     },
     "error":{
         "height.nan":"Inaltimea este numerica!",
-        "weight.nan":"Greutatea este numerica!"
-    }
+        "weight.nan":"Greutatea este numerica!",
+        "fields.required":"Completati toate campurile oblgatorii!"
+    },
+    "info.required.fields" : "Campurile cu * sunt obligatorii."
 }
