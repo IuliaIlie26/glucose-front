@@ -1,4 +1,5 @@
 @import '~bootstrap/dist/css/bootstrap.css';
+@import './green-theme.css';
 
 h4 {
     margin-top: 10px;
@@ -47,6 +48,7 @@ input[type=number] {
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
 }
+
 
 
 .ui-calendar.ui-calendar-w-btn .ui-datepicker-trigger.ui-button{

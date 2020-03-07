@@ -7,11 +7,11 @@ import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-medical-history',
-  templateUrl: './medical-history.component.html',
-  styleUrls: ['./medical-history.component.scss']
+  selector: 'app-risk-factors',
+  templateUrl: './risk-factors.component.html',
+  styleUrls: ['./risk-factors.component.scss']
 })
-export class MedicalHistoryComponent implements OnInit {
+export class RiskFactorsComponent implements OnInit {
 
   constructor(private patientApi: PatientApiService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, private translateService: TranslateService) { }
 

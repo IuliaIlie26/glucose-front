@@ -4,7 +4,7 @@ import { PatientsAllComponent } from './components/patients-all/patients-all.com
 import { PatientListComponent } from './components/patient-list/patient-list.component';
 import { PatientAlertsComponent } from './components/patient-alerts/patient-alerts.component';
 import { CreatePatientComponent } from './components/create-patient/create-patient.component';
-import { MedicalHistoryComponent } from './components/medical-history/medical-history.component';
+import { RiskFactorsComponent } from './components/risk-factors/risk-factors.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalendarModule, ButtonModule, RadioButtonModule, AccordionModule, DropdownModule, CheckboxModule, InputTextModule, PanelModule } from 'primeng/primeng';
@@ -22,7 +22,7 @@ import { TranslateModule } from '@ngx-translate/core';
     PatientSearchComponent,
     PatientsAllComponent,
     CreatePatientComponent,
-    MedicalHistoryComponent
+    RiskFactorsComponent
   ],
   imports: [
     CommonModule,

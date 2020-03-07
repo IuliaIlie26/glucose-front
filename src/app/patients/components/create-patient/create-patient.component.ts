@@ -32,7 +32,7 @@ export class CreatePatientComponent implements OnInit {
       this.savePatientDto.patient = this.patient;
       this.savePatientDto.doctorUsername = sessionStorage.getItem("loggedDoctor");
       this.patientApi.savePatient(this.savePatientDto).subscribe(patientId =>
-        this.router.navigate(['patient', 'create-patient', 'create-medical-chart', patientId])
+        this.router.navigate(['patient', 'create-patient', 'risk-factors', patientId])
       );
     }
   }
