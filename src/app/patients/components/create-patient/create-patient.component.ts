@@ -20,6 +20,7 @@ export class CreatePatientComponent implements OnInit {
   savePatientDto: SavePatientDto = new SavePatientDto();
   address: AddressDto = new AddressDto();
   pipe = new DatePipe('en-us');
+  maxDate = new Date();
   constructor(private patientApi: PatientApiService, private router: Router, private translateService: TranslateService, private toastr: ToastrService) { }
 
   ngOnInit() {

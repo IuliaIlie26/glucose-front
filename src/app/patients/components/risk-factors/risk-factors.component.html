@@ -17,7 +17,7 @@
                         <sup>*</sup>{{'patient.medical.history.height' | translate}}
                     </label>
                     <div class="col-7">
-                        <input type="text" maxLength="3" [(ngModel)]="patientRiskFactors.height">
+                        <input type="text" numbersOnly maxLength="3" [(ngModel)]="patientRiskFactors.height">
                     </div>
                 </div>
                 <div class="row form-group">
@@ -25,7 +25,7 @@
                         <sup>*</sup>{{'patient.medical.history.weight' | translate}}
                     </label>
                     <div class="col-7">
-                        <input type="text" [(ngModel)]="patientRiskFactors.weight" maxLength="3">
+                        <input type="text" numbersOnly [(ngModel)]="patientRiskFactors.weight" maxLength="3">
                     </div>
                 </div>
                 <div class="row form-group">

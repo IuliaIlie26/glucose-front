@@ -26,7 +26,7 @@
                     </label>
                     <div class="ui-g-12 ui-md-6">
                         <p-calendar class="ui-calendar" [(ngModel)]="patient.birthdate" [showIcon]="true"
-                            icon="fa fa-calendar" [monthNavigator]="true" [yearNavigator]="true" yearRange="1950:2030"
+                            icon="fa fa-calendar" [monthNavigator]="true" [yearNavigator]="true" [maxDate]="maxDate" yearRange="1950:2020"
                             dateFormat="dd/mm/yy">
                         </p-calendar>
                     </div>
@@ -50,7 +50,7 @@
                         <sup>*</sup>{{"patient.create.phone.number" | translate}}
                     </label>
                     <div class="col-7 mt-1">
-                        <input type="text" [(ngModel)]="patient.phone" />
+                        <input type="text" numbersOnly [(ngModel)]="patient.phone" maxlength="10"/>
                     </div>
                 </div>
             </p-panel>
@@ -98,7 +98,7 @@
                         <sup>*</sup>{{"patient.create.region" | translate}}
                     </label>
                     <div class="col-7 mt-1">
-                        <input type="text" [(ngModel)]="address.region" />
+                        <input type="text" [(ngModel)]="address.region" maxlength="20"/>
                     </div>
                 </div>
                 <div class="row form-group ">
@@ -106,7 +106,7 @@
                         <sup>*</sup>{{"patient.create.country" | translate}}
                     </label>
                     <div class="col-7 mt-1">
-                        <input type="text" [(ngModel)]="address.country" />
+                        <input type="text" [(ngModel)]="address.country" maxlength="20"/>
                     </div>
                 </div>
             </p-panel>

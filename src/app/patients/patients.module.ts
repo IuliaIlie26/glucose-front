@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { PatientsRoutingModule } from './patients-routing.module';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { NumbersOnlyDirective } from '../commons/directive/numbers-only.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TranslateModule } from '@ngx-translate/core';
     PatientSearchComponent,
     PatientsAllComponent,
     CreatePatientComponent,
-    RiskFactorsComponent
+    RiskFactorsComponent,
+    NumbersOnlyDirective
   ],
   imports: [
     CommonModule,
