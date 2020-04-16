@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { PatientDto } from 'src/app/commons/models/PatientDto';
-import { AddressDto } from 'src/app/patients/model/AddressDto';
-import { PatientApiService } from 'src/app/api/patient-api.service';
-import { ToastrService } from 'ngx-toastr';
+/*  */import { ToastrService } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { SavePatientDto } from '../../model/SavePatientDto';
 import { TranslateService } from '@ngx-translate/core';
+import { PatientDto } from 'src/app/commons/models/PatientDto';
+import { AddressDto } from '../../model/AddressDto';
+import { PatientApiService } from 'src/app/api/patient-api.service';
 
 @Component({
   selector: 'app-create-patient',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PatientApiService} from '../../api/patient-api.service'
+import { DoctorApiService } from 'src/app/api/doctor-api.service';
 
 @Component({
   selector: 'app-doctor-home',
@@ -9,10 +9,11 @@ import {PatientApiService} from '../../api/patient-api.service'
 export class DoctorHomeComponent implements OnInit {
 
   greet: string;
-  constructor(private patientApi : PatientApiService) { }
+  constructor(private doctorApi: DoctorApiService) { }
 
   ngOnInit() {
-    
+    let username = sessionStorage.getItem("loggedDoctor");
+    this.doctorApi.getDoctorNameAndLastname(username).subscribe(nameAndLastName => this.greet = "Hello, " + nameAndLastName);
   }
 
 }

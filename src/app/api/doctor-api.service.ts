@@ -11,7 +11,10 @@ export class DoctorApiService {
   constructor(private http: HttpClient) { }
 
   getDoctorByUsername(username: string): Observable<DoctorDto> {
-    return this.http.get<DoctorDto>(endpoint + 'getDoctorByUsername?username='+username, {})
+    return this.http.get<DoctorDto>(endpoint + 'getDoctorByUsername?username=' + username, {})
   }
 
+  getDoctorNameAndLastname(username: string): Observable<string> {
+    return this.http.get<string>(endpoint + 'getDoctorNameAndLastname?username=' + username, {})
+  }
 }
