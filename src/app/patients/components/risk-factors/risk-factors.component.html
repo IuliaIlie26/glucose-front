@@ -33,8 +33,9 @@
                         <sup>*</sup>{{'patient.risk.racial.origin' | translate}}
                     </label>
                     <div class="col-7">
-                        <p-dropdown [style]="{'width':'50%'}" [options]="races" [(ngModel)]="riskFactors.racialOrigin"
-                            optionLabel='label' [placeholder]="translateService.instant('patient.risk.select')">
+                        <p-dropdown [style]="{'width':'50%'}" [options]="races" [(ngModel)]="selectedRacialOrigin"
+                            optionLabel='label' [placeholder]="translateService.instant('patient.risk.select')"
+                            showClear='true'>
                         </p-dropdown>
                     </div>
                 </div>
@@ -45,7 +46,8 @@
                     </label>
                     <div class="col-7">
                         <p-dropdown [style]="{'width':'50%'}" [options]="conceptions"
-                            [(ngModel)]="riskFactors.conceptionMethod" optionLabel='label' [placeholder]="translateService.instant('patient.risk.select')">
+                            [(ngModel)]="selectedConceptionMethod" optionLabel='label'
+                            [placeholder]="translateService.instant('patient.risk.select')" showClear='true'>
                         </p-dropdown>
                     </div>
                 </div>
@@ -55,7 +57,8 @@
                     </label>
                     <div class="col-7">
                         <p-dropdown [style]="{'width':'50%'}" [options]="familyHistory"
-                            [(ngModel)]="riskFactors.familyHistoryOfDiabetes" optionLabel='label' [placeholder]="translateService.instant('patient.risk.select')">
+                            [(ngModel)]="selectedFamilyHistory" optionLabel='label'
+                            [placeholder]="translateService.instant('patient.risk.select')" showClear='true'>
                         </p-dropdown>
                     </div>
                 </div>

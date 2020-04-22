@@ -8,6 +8,7 @@ import { racialOrigin } from './races-origin.model';
 import { conceptionMethods } from './conception-methods.model'
 import { familyHistoryOfDiabetes } from './family-history.model'
 import { Subscription } from 'rxjs';
+import { SelectItem } from 'primeng/primeng';
 
 @Component({
   selector: 'app-risk-factors',
@@ -46,16 +47,23 @@ export class RiskFactorsComponent implements OnInit, OnDestroy {
     this.familyHistory = familyHistoryOfDiabetes[lang];
   }
 
+  selectedRacialOrigin: SelectItem;
+  selectedConceptionMethod: SelectItem;
+  selectedFamilyHistory: SelectItem;
   saveRiskFactors() {
+
     if (this.validated()) {
+      this.riskFactors.racialOrigin = this.selectedRacialOrigin.value;
+      this.riskFactors.conceptionMethod = this.selectedConceptionMethod.value;
+      this.riskFactors.familyHistoryOfDiabetes = this.selectedFamilyHistory.value;
+      this.riskFactors.patientId = +this.patientId;
       this.patientApi.saveRiskFactors(this.riskFactors).subscribe(() => this.toastr.success('Success!'))
     }
   }
 
   validated() {
-    console.log('risk ', this.riskFactors)
-    if (!(this.riskFactors.racialOrigin && this.riskFactors.height && this.riskFactors.weight &&
-      this.riskFactors.conceptionMethod && this.riskFactors.familyHistoryOfDiabetes)) {
+    if (!(this.selectedFamilyHistory && this.riskFactors.height && this.riskFactors.weight &&
+      this.selectedConceptionMethod && this.selectedRacialOrigin && this.riskFactors.smoker && this.riskFactors.macrosomicBaby && this.riskFactors.previousGDM)) {
       this.toastr.error(this.translateService.instant("error.fields.required"))
       return false;
     }
