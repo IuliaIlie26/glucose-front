@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SavePatientDto } from '../patients/model/SavePatientDto';
+import { RiskFactorsDto } from '../commons/models/PatientRiskFactorsDto';
 const endpoint = 'http://localhost:8080/api/patient/';
 
 @Injectable({
@@ -17,5 +18,9 @@ export class PatientApiService {
 
   getFullFormatAgeById(id: number): Observable<string> {
     return this.http.get<string>(endpoint + 'getFullFormatAgeById?id='+id, { responseType: 'text' as 'json' })
+  }
+
+  saveRiskFactors(riskFactors : RiskFactorsDto) : Observable<void>{
+    return this.http.post<void>(endpoint+'saveRiskFactors', riskFactors);
   }
 }

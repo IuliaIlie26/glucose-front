@@ -18,14 +18,20 @@
             "country": "Tara:",
             "zip.code": "Cod postal:"
         },
-        "medical.history":{
-            "risk.factors":"Factori de risc",
-            "age":"Varsta:",
-            "height":"Inaltime (cm):",
-            "weight":"Greutate (kg):",
-            "racial.origin":"Origine rasiala:",
-            "conception.method":"Metoda de conecptie",
-            "family.history.diabetes":"Istoric de diabet in familie:"
+        "risk": {
+            "factors": "Factori de risc",
+            "age": "Varsta:",
+            "height": "Inaltime (cm):",
+            "weight": "Greutate (kg):",
+            "racial.origin": "Origine rasiala:",
+            "conception.method": "Metoda de conecptie",
+            "family.history.diabetes": "Istoric de diabet in familie:",
+            "smoker": "Fumator",
+            "macrosomic.baby": "Copil macrosomic anterior",
+            "previous.gdm": "GDM anterior",
+            "yes" : "Da",
+            "no": "Nu",
+            "select": "Selecteaza"
         }
     },
     "menu": {
@@ -45,10 +51,10 @@
         "username": "Utilizator:",
         "password": "Parola:"
     },
-    "error":{
-        "height.nan":"Inaltimea este numerica!",
-        "weight.nan":"Greutatea este numerica!",
-        "fields.required":"Completati toate campurile oblgatorii!"
+    "error": {
+        "height.nan": "Inaltimea este numerica!",
+        "weight.nan": "Greutatea este numerica!",
+        "fields.required": "Completati toate campurile oblgatorii!"
     },
-    "info.required.fields" : "Campurile cu * sunt obligatorii."
+    "info.required.fields": "Campurile cu * sunt obligatorii."
 }

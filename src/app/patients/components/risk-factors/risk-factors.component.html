@@ -1,72 +1,100 @@
 <div class="container-fluid">
-    <h5 class="titleLabel">{{'patient.medical.history.risk.factors' | translate}}</h5>
+    <h5 class="titleLabel">{{'patient.risk.factors' | translate}}</h5>
     <div class="row">
         <div class="col-11 panel">
             <sup> {{"info.required.fields" | translate}}</sup>
-            <p-panel [header]="'patient.medical.history.risk.factors' | translate">
+            <p-panel [header]="'patient.risk.factors' | translate">
                 <div class="row form-group">
                     <label class="text-right col-form-label col-3">
-                        <sup>*</sup>{{'patient.medical.history.age' | translate}}
+                        <sup>*</sup>{{'patient.risk.age' | translate}}
                     </label>
                     <div class="col-7">
-                        <input type="text" readonly='true' value="{{age}}">
+                        <input type="text" disabled='true' value="{{age}}">
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="text-right col-form-label col-3">
-                        <sup>*</sup>{{'patient.medical.history.height' | translate}}
+                        <sup>*</sup>{{'patient.risk.height' | translate}}
                     </label>
                     <div class="col-7">
-                        <input type="text" numbersOnly maxLength="3" [(ngModel)]="patientRiskFactors.height">
+                        <input type="text" numbersOnly maxLength="3" [(ngModel)]="riskFactors.height">
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="text-right col-form-label col-3">
-                        <sup>*</sup>{{'patient.medical.history.weight' | translate}}
+                        <sup>*</sup>{{'patient.risk.weight' | translate}}
                     </label>
                     <div class="col-7">
-                        <input type="text" numbersOnly [(ngModel)]="patientRiskFactors.weight" maxLength="3">
+                        <input type="text" numbersOnly [(ngModel)]="riskFactors.weight" maxLength="3">
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="text-right col-form-label col-3">
-                        <sup>*</sup>{{'patient.medical.history.racial.origin' | translate}}
+                        <sup>*</sup>{{'patient.risk.racial.origin' | translate}}
                     </label>
                     <div class="col-7">
-                        <p-dropdown [style]="{'width':'50%'}" [options]="races" [(ngModel)]="patientRiskFactors.race"
-                            optionLabel='label'>
+                        <p-dropdown [style]="{'width':'50%'}" [options]="races" [(ngModel)]="riskFactors.racialOrigin"
+                            optionLabel='label' [placeholder]="translateService.instant('patient.risk.select')">
                         </p-dropdown>
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="text-right col-form-label col-3">
                         <sup>*</sup>
-                        {{'patient.medical.history.conception.method' | translate}}
+                        {{'patient.risk.conception.method' | translate}}
                     </label>
                     <div class="col-7">
                         <p-dropdown [style]="{'width':'50%'}" [options]="conceptions"
-                            [(ngModel)]="patientRiskFactors.conception" optionLabel='label'>
+                            [(ngModel)]="riskFactors.conceptionMethod" optionLabel='label' [placeholder]="translateService.instant('patient.risk.select')">
                         </p-dropdown>
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="text-right col-form-label col-3">
-                        <sup>*</sup>{{'patient.medical.history.family.history.diabetes' | translate}}
+                        <sup>*</sup>{{'patient.risk.family.history.diabetes' | translate}}
                     </label>
                     <div class="col-7">
                         <p-dropdown [style]="{'width':'50%'}" [options]="familyHistory"
-                            [(ngModel)]="patientRiskFactors.diabetesHistory" optionLabel='label'>
+                            [(ngModel)]="riskFactors.familyHistoryOfDiabetes" optionLabel='label' [placeholder]="translateService.instant('patient.risk.select')">
                         </p-dropdown>
                     </div>
                 </div>
-                <div class="row form-group" *ngFor="let risk of risks">
+                <div class="row form-group">
                     <label class="text-right col-form-label col-3">
-                        <sup>*</sup>{{risk.name}}:
+                        <sup>*</sup>{{'patient.risk.smoker' | translate}}:
                     </label>
                     <div class="col-7">
-                        <p-radioButton class="mr-2" value="true" label="Yes" [(ngModel)]="risk.selected">
+                        <p-radioButton class="mr-2" value="true" [label]="translateService.instant('patient.risk.yes')"
+                            [(ngModel)]="riskFactors.smoker">
                         </p-radioButton>
-                        <p-radioButton class="mr-2" value="false" label="No" [(ngModel)]="risk.selected">
+                        <p-radioButton class="mr-2" value="false" [label]="translateService.instant('patient.risk.no')"
+                            [(ngModel)]="riskFactors.smoker">
+                        </p-radioButton>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="text-right col-form-label col-3">
+                        <sup>*</sup>{{'patient.risk.macrosomic.baby' | translate}}:
+                    </label>
+                    <div class="col-7">
+                        <p-radioButton class="mr-2" value="true" [label]="translateService.instant('patient.risk.yes')"
+                            [(ngModel)]="riskFactors.macrosomicBaby">
+                        </p-radioButton>
+                        <p-radioButton class="mr-2" value="false" [label]="translateService.instant('patient.risk.no')"
+                            [(ngModel)]="riskFactors.macrosomicBaby">
+                        </p-radioButton>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label class="text-right col-form-label col-3">
+                        <sup>*</sup>{{'patient.risk.previous.gdm' | translate}}:
+                    </label>
+                    <div class="col-7">
+                        <p-radioButton class="mr-2" value="true" [label]="translateService.instant('patient.risk.yes')"
+                            [(ngModel)]="riskFactors.previousGDM">
+                        </p-radioButton>
+                        <p-radioButton class="mr-2" value="false" [label]="translateService.instant('patient.risk.no')"
+                            [(ngModel)]="riskFactors.previousGDM">
                         </p-radioButton>
                     </div>
                 </div>
@@ -74,7 +102,7 @@
             <div class="row">
                 <div class="offset-5 mt-2 mb-5">
                     <button class="btn btn-outline-success my-2 my-sm-0"
-                        (click)="save()">{{'patient.create.save' | translate}}
+                        (click)="saveRiskFactors()">{{'patient.create.save' | translate}}
                     </button>
                 </div>
             </div>

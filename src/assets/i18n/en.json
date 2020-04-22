@@ -18,14 +18,20 @@
             "country": "Country:",
             "zip.code": "Zip Code:"
         },
-        "medical.history": {
-            "risk.factors": "Risk Factors",
+        "risk": {
+            "factors": "Risk Factors",
             "age": "Age:",
             "height": "Height (cm):",
             "weight": "Weight (kg):",
             "racial.origin": "Racial Origin:",
             "conception.method": "Conception method",
-            "family.history.diabetes": "Family history of diabetes:"
+            "family.history.diabetes": "Family history of diabetes:",
+            "smoker": "Smoker",
+            "macrosomic.baby": "Previous macrosomic baby",
+            "previous.gdm": "Previous GDM",
+            "yes": "Yes",
+            "no": "No",
+            "select": "Select"
         }
     },
     "menu": {
@@ -45,10 +51,10 @@
         "username": "Username:",
         "password": "Password:"
     },
-    "error":{
-        "height.nan":"Height must be numerical!",
-        "weight.nan":"Weight must be numerical!",
-        "fields.required":"Please fill out all required fields!"
+    "error": {
+        "height.nan": "Height must be numerical!",
+        "weight.nan": "Weight must be numerical!",
+        "fields.required": "Please fill out all required fields!"
     },
-    "info.required.fields" : "Fields with * are required."
+    "info.required.fields": "Fields with * are required."
 }

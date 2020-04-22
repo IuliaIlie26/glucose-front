@@ -1,12 +1,11 @@
-import { RiskFactors } from './RiskFactors';
-
-export class PatientRiskFactorsDto {
-    riskFactors: RiskFactors[];
+export class RiskFactorsDto {
     patientId: number;
-    age: string;
     height: number;
     weight: number;
-    race: string;
-    diabetesHistory : string;
-    conception : string;
+    racialOrigin: string;
+    familyHistoryOfDiabetes: string;
+    conceptionMethod: string;
+    smoker: boolean;
+    macrosomicBaby: boolean;
+    previousGDM: boolean;
 }
