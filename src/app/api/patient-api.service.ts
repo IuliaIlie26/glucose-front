@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SavePatientDto } from '../patients/model/SavePatientDto';
 import { RiskFactorsDto } from '../commons/models/PatientRiskFactorsDto';
+import { PatientDto } from '../commons/models/PatientDto';
 const endpoint = 'http://localhost:8080/api/patient/';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class PatientApiService {
 
   constructor(private http: HttpClient) { }
 
-  savePatient(dto: SavePatientDto): Observable<number> {
+  savePatient(dto: PatientDto): Observable<number> {
     return this.http.post<number>(endpoint + 'savePatient', dto, {})
   }
 

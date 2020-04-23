@@ -8,6 +8,7 @@
             "save": "Save",
             "name": "Name:",
             "lastname": "Last name:",
+            "cnp": "Personal Number:",
             "birthdate": "Birthdate:",
             "email": "E-Mail:",
             "phone.number": "Phone Number:",

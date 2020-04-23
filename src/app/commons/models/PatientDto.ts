@@ -8,5 +8,6 @@ export class PatientDto {
     doctors: DoctorDto[] = [];
     birthdate: string;
     phone: string;
-    email: string
+    email: string;
+    cnp: string;
 }

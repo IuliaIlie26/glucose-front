@@ -20,14 +20,22 @@
                         <input type="text" [(ngModel)]=" patient.lastname" />
                     </div>
                 </div>
+                <div class="row form-group ">
+                    <label class="text-right col-form-label col-2">
+                        <sup>*</sup>{{"patient.create.cnp" | translate}}
+                    </label>
+                    <div class="col-7 mt-1">
+                        <input type="text" [(ngModel)]=" patient.cnp" maxlength="13" />
+                    </div>
+                </div>
                 <div class="row form-group">
                     <label class="text-right col-form-label col-2">
                         <sup>*</sup>{{"patient.create.birthdate" | translate}}
                     </label>
                     <div class="ui-g-12 ui-md-6">
                         <p-calendar class="ui-calendar" [(ngModel)]="patient.birthdate" [showIcon]="true"
-                            icon="fa fa-calendar" [monthNavigator]="true" [yearNavigator]="true" [maxDate]="maxDate" yearRange="1950:2020"
-                            dateFormat="dd/mm/yy">
+                            icon="fa fa-calendar" [monthNavigator]="true" [yearNavigator]="true" [maxDate]="maxDate"
+                            yearRange="1950:2020" dateFormat="dd/mm/yy">
                         </p-calendar>
                     </div>
                 </div>
@@ -50,7 +58,7 @@
                         <sup>*</sup>{{"patient.create.phone.number" | translate}}
                     </label>
                     <div class="col-7 mt-1">
-                        <input type="text" numbersOnly [(ngModel)]="patient.phone" maxlength="10"/>
+                        <input type="text" numbersOnly [(ngModel)]="patient.phone" maxlength="10" />
                     </div>
                 </div>
             </p-panel>
@@ -90,7 +98,7 @@
                         {{"patient.create.zip.code" | translate}}
                     </label>
                     <div class="col-7 mt-1">
-                        <input type="text" [(ngModel)]="address.zipCode" />
+                        <input type="text" [(ngModel)]="address.zipCode" maxlength="6" numbersOnly />
                     </div>
                 </div>
                 <div class="row form-group ">
@@ -98,7 +106,7 @@
                         <sup>*</sup>{{"patient.create.region" | translate}}
                     </label>
                     <div class="col-7 mt-1">
-                        <input type="text" [(ngModel)]="address.region" maxlength="20"/>
+                        <input type="text" [(ngModel)]="address.region" maxlength="20" />
                     </div>
                 </div>
                 <div class="row form-group ">
@@ -106,7 +114,10 @@
                         <sup>*</sup>{{"patient.create.country" | translate}}
                     </label>
                     <div class="col-7 mt-1">
-                        <input type="text" [(ngModel)]="address.country" maxlength="20"/>
+                        <p-dropdown [style]="{'width':'50%'}" [options]="countryOptions" [(ngModel)]="address.country"
+                            optionLabel='label' [placeholder]="translateService.instant('patient.risk.select')" filter="true"
+                            showClear='true'>
+                        </p-dropdown>
                     </div>
                 </div>
             </p-panel>

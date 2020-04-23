@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-/*  */import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
-import { SavePatientDto } from '../../model/SavePatientDto';
 import { TranslateService } from '@ngx-translate/core';
 import { PatientDto } from 'src/app/commons/models/PatientDto';
 import { AddressDto } from '../../model/AddressDto';
 import { PatientApiService } from 'src/app/api/patient-api.service';
+import { countryOptions } from './countries.model'
 
 @Component({
   selector: 'app-create-patient',
@@ -17,22 +17,21 @@ export class CreatePatientComponent implements OnInit {
 
   errors = "";
   patient: PatientDto = new PatientDto();
-  savePatientDto: SavePatientDto = new SavePatientDto();
   address: AddressDto = new AddressDto();
   pipe = new DatePipe('en-us');
   maxDate = new Date();
   constructor(private patientApi: PatientApiService, private router: Router, private translateService: TranslateService, private toastr: ToastrService) { }
+  countryOptions: Array<any>
 
   ngOnInit() {
+    this.countryOptions = countryOptions;
   }
 
   save() {
     if (this.validate()) {
       this.patient.address = this.address;
       this.patient.birthdate = this.pipe.transform(this.patient.birthdate, 'yyyy-MM-dd');
-      this.savePatientDto.patient = this.patient;
-      this.savePatientDto.doctorUsername = sessionStorage.getItem("loggedDoctor");
-      this.patientApi.savePatient(this.savePatientDto).subscribe(patientId =>
+      this.patientApi.savePatient(this.patient).subscribe(patientId =>
         this.router.navigate(['patient', 'create-patient', 'risk-factors', patientId])
       );
     }

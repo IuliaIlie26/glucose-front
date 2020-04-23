@@ -23,6 +23,7 @@ import { DoctorApiService } from './api/doctor-api.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    NgxPermissionsModule.forRoot()
   ],
   bootstrap: [AppComponent],
   providers: [
