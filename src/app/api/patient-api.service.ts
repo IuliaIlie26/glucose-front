@@ -17,10 +17,14 @@ export class PatientApiService {
   }
 
   getFullFormatAgeById(id: number): Observable<string> {
-    return this.http.get<string>(endpoint + 'getFullFormatAgeById?id='+id, { responseType: 'text' as 'json' })
+    return this.http.get<string>(endpoint + 'getFullFormatAgeById?id=' + id, { responseType: 'text' as 'json' })
   }
 
-  saveRiskFactors(riskFactors : RiskFactorsDto) : Observable<void>{
-    return this.http.post<void>(endpoint+'saveRiskFactors', riskFactors);
+  saveRiskFactors(riskFactors: RiskFactorsDto): Observable<void> {
+    return this.http.post<void>(endpoint + 'saveRiskFactors', riskFactors);
+  }
+
+  getAllPatients(): Observable<PatientDto[]> {
+    return this.http.get<PatientDto[]>(endpoint + 'getAllPatients');
   }
 }

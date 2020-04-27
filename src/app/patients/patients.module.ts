@@ -16,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NumbersOnlyDirective } from '../commons/directive/numbers-only.directive';
 import { ManagePatientsComponent } from './components/manage-patients/manage-patients.component';
 import { ManageSensorComponent } from './components/manage-sensor/manage-sensor.component';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ManageSensorComponent } from './components/manage-sensor/manage-sensor.
     NgbModule,
     ButtonModule,
     RadioButtonModule,
+    TableModule,
     AccordionModule,
     ToastrModule.forRoot(),
     PatientsRoutingModule,

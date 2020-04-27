@@ -6,7 +6,7 @@
             <p-panel [header]="'patient.create.header.personal' | translate">
                 <div class="row form-group">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>{{"patient.create.name" | translate}}
+                        <sup>*</sup>{{"patient.create.name" | translate}}:
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]="patient.name" />
@@ -14,7 +14,7 @@
                 </div>
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>{{"patient.create.lastname" | translate}}
+                        <sup>*</sup>{{"patient.create.lastname" | translate}}:
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]=" patient.lastname" />
@@ -22,7 +22,7 @@
                 </div>
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>{{"patient.create.cnp" | translate}}
+                        <sup>*</sup>{{"patient.create.cnp" | translate}}:
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]=" patient.cnp" maxlength="13" numbersOnly/>
@@ -47,7 +47,7 @@
             <p-panel [header]="'patient.create.header.contact' | translate">
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>{{"patient.create.email" | translate}}
+                        <sup>*</sup>{{"patient.create.email" | translate}}:
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" [(ngModel)]="patient.email" />
@@ -55,7 +55,7 @@
                 </div>
                 <div class="row form-group ">
                     <label class="text-right col-form-label col-2">
-                        <sup>*</sup>{{"patient.create.phone.number" | translate}}
+                        <sup>*</sup>{{"patient.create.phone.number" | translate}}:
                     </label>
                     <div class="col-7 mt-1">
                         <input type="text" numbersOnly [(ngModel)]="patient.phone" maxlength="10" />

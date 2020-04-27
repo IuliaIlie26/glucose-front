@@ -1,1 +1,19 @@
-<p>manage-patients works!</p>
+<div class="container-fluid">
+    <h5 class="titleLabel">{{"patient.manage.subtitle" | translate}} </h5>
+    <p-table [columns]="columnMetaData" [value]="patients">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns">
+                    {{col.header | translate}}
+                </th>
+             </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+                <td *ngFor="let col of columns">
+                    {{rowData[col.field]}}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

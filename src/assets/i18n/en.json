@@ -6,12 +6,12 @@
             "header.contact": "Contact Information",
             "header.address": "Address",
             "save": "Save",
-            "name": "Name:",
-            "lastname": "Last name:",
-            "cnp": "Personal Number:",
+            "name": "Name",
+            "lastname": "Last name",
+            "cnp": "Personal Number",
             "birthdate": "Birthdate:",
-            "email": "E-Mail:",
-            "phone.number": "Phone Number:",
+            "email": "E-Mail",
+            "phone.number": "Phone Number",
             "address.line.1": "Address Line 1:",
             "address.line.2": "Address Line 2:",
             "city": "City:",
@@ -36,6 +36,7 @@
         },
         "manage": {
             "title": "Manage patients",
+            "subtitle": "Patients list:",
             "sensor": {
                 "title": "Manage sensors"
             }
@@ -71,5 +72,6 @@
         "weight.nan": "Weight must be numerical!",
         "fields.required": "Please fill out all required fields!"
     },
-    "info.required.fields": "Fields with * are required."
+    "info.required.fields": "Fields with * are required.",
+    "datatable.no_data": "No data available!"
 }

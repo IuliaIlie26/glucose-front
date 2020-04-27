@@ -6,12 +6,12 @@
             "header.contact": "Contact",
             "header.address": "Adresa",
             "save": "Salveaza",
-            "name": "Nume:",
-            "lastname": "Prenume:",
-            "cnp": "Cod numeric personal:",
+            "name": "Nume",
+            "lastname": "Prenume",
+            "cnp": "Cod numeric personal",
             "birthdate": "Ziua de nastere:",
-            "email": "E-Mail:",
-            "phone.number": "Numar de telefon:",
+            "email": "E-Mail",
+            "phone.number": "Numar de telefon",
             "address.line.1": "Adresa rand 1:",
             "address.line.2": "Adresa rand 2:",
             "city": "Oras:",
@@ -36,6 +36,7 @@
         },
         "manage": {
             "title": "Administreaza pacienti",
+            "subtitle": "Lista pacientilor:",
             "sensor": {
                 "title": "Administreaza senzorii"
             }
@@ -71,5 +72,6 @@
         "weight.nan": "Greutatea este numerica!",
         "fields.required": "Completati toate campurile oblgatorii!"
     },
-    "info.required.fields": "Campurile cu * sunt obligatorii."
+    "info.required.fields": "Campurile cu * sunt obligatorii.",
+    "datatable.no_data": "Nu exista date!"
 }
