@@ -7,7 +7,6 @@ import { CreatePatientComponent } from './components/create-patient/create-patie
 import { RiskFactorsComponent } from './components/risk-factors/risk-factors.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CalendarModule, ButtonModule, RadioButtonModule, AccordionModule, DropdownModule, CheckboxModule, InputTextModule, PanelModule } from 'primeng/primeng';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { PatientsRoutingModule } from './patients-routing.module';
@@ -16,7 +15,15 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NumbersOnlyDirective } from '../commons/directive/numbers-only.directive';
 import { ManagePatientsComponent } from './components/manage-patients/manage-patients.component';
 import { ManageSensorComponent } from './components/manage-sensor/manage-sensor.component';
-import {TableModule} from 'primeng/table';
+import { TableModule } from 'primeng/table';
+import { CalendarModule } from 'primeng/calendar';
+import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { AccordionModule } from 'primeng/accordion';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ButtonModule } from 'primeng/button';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   declarations: [
