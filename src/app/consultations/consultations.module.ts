@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConsultationsRoutingModule } from './consultations-routing.module';
-import { CalendarComponent } from './calendar/calendar.component';
 import { CreateConsultationComponent } from './create-consultation/create-consultation.component';
+import { ManageConsultationsComponent } from './manage-consultations/manage-consultations.component';
+import { ViewConsultationsComponent } from './view-consultations/view-consultations.component';
 
 
 @NgModule({
   declarations: [
-    CalendarComponent,
-    CreateConsultationComponent
+    CreateConsultationComponent,
+    ManageConsultationsComponent,
+    ViewConsultationsComponent
   ],
   imports: [
     CommonModule,

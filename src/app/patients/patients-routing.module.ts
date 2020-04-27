@@ -5,6 +5,8 @@ import { PatientListComponent } from './components/patient-list/patient-list.com
 import { RiskFactorsComponent } from './components/risk-factors/risk-factors.component';
 import { CreatePatientComponent } from './components/create-patient/create-patient.component';
 import { PatientSearchComponent } from './components/patient-search/patient-search.component';
+import { ManagePatientsComponent } from './components/manage-patients/manage-patients.component';
+import { ManageSensorComponent } from './components/manage-sensor/manage-sensor.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,13 @@ const routes: Routes = [
   {
     path: 'patient/patients-list',
     component: PatientListComponent
+  },
+  {
+    path: 'patient/manage-patients',
+    component: ManagePatientsComponent
+  }, {
+    path: 'patient/manage-sensor',
+    component: ManageSensorComponent
   }
 ];
 

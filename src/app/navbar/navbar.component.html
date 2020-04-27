@@ -5,11 +5,29 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" [routerLink]="['doctor/doctor-home']" routerLinkActive="current-item"
+                        <a class="nav-link" [routerLink]="['home']" routerLinkActive="current-item"
                             [routerLinkActiveOptions]="{exact: false}">{{"menu.home" | translate}} <span
                                 class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item dropdown active">
+
+                    <!--Doctor: view patients-->
+                    <li class="nav-item active" *ngxPermissionsOnly="['DOCTOR']">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            {{"menu.patients" | translate}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" [routerLink]="['patient/patients-list']"
+                                routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">{{"menu.doctor.patients" | translate}}</a>
+                            <a class="nav-link" [routerLink]="['patient/patient-alerts']"
+                                routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">
+                                {{"menu.patients.alerts" | translate}}</a>
+                        </div>
+                    </li>
+
+                    <!--Administrator: Create and manage patients-->
+                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['ADMINISTRATOR']">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             {{"menu.patients" | translate}}
@@ -18,36 +36,58 @@
                             <a class="dropdown-item" [routerLink]="['patient/create-patient']"
                                 routerLinkActive="current-item"
                                 [routerLinkActiveOptions]="{exact: false}">{{"patient.create.title" | translate}}</a>
-
-                            <a class="dropdown-item" [routerLink]="['patient/patients-list']"
+                            <a class="dropdown-item" [routerLink]="['patient/manage-patients']"
                                 routerLinkActive="current-item"
-                                [routerLinkActiveOptions]="{exact: false}">{{"menu.my.patients" | translate}}</a>
+                                [routerLinkActiveOptions]="{exact: false}">{{"patient.manage.title" | translate}}</a>
+                            <a class="dropdown-item" [routerLink]="['patient/manage-sensor']"
+                                routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">{{"patient.manage.sensor.title" | translate}}</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown active">
+
+                    <!--Administrator: view doctor list and schedule-->
+                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['ADMINISTRATOR']">
+                        <a class="nav-link" [routerLink]="['doctor/list']" routerLinkActive="current-item"
+                            [routerLinkActiveOptions]="{exact: false}">
+                            {{"menu.doctor.title" | translate}}
+                        </a>
+                    </li>
+
+                    <!--Doctor: view consultations-->
+                    <li class=" nav-item active" *ngxPermissionsOnly="['DOCTOR']">
+                        <a class="nav-link" [routerLink]="['consultation/view-consultations']"
+                            routerLinkActive="current-item"
+                            [routerLinkActiveOptions]="{exact: false}">{{"menu.consultations.view" | translate}}<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+
+                    <!--Administrator: create and manage consultations-->
+                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['ADMINISTRATOR']">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                            {{"menu.calendar" | translate}}
+                            {{"menu.consultations.title" | translate}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" [routerLink]="['consultation/calendar']"
-                                routerLinkActive="current-item"
-                                [routerLinkActiveOptions]="{exact: false}">{{"menu.calendar" | translate}}</a>
                             <a class="dropdown-item" [routerLink]="['consultation/create-consultation']"
                                 routerLinkActive="current-item"
-                                [routerLinkActiveOptions]="{exact: false}">{{"menu.create.consultation" | translate}}</a>
+                                [routerLinkActiveOptions]="{exact: false}">{{"menu.consultations.create" | translate}}</a>
+                            <a class="dropdown-item" [routerLink]="['consultation/manage-consultations']"
+                                routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">{{"menu.consultations.manage" | translate}}</a>
                         </div>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" [routerLink]="['patient/patient-alerts']" routerLinkActive="current-item"
-                            [routerLinkActiveOptions]="{exact: false}"> {{"menu.patients.alerts" | translate}} <span
-                                class="sr-only">(current)</span></a>
+
+                    <!--Doctor: calendar-->
+                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['DOCTOR']">
+                        <a class="nav-link dropdown-toggle" [routerLink]="[doctor/schedule]"
+                            routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">
+                            {{"menu.calendar" | translate}}
+                        </a>
                     </li>
 
                 </ul>
                 <fa-icon class="fa fa-globe fa-lg"></fa-icon>
-                <button class="btn mr-1"
-                    (click)="changeLanguage()">{{language}}</button>
+                <button class="btn mr-1" (click)="changeLanguage()">{{language}}</button>
 
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search"

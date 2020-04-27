@@ -8,7 +8,7 @@ export class NavbarComponent implements OnInit {
 
   language = 'RO';
   browserLang = 'en';
-
+  
   constructor(private translate: TranslateService) {
   }
 

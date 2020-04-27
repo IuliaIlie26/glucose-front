@@ -33,14 +33,28 @@
             "yes": "Yes",
             "no": "No",
             "select": "Select"
+        },
+        "manage": {
+            "title": "Manage patients",
+            "sensor": {
+                "title": "Manage sensors"
+            }
         }
     },
     "menu": {
         "home": "Home",
         "patients": "Patients",
-        "my.patients": "My Patients",
         "calendar": "Calendar",
-        "create.consultation": "Create a new consultation",
+        "consultations": {
+            "title": "Consultations",
+            "create": "Create a new consultation",
+            "manage": "Manage consultations",
+            "view": "View consultations"
+        },
+        "doctor": {
+            "title": "Doctors",
+            "patients": "My Patients"
+        },
         "patients.alerts": "Patient Alerts",
         "search": "Search",
         "settings": "Settings",

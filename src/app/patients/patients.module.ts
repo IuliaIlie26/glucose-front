@@ -14,6 +14,8 @@ import { PatientsRoutingModule } from './patients-routing.module';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { NumbersOnlyDirective } from '../commons/directive/numbers-only.directive';
+import { ManagePatientsComponent } from './components/manage-patients/manage-patients.component';
+import { ManageSensorComponent } from './components/manage-sensor/manage-sensor.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NumbersOnlyDirective } from '../commons/directive/numbers-only.directiv
     PatientsAllComponent,
     CreatePatientComponent,
     RiskFactorsComponent,
-    NumbersOnlyDirective
+    NumbersOnlyDirective,
+    ManagePatientsComponent,
+    ManageSensorComponent
   ],
   imports: [
     CommonModule,

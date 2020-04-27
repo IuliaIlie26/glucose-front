@@ -8,7 +8,7 @@
             "save": "Salveaza",
             "name": "Nume:",
             "lastname": "Prenume:",
-            "cnp" : "Cod numeric personal:",
+            "cnp": "Cod numeric personal:",
             "birthdate": "Ziua de nastere:",
             "email": "E-Mail:",
             "phone.number": "Numar de telefon:",
@@ -30,17 +30,31 @@
             "smoker": "Fumator",
             "macrosomic.baby": "Copil macrosomic anterior",
             "previous.gdm": "GDM anterior",
-            "yes" : "Da",
+            "yes": "Da",
             "no": "Nu",
             "select": "Selecteaza"
+        },
+        "manage": {
+            "title": "Administreaza pacienti",
+            "sensor": {
+                "title": "Administreaza senzorii"
+            }
         }
     },
     "menu": {
         "home": "Acasa",
         "patients": "Pacienti",
-        "my.patients": "Pacientii mei",
         "calendar": "Calendar",
-        "create.consultation": "Creeaza o noua consultatie",
+        "consultations": {
+            "title": "Consultatii",
+            "create": "Creeaza o noua consultatie",
+            "manage": "Administreaza consultatiile",
+            "view": "Vezi consultatiile"
+        },
+        "doctor": {
+            "title": "Doctori",
+            "patients": "Pacientii mei"
+        },
         "patients.alerts": "Alerte de pacienti",
         "search": "Cauta",
         "settings": "Setari",

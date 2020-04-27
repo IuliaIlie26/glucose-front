@@ -24,18 +24,23 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { UsersApiService } from './api/users-api.service';
+import { HomeComponent } from './commons/components/home/home.component';
+import {PasswordModule} from 'primeng/password';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    PasswordModule,
     CalendarModule,
     BrowserAnimationsModule,
     NgbModule,
@@ -62,7 +67,9 @@ import { NgxPermissionsModule } from 'ngx-permissions';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestsInterceptor, multi: true },
     PatientApiService,
-    DoctorApiService]
+    DoctorApiService,
+    UsersApiService
+  ]
 })
 export class AppModule { }
 

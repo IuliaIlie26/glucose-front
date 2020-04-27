@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DoctorRoutingModule } from './doctor-routing.module';
-import { DoctorHomeComponent } from './doctor-home/doctor-home.component';
 import { SettingsComponent } from './settings/settings.component';
+import { DoctorScheduleComponent } from './doctor-schedule/doctor-schedule.component';
+import { DoctorListComponent } from './doctor-list/doctor-list.component';
 
 
 @NgModule({
-  declarations: [DoctorHomeComponent,
-    SettingsComponent],
+  declarations: [SettingsComponent, DoctorScheduleComponent, DoctorListComponent],
   imports: [
     CommonModule,
     DoctorRoutingModule

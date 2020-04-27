@@ -1,24 +1,32 @@
-import { Component, OnInit} from '@angular/core';
-import { Route, Router } from '@angular/router';
-import { DoctorApiService } from '../api/doctor-api.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UsersApiService } from '../api/users-api.service';
+import { UserDto } from '../commons/models/UserDto';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  styleUrls :['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
-  username: string;
-  password: string;
- 
-  constructor(private route: Router) { }
+  userDto = new UserDto();
+
+  constructor(private route: Router, private usersApi: UsersApiService, private permissionService: NgxPermissionsService) { }
 
   ngOnInit() {
   }
 
   onLogin() {
-    
-    sessionStorage.setItem("loggedDoctor", this.username);
-    this.route.navigate(['/doctor/doctor-home']);
+
+    this.usersApi.login(this.userDto).subscribe(role => {
+      sessionStorage.setItem("loggedUsername", this.userDto.username);
+      let permission = [];
+      permission.push(role);
+      console.log(role)
+      this.permissionService.loadPermissions(permission);
+      this.route.navigate(['/home']);
+    })
   }
 }

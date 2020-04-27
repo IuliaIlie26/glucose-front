@@ -25,7 +25,7 @@
                         <sup>*</sup>{{"patient.create.cnp" | translate}}
                     </label>
                     <div class="col-7 mt-1">
-                        <input type="text" [(ngModel)]=" patient.cnp" maxlength="13" />
+                        <input type="text" [(ngModel)]=" patient.cnp" maxlength="13" numbersOnly/>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -114,7 +114,7 @@
                         <sup>*</sup>{{"patient.create.country" | translate}}
                     </label>
                     <div class="col-7 mt-1">
-                        <p-dropdown [style]="{'width':'50%'}" [options]="countryOptions" [(ngModel)]="address.country"
+                        <p-dropdown [style]="{'width':'50%'}" [options]="countryOptions" [(ngModel)]="selectedCountry"
                             optionLabel='label' [placeholder]="translateService.instant('patient.risk.select')" filter="true"
                             showClear='true'>
                         </p-dropdown>

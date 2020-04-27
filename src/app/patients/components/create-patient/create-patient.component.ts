@@ -7,6 +7,7 @@ import { PatientDto } from 'src/app/commons/models/PatientDto';
 import { AddressDto } from '../../model/AddressDto';
 import { PatientApiService } from 'src/app/api/patient-api.service';
 import { countryOptions } from './countries.model'
+import { SelectItem } from 'primeng/primeng';
 
 @Component({
   selector: 'app-create-patient',
@@ -27,8 +28,10 @@ export class CreatePatientComponent implements OnInit {
     this.countryOptions = countryOptions;
   }
 
+  selectedCountry: SelectItem;
   save() {
     if (this.validate()) {
+      this.address.country= this.selectedCountry.label;
       this.patient.address = this.address;
       this.patient.birthdate = this.pipe.transform(this.patient.birthdate, 'yyyy-MM-dd');
       this.patientApi.savePatient(this.patient).subscribe(patientId =>
@@ -40,7 +43,7 @@ export class CreatePatientComponent implements OnInit {
   validate() {
     if (!(this.patient.name && this.patient.lastname && this.patient.birthdate &&
       this.patient.email && this.patient.phone && this.address.addressLine1 &&
-      this.address.city && this.address.country && this.address.region)) {
+      this.address.city && this.selectedCountry && this.address.region)) {
       this.toastr.error(this.translateService.instant("error.fields.required"))
       return false;
     }
