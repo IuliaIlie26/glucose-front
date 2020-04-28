@@ -37,6 +37,8 @@
         "manage": {
             "title": "Administreaza pacienti",
             "subtitle": "Lista pacientilor:",
+            "edit": "Editeaza",
+            "delete" : "Sterge",
             "sensor": {
                 "title": "Administreaza senzorii"
             }
@@ -57,7 +59,14 @@
             "patients": "Pacientii mei"
         },
         "patients.alerts": "Alerte de pacienti",
-        "search": "Cauta",
+        "search": {
+            "byName": "Cauta dupa prenume",
+            "byLastName": "Cauta dupa nume",
+            "byPhone": "Cauta dupa numar",
+            "byEmail": "Cauta dupa email",
+            "byAddress": "Cauta dupa adresa",
+            "byCNP": "Cauta dupa CNP"
+        },
         "settings": "Setari",
         "logout": "Delogare",
         "patients.search.placeholder": "Cauta pacienti..."

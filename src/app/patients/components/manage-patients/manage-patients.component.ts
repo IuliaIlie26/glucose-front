@@ -10,6 +10,7 @@ import { PatientApiService } from 'src/app/api/patient-api.service';
 export class ManagePatientsComponent implements OnInit {
 
   patients: PatientDto[] = [];
+  selectedPatient: PatientDto;
   constructor(private patientApi: PatientApiService) { }
 
   columnMetaData = [

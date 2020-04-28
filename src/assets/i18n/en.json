@@ -37,6 +37,8 @@
         "manage": {
             "title": "Manage patients",
             "subtitle": "Patients list:",
+            "edit": "Edit",
+            "delete" : "Delete",
             "sensor": {
                 "title": "Manage sensors"
             }
@@ -57,7 +59,14 @@
             "patients": "My Patients"
         },
         "patients.alerts": "Patient Alerts",
-        "search": "Search",
+        "search": {
+           "byName": "Search by name",
+           "byLastName": "Search by last name",
+           "byPhone": "Search by phone",
+           "byEmail": "Search by email",
+           "byAddress": "Search by address",
+           "byCNP": "Search by personal number"
+        },
         "settings": "Settings",
         "logout": "Logout",
         "patients.search.placeholder": "Search for patients..."
