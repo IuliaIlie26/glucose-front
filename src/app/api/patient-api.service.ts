@@ -27,4 +27,8 @@ export class PatientApiService {
   getAllPatients(): Observable<PatientDto[]> {
     return this.http.get<PatientDto[]>(endpoint + 'getAllPatients');
   }
+
+  deletePatientById(id: string): Observable<void> {
+    return this.http.post<void>(endpoint + 'deletePatientById', id);
+  }
 }

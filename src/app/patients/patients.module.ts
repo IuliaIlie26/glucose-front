@@ -24,7 +24,11 @@ import { AccordionModule } from 'primeng/accordion';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
-import {TooltipModule} from 'primeng/tooltip';
+import { TooltipModule } from 'primeng/tooltip';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -42,6 +46,7 @@ import {TooltipModule} from 'primeng/tooltip';
   imports: [
     CommonModule,
     HttpClientModule,
+    ConfirmDialogModule,
     FormsModule,
     CalendarModule,
     NgbModule,
@@ -57,7 +62,10 @@ import {TooltipModule} from 'primeng/tooltip';
     InputTextModule,
     PanelModule,
     ReactiveFormsModule,
-    TranslateModule
-  ]
+    TranslateModule,
+    MessagesModule,
+    MessageModule
+  ],
+  providers: [ConfirmationService]
 })
 export class PatientsModule { }

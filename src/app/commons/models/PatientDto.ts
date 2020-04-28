@@ -1,6 +1,7 @@
 import { AddressDto } from '../../patients/model/AddressDto';
 
 export class PatientDto {
+    id: string;
     name: string;
     lastname: string;
     address: AddressDto;

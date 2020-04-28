@@ -78,6 +78,17 @@
         "username": "Utilizator:",
         "password": "Parola:"
     },
+    "confirmation": {
+        "message": {
+            "delete": "Sigur vrei sa stergi pacientul?",
+            "deletion.rejected": "Stergere anulata!",
+            "success": "Succes!",
+            "rejected": "Respins:"
+        },
+        "header": {
+            "delete": "Confirmare de stergere"
+        }
+    },
     "error": {
         "height.nan": "Inaltimea este numerica!",
         "weight.nan": "Greutatea este numerica!",

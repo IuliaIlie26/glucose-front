@@ -1,8 +1,10 @@
 <div class="container-fluid">
+    <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
+    <p-messages [value]="message"></p-messages>
     <div class="row col-12">
-        <p-table #dt [value]="patients" [(selection)]="selectedPatient" dataKey="id" styleClass="ui-table-patients"
-            [rowHover]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
-            [loading]="loading" [paginator]="true" currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
+        <p-table #dt [value]="patients" dataKey="id" styleClass="ui-table-patients" [rowHover]="true" [rows]="10"
+            [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" [paginator]="true"
+            currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
             [globalFilterFields]="['name','lastname','cnp','fullAddress', 'email']">
             <ng-template pTemplate="caption">
                 <span style="color: green;">{{"patient.manage.subtitle" | translate}}</span>
@@ -90,10 +92,14 @@
                         <span style="vertical-align: middle; margin-left: .5em"> {{patient.fullAddress}}</span>
                     </td>
                     <td>
-                        <button pButton type="button" class="ui-button-secondary" icon="fa fa-edit" pTooltip="{{'patient.manage.edit' | translate}}" tooltipPosition="top"></button>
+                        <button pButton type="button" class="ui-button-secondary" icon="fa fa-edit"
+                            pTooltip="{{'patient.manage.edit' | translate}}" tooltipPosition="top"
+                            (click)="edit(patient.id)"></button>
                     </td>
                     <td>
-                        <button pButton type="button" class="ui-button-secondary" icon="fa fa-trash"  pTooltip="{{'patient.manage.delete' | translate}}" tooltipPosition="top"></button>
+                        <button pButton type="button" class="ui-button-secondary" icon="fa fa-trash"
+                            pTooltip="{{'patient.manage.delete' | translate}}" tooltipPosition="top"
+                            (click)="onDelete(patient.id)"></button>
                     </td>
                 </tr>
             </ng-template>

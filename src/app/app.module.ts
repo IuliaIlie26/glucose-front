@@ -26,7 +26,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { UsersApiService } from './api/users-api.service';
 import { HomeComponent } from './commons/components/home/home.component';
-import {PasswordModule} from 'primeng/password';
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   declarations: [
