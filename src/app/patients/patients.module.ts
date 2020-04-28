@@ -24,6 +24,7 @@ import { AccordionModule } from 'primeng/accordion';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
+import {TooltipModule} from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { PanelModule } from 'primeng/panel';
     RadioButtonModule,
     TableModule,
     AccordionModule,
+    TooltipModule,
     ToastrModule.forRoot(),
     PatientsRoutingModule,
     DropdownModule,

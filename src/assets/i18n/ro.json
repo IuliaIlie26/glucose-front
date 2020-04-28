@@ -36,9 +36,9 @@
         },
         "manage": {
             "title": "Administreaza pacienti",
-            "subtitle": "Lista pacientilor:",
+            "subtitle": "Lista pacientilor",
             "edit": "Editeaza",
-            "delete" : "Sterge",
+            "delete": "Sterge",
             "sensor": {
                 "title": "Administreaza senzorii"
             }
@@ -60,6 +60,8 @@
         },
         "patients.alerts": "Alerte de pacienti",
         "search": {
+            "search": "Cauta",
+            "global": "Cautare globala",
             "byName": "Cauta dupa prenume",
             "byLastName": "Cauta dupa nume",
             "byPhone": "Cauta dupa numar",

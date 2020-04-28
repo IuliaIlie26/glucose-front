@@ -36,9 +36,9 @@
         },
         "manage": {
             "title": "Manage patients",
-            "subtitle": "Patients list:",
+            "subtitle": "Patients list",
             "edit": "Edit",
-            "delete" : "Delete",
+            "delete": "Delete",
             "sensor": {
                 "title": "Manage sensors"
             }
@@ -60,12 +60,14 @@
         },
         "patients.alerts": "Patient Alerts",
         "search": {
-           "byName": "Search by name",
-           "byLastName": "Search by last name",
-           "byPhone": "Search by phone",
-           "byEmail": "Search by email",
-           "byAddress": "Search by address",
-           "byCNP": "Search by personal number"
+            "search": "Search",
+            "global": "Global search",
+            "byName": "Search by name",
+            "byLastName": "Search by last name",
+            "byPhone": "Search by phone",
+            "byEmail": "Search by email",
+            "byAddress": "Search by address",
+            "byCNP": "Search by personal number"
         },
         "settings": "Settings",
         "logout": "Logout",
