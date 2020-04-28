@@ -94,6 +94,9 @@
             "delete": "Deletion confirmation"
         }
     },
+    "buttons": {
+        "cancel": "Cancel"
+    },
     "info.required.fields": "Fields with * are required.",
     "datatable.no_data": "No data available!"
 }

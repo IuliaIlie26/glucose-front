@@ -5,6 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { ConfirmationService } from 'primeng/api';
 import { Message } from 'primeng/api';
 import { ToastrService } from 'ngx-toastr';
+import { countryOptions } from '../../../commons/models/countries.model'
+import { SelectItem } from 'primeng/api';
 
 @Component({
   selector: 'app-manage-patients',
@@ -15,6 +17,11 @@ export class ManagePatientsComponent implements OnInit {
 
   patients: PatientDto[] = [];
   message: Message[];
+  showEditModal = false;
+  selectedPatient: PatientDto;
+  countryOptions: Array<any>
+  selectedCountry: SelectItem;
+  
   constructor(private patientApi: PatientApiService, private confirmationService: ConfirmationService, private translateService: TranslateService, private toastr: ToastrService) { }
 
   ngOnInit() {
@@ -26,12 +33,18 @@ export class ManagePatientsComponent implements OnInit {
   }
 
 
-  edit(id: string) {
-    console.log(id, 'idul')
+  edit(patient) {
+    this.showEditModal = true;
+    this.selectedPatient = patient;
+    this.countryOptions = countryOptions;
   }
 
   onDelete(id: string) {
     this.confirmDeletion(id);
+  }
+
+  modifyPatient() {
+
   }
 
 

@@ -94,7 +94,7 @@
                     <td>
                         <button pButton type="button" class="ui-button-secondary" icon="fa fa-edit"
                             pTooltip="{{'patient.manage.edit' | translate}}" tooltipPosition="top"
-                            (click)="edit(patient.id)"></button>
+                            (click)="edit(patient)"></button>
                     </td>
                     <td>
                         <button pButton type="button" class="ui-button-secondary" icon="fa fa-trash"
@@ -110,4 +110,109 @@
             </ng-template>
         </p-table>
     </div>
+
+
+    <p-dialog *ngIf="selectedPatient" header="{{'patient.manage.edit' | translate}}" [(visible)]="showEditModal"
+        [blockScroll]="true" position="top" [baseZIndex]="10000">
+        <div class="col-12">
+            <div class="row form-group">
+                <div class="col-6">
+                    <label class="text-right col-form-label">
+                        <sup>*</sup>{{"patient.create.name" | translate}}:
+                    </label>
+                    <input class="ml-4" type=" text" [(ngModel)]="selectedPatient.name" />
+                </div>
+                <div class="col-6">
+                    <label class="text-right col-form-label ">
+                        <sup>*</sup>{{"patient.create.lastname" | translate}}:
+                    </label>
+                    <input class="ml-4" type="text" [(ngModel)]=" selectedPatient.lastname" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-6 form-group">
+                    <label class="text-right col-form-label">
+                        <sup>*</sup>{{"patient.create.cnp" | translate}}:
+                    </label>
+                    <input class="ml-4" type="text" [(ngModel)]=" selectedPatient.cnp" maxlength="13" numbersOnly />
+                </div>
+                <div class="col-6 form-group">
+                    <label class="text-right col-form-label">
+                        <sup>*</sup>{{"patient.create.birthdate" | translate}}
+                    </label>
+                    <p-calendar class="ui-calendar" [(ngModel)]="selectedPatient.birthdate" [showIcon]="true"
+                        icon="fa fa-calendar" [monthNavigator]="true" [yearNavigator]="true" [maxDate]="maxDate"
+                        yearRange="1950:2020" dateFormat="dd/mm/yy">
+                    </p-calendar>
+                </div>
+            </div>
+            <div class="row form-group ">
+                <div class="col-6">
+                    <label class="text-right col-form-label ">
+                        <sup>*</sup>{{"patient.create.email" | translate}}:
+                    </label>
+                    <input class="ml-4" type="text" [(ngModel)]="selectedPatient.email" />
+                </div>
+                <div class="col-6">
+                    <label class="text-right col-form-label">
+                        <sup>*</sup>{{"patient.create.phone.number" | translate}}:
+                    </label>
+                    <input class="ml-4" type="text" numbersOnly [(ngModel)]="selectedPatient.phone" maxlength="10" />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <div class="col-6">
+                    <label class="text-right col-form-label">
+                        <sup>*</sup>{{"patient.create.address.line.1" | translate}}
+                    </label>
+                    <input class="ml-4" type="text" [(ngModel)]="selectedPatient.address.addressLine1" />
+                </div>
+                <div class="col-6">
+                    <label class="text-right col-form-label">
+                        {{"patient.create.address.line.2" | translate}}
+                    </label>
+                    <input class="ml-4" type="text" [(ngModel)]="selectedPatient.address.addressLine2" />
+                </div>
+            </div>
+
+            <div class="row form-group col-form-label">
+                <div class="col-6">
+                    <label class="text-right ">
+                        <sup>*</sup>{{"patient.create.city" | translate}}
+                    </label>
+                    <input class="ml-4" type="text" [(ngModel)]="selectedPatient.address.city" />
+                </div>
+                <div class="col-6 ">
+                    <label class="text-right col-form-label">
+                        {{"patient.create.zip.code" | translate}}
+                    </label>
+                    <input class="ml-4" type="text" [(ngModel)]="selectedPatient.address.zipCode" maxlength="6"
+                        numbersOnly />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <div class="col-6">
+                    <label class="text-right col-form-label">
+                        <sup>*</sup>{{"patient.create.region" | translate}}
+                    </label>
+                    <input class="ml-4" type="text" [(ngModel)]="selectedPatient.address.region" maxlength="20" />
+                </div>
+                <div class="col-6">
+                    <label class="text-right ">
+                        <sup>*</sup>{{"patient.create.country" | translate}}
+                    </label>
+                    <p-dropdown [style]="{'width':'50%'}" [options]="countryOptions"
+                        [(ngModel)]="selectedPatient.address.country" optionLabel='label'
+                        [placeholder]="translateService.instant('patient.risk.select')" filter="true" showClear='true'>
+                    </p-dropdown>
+                </div>
+            </div>
+        </div>
+        <p-footer>
+            <button class="ui-button-secondary" type="button" pButton (click)="showEditModal=false"
+                label="{{'buttons.cancel' | translate}}"></button>
+            <button type="button" pButton icon="pi pi-check" (click)="modifyPatient()"
+                label="{{'patient.create.save' | translate}}"></button>
+        </p-footer>
+    </p-dialog>
 </div>

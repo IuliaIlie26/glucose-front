@@ -6,8 +6,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { PatientDto } from 'src/app/commons/models/PatientDto';
 import { AddressDto } from '../../model/AddressDto';
 import { PatientApiService } from 'src/app/api/patient-api.service';
-import { countryOptions } from './countries.model'
-import { SelectItem } from 'primeng/primeng';
+import { countryOptions } from '../../../commons/models/countries.model'
+import { SelectItem } from 'primeng/api';
 
 @Component({
   selector: 'app-create-patient',

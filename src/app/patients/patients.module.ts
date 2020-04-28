@@ -29,7 +29,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
-
+import {DialogModule} from 'primeng/dialog';
 @NgModule({
   declarations: [
     PatientListComponent,
@@ -45,6 +45,7 @@ import { MessageModule } from 'primeng/message';
   ],
   imports: [
     CommonModule,
+    DialogModule,
     HttpClientModule,
     ConfirmDialogModule,
     FormsModule,

@@ -89,6 +89,9 @@
             "delete": "Confirmare de stergere"
         }
     },
+    "buttons":{
+        "cancel": "Anuleaza"
+    },
     "error": {
         "height.nan": "Inaltimea este numerica!",
         "weight.nan": "Greutatea este numerica!",
