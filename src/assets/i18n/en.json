@@ -42,6 +42,22 @@
             "sensor": {
                 "title": "Manage sensors"
             }
+        },
+        "edit": {
+            "title": "Edit patient information",
+            "success": "Personal information updated successfully!"
+        },
+        "required": {
+            "name": "Name is required!",
+            "lastname": "Last name is required!",
+            "cnp": "Personal Number is required!",
+            "email": "E-Mail is required!",
+            "phone": "Phone number is required!",
+            "birthdate": "Birthdate is required!",
+            "address": "Address is required!",
+            "city": "City is required!",
+            "country": "Country is required!",
+            "region": "Region is required!"
         }
     },
     "menu": {

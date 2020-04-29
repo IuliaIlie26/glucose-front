@@ -1,4 +1,4 @@
-import { PatientDto } from 'src/app/commons/models/PatientDto';
+import { PatientDto } from 'src/app/shared/models/PatientDto';
 
 export class SavePatientDto{
 

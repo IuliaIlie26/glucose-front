@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { PatientDto } from 'src/app/commons/models/PatientDto';
+import { PatientDto } from 'src/app/shared/models/PatientDto';
 import { PatientApiService } from 'src/app/api/patient-api.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ConfirmationService } from 'primeng/api';
 import { Message } from 'primeng/api';
 import { ToastrService } from 'ngx-toastr';
-import { countryOptions } from '../../../commons/models/countries.model'
-import { SelectItem } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-patients',
@@ -17,12 +16,8 @@ export class ManagePatientsComponent implements OnInit {
 
   patients: PatientDto[] = [];
   message: Message[];
-  showEditModal = false;
-  selectedPatient: PatientDto;
-  countryOptions: Array<any>
-  selectedCountry: SelectItem;
-  
-  constructor(private patientApi: PatientApiService, private confirmationService: ConfirmationService, private translateService: TranslateService, private toastr: ToastrService) { }
+
+  constructor(private patientApi: PatientApiService, private confirmationService: ConfirmationService, private translateService: TranslateService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit() {
     this.getPatients();
@@ -32,21 +27,13 @@ export class ManagePatientsComponent implements OnInit {
     this.patientApi.getAllPatients().subscribe(patients => this.patients = patients);
   }
 
-
   edit(patient) {
-    this.showEditModal = true;
-    this.selectedPatient = patient;
-    this.countryOptions = countryOptions;
+    this.router.navigate(['patient', 'manage-patients', 'edit', patient.id])
   }
 
   onDelete(id: string) {
     this.confirmDeletion(id);
   }
-
-  modifyPatient() {
-
-  }
-
 
   confirmDeletion(id) {
     let confirmationMessage = this.translateService.instant('confirmation.message.delete');

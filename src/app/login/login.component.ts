@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersApiService } from '../api/users-api.service';
-import { UserDto } from '../commons/models/UserDto';
+import { UserDto } from '../shared/models/UserDto';
 import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({

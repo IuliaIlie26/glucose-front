@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { RiskFactorsDto } from '../commons/models/PatientRiskFactorsDto';
-import { PatientDto } from '../commons/models/PatientDto';
+import { RiskFactorsDto } from '../shared/models/PatientRiskFactorsDto';
+import { PatientDto } from '../shared/models/PatientDto';
 const endpoint = 'http://localhost:8080/api/patient/';
 
 @Injectable({
@@ -30,5 +30,13 @@ export class PatientApiService {
 
   deletePatientById(id: string): Observable<void> {
     return this.http.post<void>(endpoint + 'deletePatientById', id);
+  }
+
+  getPatientById(id: number): Observable<PatientDto> {
+    return this.http.get<PatientDto>(endpoint + 'getPatientById?id=' + id);
+  }
+
+  updatePatient(dto: PatientDto): Observable<void> {
+    return this.http.post<void>(endpoint + 'updatePatient', dto, {})
   }
 }

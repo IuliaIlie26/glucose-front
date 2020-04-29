@@ -42,6 +42,22 @@
             "sensor": {
                 "title": "Administreaza senzorii"
             }
+        },
+        "edit": {
+            "title": "Editeaza datele pacientului",
+            "success": "Datele au fost actualizate!"
+        },
+        "required": {
+            "name": "Numele este obligatoriu!",
+            "lastname": "Prenumele este obligatoriu!",
+            "cnp": "CNP-ul este obligatoriu!",
+            "email": "E-Mail-ul este obligatoriu!",
+            "phone": "Numarul de telefon este obligatoriu!",
+            "birthdate": "Ziua de nastere este obligatorie!",
+            "address": "Adresa este obligatorie!",
+            "city": "Orasul este obligatoriu!",
+            "country": "Tara este obligatorie!",
+            "region": "Judetul este obligatoriu!"
         }
     },
     "menu": {

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RiskFactorsDto } from 'src/app/commons/models/PatientRiskFactorsDto';
+import { RiskFactorsDto } from 'src/app/shared/models/PatientRiskFactorsDto';
 import { PatientApiService } from 'src/app/api/patient-api.service';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { DoctorDto } from '../commons/models/DoctorDto';
+import { DoctorDto } from '../shared/models/DoctorDto';
 const endpoint = 'http://localhost:8080/api/doctor/';
 @Injectable({
   providedIn: 'root'

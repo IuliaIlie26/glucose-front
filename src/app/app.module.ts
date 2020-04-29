@@ -17,7 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { PatientsModule } from './patients/patients.module';
 import { DoctorModule } from './doctor/doctor.module';
 import { ConsultationsModule } from './consultations/consultations.module';
-import { HttpRequestsInterceptor } from './commons/service/http-interceptor';
+import { HttpRequestsInterceptor } from './shared/service/http-interceptor';
 import { PatientApiService } from './api/patient-api.service';
 import { DoctorApiService } from './api/doctor-api.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -25,15 +25,14 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { UsersApiService } from './api/users-api.service';
-import { HomeComponent } from './commons/components/home/home.component';
 import { PasswordModule } from 'primeng/password';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavbarComponent,
-    HomeComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +52,7 @@ import { PasswordModule } from 'primeng/password';
     DoctorModule,
     ConsultationsModule,
     PatientsModule,
+    SharedModule,
     FontAwesomeModule,
     TranslateModule.forRoot({
       loader: {

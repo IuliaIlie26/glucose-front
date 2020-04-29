@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UserDto } from '../commons/models/UserDto';
+import { UserDto } from '../shared/models/UserDto';
 const endpoint = 'http://localhost:8080/api/users/';
 
 @Injectable({

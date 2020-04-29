@@ -4,7 +4,7 @@ export class PatientDto {
     id: string;
     name: string;
     lastname: string;
-    address: AddressDto;
+    address: AddressDto = new AddressDto();
     birthdate: string;
     phone: string;
     email: string;

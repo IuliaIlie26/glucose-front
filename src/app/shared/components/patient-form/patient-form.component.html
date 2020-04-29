@@ -1,0 +1,167 @@
+<div class="row">
+    <div class="col-11 panel">
+        <div class="alert-danger" *ngIf="(name.invalid && (name.dirty || name.touched))">
+            {{'patient.required.name' | translate}}
+        </div>
+        <div class="alert-danger" *ngIf="(lastname.invalid && (lastname.dirty || lastname.touched))">
+            {{'patient.required.lastname' | translate}}
+        </div>
+        <div class="alert-danger" *ngIf="(cnp.invalid && (cnp.dirty || cnp.touched))">
+            {{'patient.required.cnp' | translate}}
+        </div>
+        <div class="alert-danger" *ngIf="(birthdate.invalid && (birthdate.dirty || birthdate.touched))">
+            {{'patient.required.birthdate' | translate}}
+        </div>
+        <div class="alert-danger" *ngIf="(email.invalid && (email.dirty || email.touched))">
+            {{'patient.required.email' | translate}}
+        </div>
+        <div class="alert-danger" *ngIf="(phone.invalid && (phone.dirty || phone.touched))">
+            {{'patient.required.phone' | translate}}
+        </div>
+        <div class="alert-danger" *ngIf=" (adr1.invalid && (adr1.dirty || adr1.touched))">
+            {{'patient.required.address' | translate}}
+        </div>
+        <div class="alert-danger" *ngIf="(city.invalid && (city.dirty || city.touched))">
+            {{'patient.required.city' | translate}}
+        </div>
+        <div class="alert-danger" *ngIf="region.invalid && (region.dirty || region.touched)">
+            {{'patient.required.region' | translate}}
+        </div>
+        <div class="alert-danger" *ngIf="country.invalid && (country.dirty || country.touched)">
+            {{'patient.required.country' | translate}}
+        </div>
+        <br />
+        <p-panel [header]="'patient.create.header.personal' | translate">
+            <div class="row form-group">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"patient.create.name" | translate}}:
+                </label>
+                <div class="col-7 mt-1">
+                    <input id="name" name="name" type="text" [(ngModel)]="patient.name" required #name="ngModel" />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"patient.create.lastname" | translate}}:
+                </label>
+                <div class="col-7 mt-1">
+                    <input id="lastname" name="lastname" type="text" [(ngModel)]=" patient.lastname" required
+                        #lastname="ngModel" />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"patient.create.cnp" | translate}}:
+                </label>
+                <div class="col-7 mt-1">
+                    <input id="cnp" name="cnp" type="text" [(ngModel)]=" patient.cnp" maxlength="13" numbersOnly
+                        required #cnp="ngModel" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"patient.create.birthdate" | translate}}
+                </label>
+                <div class="ui-g-12 ui-md-6">
+                    <p-calendar id="birthdate" name="birthdate" class="ui-calendar" [(ngModel)]="selectedBirthdate"
+                        [showIcon]="true" icon="fa fa-calendar" [monthNavigator]="true" [yearNavigator]="true"
+                        [maxDate]="maxDate" yearRange="1950:2020" dateFormat="dd/mm/yy" required #birthdate="ngModel">
+                    </p-calendar>
+                </div>
+            </div>
+        </p-panel>
+    </div>
+</div>
+<div class="row">
+    <div class="col-11 panel">
+        <p-panel [header]="'patient.create.header.contact' | translate">
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"patient.create.email" | translate}}:
+                </label>
+                <div class="col-7 mt-1">
+                    <input id="email" name="email" type="text" [(ngModel)]="patient.email" required #email="ngModel" />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"patient.create.phone.number" | translate}}:
+                </label>
+                <div class="col-7 mt-1">
+                    <input id="phone" name="phone" type="text" numbersOnly [(ngModel)]="patient.phone" maxlength="10"
+                        required #phone="ngModel" />
+                </div>
+            </div>
+        </p-panel>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-11 panel">
+        <p-panel [header]="'patient.create.header.address' |translate">
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"patient.create.address.line.1" | translate}}
+                </label>
+                <div class="col-7 mt-1">
+                    <input id="adr1" name="adr1" type="text" [(ngModel)]="patient.address.addressLine1" required
+                        #adr1="ngModel" />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    {{"patient.create.address.line.2" | translate}}
+                </label>
+                <div class="col-7 mt-1">
+                    <input type="text" [(ngModel)]="patient.address.addressLine2" />
+                </div>
+            </div>
+
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"patient.create.city" | translate}}
+                </label>
+                <div class="col-7 mt-1">
+                    <input id="city" name="city" type="text" [(ngModel)]="patient.address.city" required
+                        #city="ngModel" />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    {{"patient.create.zip.code" | translate}}
+                </label>
+                <div class="col-7 mt-1">
+                    <input type="text" [(ngModel)]="patient.address.zipCode" maxlength="6" numbersOnly />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"patient.create.region" | translate}}
+                </label>
+                <div class="col-7 mt-1">
+                    <input id="region" name="region" type="text" [(ngModel)]="patient.address.region" maxlength="20"
+                        required #region="ngModel" />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"patient.create.country" | translate}}
+                </label>
+                <div class="col-7 mt-1">
+                    <p-dropdown id="country" name="country" [style]="{'width':'50%'}" [options]="countryOptions"
+                        [(ngModel)]="selectedCountry" optionLabel='label'
+                        [placeholder]="selectedCountry ? selectedCountry.label : translateService.instant('patient.risk.select')"
+                        filter="true" showClear='true' required #country="ngModel">
+                    </p-dropdown>
+                </div>
+            </div>
+        </p-panel>
+        <div class="row">
+            <div class="offset-5 mt-2 mb-5">
+                <button type="submit" class="btn btn-outline-success my-2 my-sm-0"
+                    (click)="emitPatientInformation()">{{"patient.create.save" | translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
