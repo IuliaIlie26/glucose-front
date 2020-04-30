@@ -41,7 +41,14 @@
             "edit": "Edit",
             "delete": "Delete",
             "sensor": {
-                "title": "Manage sensors"
+                "title": "Manage sensors",
+                "status": "Status",
+                "activationDate": "Activation date",
+                "deactivationDate": "Deactivation date",
+                "doctorName": "Responsible doctor",
+                "sensorId": "Sensor serial number",
+                "subtitle": "Sensors distribution list",
+                "assign" : "Assign a sensor to a patient"
             }
         },
         "edit": {
@@ -84,7 +91,11 @@
             "byPhone": "Search by phone",
             "byEmail": "Search by email",
             "byAddress": "Search by address",
-            "byCNP": "Search by personal number"
+            "byCNP": "Search by personal number",
+            "byDoctorName" : "Search by doctor",
+            "bySensorId": "Search by sensor serial",
+            "byActivationDate": "Search by activation date",
+            "byDeactivationDate": "Search by deactivation date"
         },
         "settings": "Settings",
         "logout": "Logout",
