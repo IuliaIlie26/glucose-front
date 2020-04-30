@@ -12,8 +12,8 @@ export class PatientApiService {
 
   constructor(private http: HttpClient) { }
 
-  savePatient(dto: PatientDto): Observable<number> {
-    return this.http.post<number>(endpoint + 'savePatient', dto, {})
+  savePatient(dto: PatientDto): Observable<void> {
+    return this.http.post<void>(endpoint + 'savePatient', dto, {})
   }
 
   getFullFormatAgeById(id: number): Observable<string> {

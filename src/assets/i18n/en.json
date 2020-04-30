@@ -17,7 +17,8 @@
             "city": "City:",
             "region": "Region:",
             "country": "Country:",
-            "zip.code": "Zip Code:"
+            "zip.code": "Zip Code:",
+            "success": "The patient has been saved successfully!"
         },
         "risk": {
             "factors": "Risk Factors",

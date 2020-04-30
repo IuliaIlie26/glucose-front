@@ -26,9 +26,11 @@ export class CreatePatientComponent implements OnInit, OnChanges {
   selectedCountry: SelectItem;
 
   savePatient(patient: PatientDto) {
-    this.patientApi.savePatient(patient).subscribe(patientId =>
-      this.router.navigate(['patient', 'create-patient', 'risk-factors', patientId])
-    );
+    this.patientApi.savePatient(patient).subscribe(() => {
+      const successMessage = this.translateService.instant('patient.create.success');
+      this.toastr.success(successMessage);
+      this.router.navigate(['home'])
+    });
   }
 
   ngOnChanges() {

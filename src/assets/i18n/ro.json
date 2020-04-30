@@ -17,7 +17,8 @@
             "city": "Oras:",
             "region": "Judet:",
             "country": "Tara:",
-            "zip.code": "Cod postal:"
+            "zip.code": "Cod postal:",
+            "success":"Pacientul a fost salvat cu succes!"
         },
         "risk": {
             "factors": "Factori de risc",
