@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RiskFactorsDto } from '../shared/models/PatientRiskFactorsDto';
 import { PatientDto } from '../shared/models/PatientDto';
+import { PatientSensorDistributionDto } from '../patients/model/PatientSensorDistributionDto';
+import { MessageDto } from '../shared/models/MessageDto';
 const endpoint = 'http://localhost:8080/api/patient/';
 
 @Injectable({
@@ -38,5 +40,9 @@ export class PatientApiService {
 
   updatePatient(dto: PatientDto): Observable<void> {
     return this.http.post<void>(endpoint + 'updatePatient', dto, {})
+  }
+
+  assignSensor(dto: PatientSensorDistributionDto): Observable<MessageDto> {
+    return this.http.post<MessageDto>(endpoint + 'assignSensor', dto, { responseType: 'text' as 'json' });
   }
 }

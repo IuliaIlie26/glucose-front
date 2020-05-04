@@ -6,7 +6,7 @@ import { CreatePatientComponent } from './components/create-patient/create-patie
 import { ManagePatientsComponent } from './components/manage-patients/manage-patients.component';
 import { ManageSensorComponent } from './components/manage-sensor/manage-sensor.component';
 import { PatientEditComponent } from './components/patient-edit/patient-edit.component';
-import { PatientsListComponent } from './patients-list/patients-list.component';
+import { PatientsListComponent } from './components/patients-list/patients-list.component';
 
 
 const routes: Routes = [

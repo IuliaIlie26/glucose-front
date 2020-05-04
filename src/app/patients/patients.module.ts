@@ -28,8 +28,9 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { DialogModule } from 'primeng/dialog';
 import { PatientEditComponent } from './components/patient-edit/patient-edit.component';
-import { PatientsListComponent } from './patients-list/patients-list.component';
+import { PatientsListComponent } from './components/patients-list/patients-list.component';
 import { SharedModule } from '../shared/shared.module';
+import {FieldsetModule} from 'primeng/fieldset';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { SharedModule } from '../shared/shared.module';
     RadioButtonModule,
     TableModule,
     AccordionModule,
+    FieldsetModule,
     TooltipModule,
     ToastrModule.forRoot(),
     PatientsRoutingModule,

@@ -1,39 +1,41 @@
 <div class="container-fluid">
     <div class="col-12">
-        <div class="row col-11">
-            <h6>{{"patient.manage.sensor.assign" | translate}} </h6>
-        </div>
-        <div class="col-8">
-            <div class="row form-group">
-                <label class="text-right col-form-label col-2">
-                    {{"patient.create.name" | translate}}:
-                </label>
-                <div class="col-6">
-                    <input type="text" [(ngModel)]="filter.name" />
+        <p-fieldset [legend]="'patient.manage.sensor.assign.legend' | translate" [toggleable]="true" collapsed="true">
+            <div class="col-8">
+                <div *ngIf="errorMessage">
+                    <span style="color:indianred;">{{errorMessage}}</span>
+                </div>
+                <div class="row form-group ">
+                    <label class="text-right col-form-label col-2">
+                        {{"patient.create.cnp" | translate}}:
+                    </label>
+                    <div class="col-6">
+                        <input type="text" maxlength="13" [(ngModel)]="newDistribution.patientCnp" />
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <label class="text-right col-form-label col-2">
+                        {{"patient.manage.sensor.sensorId" | translate}}:
+                    </label>
+                    <div class="col-6">
+                        <input type="text" [(ngModel)]=" newDistribution.sensorId" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="offset-3 mb-1">
+                        <button type="submit" class="btn btn-outline-success my-2 my-sm-0"
+                            (click)="assign()">{{"patient.manage.sensor.assign.btn" | translate}}
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div class="row form-group ">
-                <label class="text-right col-form-label col-2">
-                    {{"patient.create.lastname" | translate}}:
-                </label>
-                <div class="col-6">
-                    <input type="text" [(ngModel)]=" filter.lastname" />
-                </div>
-            </div>
-            <div class="row form-group ">
-                <label class="text-right col-form-label col-2">
-                    {{"patient.create.cnp" | translate}}:
-                </label>
-                <div class="col-6">
-                    <input type="text" [(ngModel)]=" filter.cnp" />
-                </div>
-            </div>
-        </div>
+        </p-fieldset>
         <br />
         <p-table #dt [value]="distributionList" dataKey="id" styleClass="ui-table-patients" [rowHover]="true"
             [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
             [paginator]="true" currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
-            [globalFilterFields]="['name','lastname','cnp','doctorName']">
+            [globalFilterFields]="['patientName', 'cnp','doctorName']">
             <ng-template pTemplate="caption">
                 <span style="color: green;">{{"patient.manage.sensor.subtitle" | translate}}</span>
                 <div class="ui-table-globalfilter-container">
@@ -49,8 +51,8 @@
                     <th pSortableColumn="patientName">{{'patient.create.name'|translate}}
                         <p-sortIcon field="patientName"></p-sortIcon>
                     </th>
-                    <th pSortableColumn="cnp">{{'patient.create.cnp'|translate}}
-                        <p-sortIcon field="cnp"> </p-sortIcon>
+                    <th pSortableColumn="patientCnp">{{'patient.create.cnp'|translate}}
+                        <p-sortIcon field="patientCnp"> </p-sortIcon>
                     </th>
                     <th pSortableColumn="doctorName">{{'patient.manage.sensor.doctorName'|translate}}
                         <p-sortIcon field="doctorName"> </p-sortIcon>
@@ -58,10 +60,10 @@
                     <th pSortableColumn="status">{{'patient.manage.sensor.status'|translate}}
                         <p-sortIcon field="status"> </p-sortIcon>
                     </th>
-                    <th pSortableColumn="doctorName">{{'patient.manage.sensor.activationDate'|translate}}
+                    <th pSortableColumn="activationDate">{{'patient.manage.sensor.activationDate'|translate}}
                         <p-sortIcon field="activationDate"> </p-sortIcon>
                     </th>
-                    <th pSortableColumn="status">{{'patient.manage.sensor.deactivationDate'|translate}}
+                    <th pSortableColumn="deactivationDate">{{'patient.manage.sensor.deactivationDate'|translate}}
                         <p-sortIcon field="deactivationDate"> </p-sortIcon>
                     </th>
                     <th></th>
@@ -79,7 +81,7 @@
                     </th>
                     <th>
                         <input pInputText type="text" style="width: 80%"
-                            (input)="dt.filter($event.target.value, 'cnp', 'startsWith')"
+                            (input)="dt.filter($event.target.value, 'patientCnp', 'startsWith')"
                             [placeholder]="'menu.search.byCNP' | translate" class="ui-column-filter">
                     </th>
                     <th>
@@ -120,7 +122,7 @@
                         <span style="vertical-align: middle; margin-left: .5em"> {{patient.patientName}}</span>
                     </td>
                     <td>
-                        <span style="vertical-align: middle; margin-left: .5em">{{patient.cnp}}</span>
+                        <span style="vertical-align: middle; margin-left: .5em">{{patient.patientCnp}}</span>
                     </td>
                     <td>
                         <span style="vertical-align: middle; margin-left: .5em"> {{patient.doctorName}}</span>

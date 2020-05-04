@@ -48,7 +48,14 @@
                 "doctorName": "Doctorul responsabil",
                 "sensorId": "Seria senzorului",
                 "subtitle": "Lista de distributie a senzorilor",
-                "assign" : "Asigneaza un senzor unui pacient"
+                "assign": {
+                    "legend": "Asigneaza un senzor unui pacient",
+                    "btn": "Asigneaza",
+                    "success": "Senzor asignat cu succes!",
+                    "hasSensor": "Pacientul are deja un senzor asignat!",
+                    "not.found": "Pacientul nu a fost gasit in sistem!",
+                    "sensor.assigned": "Acest senzor este deja asignat!"
+                }
             }
         },
         "edit": {
