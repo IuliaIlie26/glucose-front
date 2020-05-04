@@ -53,7 +53,7 @@
                     "btn": "Assign",
                     "success": "Sensor assigned successfully!",
                     "hasSensor": "The patient has already a sensor assigned!",
-                    "not.found": "Pacient not found in the system!",
+                    "not.found": "The pacient was not found in the system!",
                     "sensor.assigned": "This sensor is already assiged!"
                 }
             }

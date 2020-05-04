@@ -43,6 +43,10 @@ export class PatientApiService {
   }
 
   assignSensor(dto: PatientSensorDistributionDto): Observable<MessageDto> {
-    return this.http.post<MessageDto>(endpoint + 'assignSensor', dto, { responseType: 'text' as 'json' });
+    return this.http.post<MessageDto>(endpoint + 'assignSensor', dto);
+  }
+
+  getSensorDistribution(): Observable<PatientSensorDistributionDto[]> {
+    return this.http.get<PatientSensorDistributionDto[]>(endpoint + 'getSensorDistribution');
   }
 }
