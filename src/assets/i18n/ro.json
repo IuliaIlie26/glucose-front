@@ -75,6 +75,18 @@
             "region": "Judetul este obligatoriu!"
         }
     },
+    "doctor": {
+        "name": "Nume",
+        "lastname": "Prenume",
+        "speciality": "Specialitate",
+        "email": "E-Mail",
+        "phone.number": "Telefon",
+        "list":{
+            "subtitle": "Lista doctorilor",
+            "viewSchedule": "Vezi programul",
+            "create": "Adauga un doctor"
+        }
+    },
     "menu": {
         "home": "Acasa",
         "patients": "Pacienti",
@@ -99,6 +111,7 @@
             "byEmail": "Cauta dupa email",
             "byAddress": "Cauta dupa adresa",
             "byCNP": "Cauta dupa CNP",
+            "bySpeciality": "Cauta dupa specializare",
             "byStatus": "Cauta dupa status",
             "byDoctorName": "Cauta dupa doctor",
             "bySensorId": "Cauta dupa seria senzorului",

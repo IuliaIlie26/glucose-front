@@ -1,1 +1,105 @@
-<p>doctor-list works!</p>
+<div class="container-fluid">
+    <div class="row col-12 mt-3">
+        <p-table #dt [value]="doctorList" dataKey="id" styleClass="ui-table-doctors" [rowHover]="true" [rows]="10"
+            [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" [paginator]="true"
+            currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
+            [globalFilterFields]="['name','lastname','speciality','email','phone']">
+            <ng-template pTemplate="caption">
+                <span style="color: green;">{{"doctor.list.subtitle" | translate}}</span>
+                <div class="ui-table-globalfilter-container">
+                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                        [placeholder]="'menu.search.global' | translate" />
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="name">{{'doctor.name'|translate}}
+                        <p-sortIcon field="name"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="lastname">{{'doctor.lastname'|translate}}
+                        <p-sortIcon field="lastname"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="speciality">{{'doctor.speciality'|translate}}
+                        <p-sortIcon field="speciality"> </p-sortIcon>
+                    </th>
+                    <th pSortableColumn="phone">{{'doctor.phone.number'|translate}}
+                        <p-sortIcon field="phone"> </p-sortIcon>
+                    </th>
+                    <th pSortableColumn="email">{{'doctor.email'|translate}}
+                        <p-sortIcon field="email"></p-sortIcon>
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>
+                        <input pInputText type="text" style="width: fit-content;"
+                            (input)="dt.filter($event.target.value, 'name', 'startsWith')"
+                            [placeholder]="'menu.search.byName' | translate" class="ui-column-filter">
+                    </th>
+                    <th>
+                        <input pInputText type="text" style="width: fit-content;"
+                            (input)="dt.filter($event.target.value, 'lastname', 'startsWith')"
+                            [placeholder]="'menu.search.byLastName' | translate" class="ui-column-filter">
+                    </th>
+                    <th>
+                        <p-dropdown [options]="specialities"
+                            (onChange)="dt.filter($event.value, 'speciality', 'equals')" styleClass="ui-column-filter"
+                            [placeholder]="'menu.search.bySpeciality' | translate" [showClear]="true">
+                            <ng-template let-option pTemplate="item">
+                                <span>{{option.label}}</span>
+                            </ng-template>
+                        </p-dropdown>
+                    </th>
+                    <th>
+                        <input pInputText type="text" style="width: fit-content;"
+                            (input)="dt.filter($event.target.value, 'phone', 'startsWith')"
+                            [placeholder]="'menu.search.byPhone' | translate" class="ui-column-filter">
+                    </th>
+                    <th>
+                        <input pInputText type="text" style="width: fit-content;"
+                            (input)="dt.filter($event.target.value, 'email', 'startsWith')"
+                            [placeholder]="'menu.search.byEmail' | translate" class="ui-column-filter">
+                    </th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-doctor>
+                <tr class="ui-selectable-row">
+                    <td>
+                        <span style="vertical-align: middle; margin-left: .5em"> {{doctor.name}}</span>
+                    </td>
+                    <td>
+                        <span style="vertical-align: middle; margin-left: .5em">{{doctor.lastname}}</span>
+                    </td>
+                    <td>
+                        <span style="vertical-align: middle; margin-left: .5em">{{doctor.speciality}}</span>
+                    </td>
+                    <td>
+                        <span style="vertical-align: middle; margin-left: .5em"> {{doctor.phone}}</span>
+                    </td>
+                    <td>
+                        <span style="vertical-align: middle; margin-left: .5em"> {{doctor.email}}</span>
+                    </td>
+
+                    <td>
+                        <button pButton type="button" class="ui-button-secondary" icon="fa fa-edit"
+                            pTooltip="{{'patient.manage.edit' | translate}}" tooltipPosition="top"
+                            (click)="edit(doctor)"></button>
+                    </td>
+                    <td>
+                        <button pButton type="button" class="ui-button-secondary" icon="fa fa-address-book"
+                            pTooltip="{{'doctor.list.viewSchedule' | translate}}" tooltipPosition="top"
+                            (click)="viewSchedule(doctor.id)"></button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="7" style="text-align:center; color:indianred;">{{'datatable.no_data' | translate}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

@@ -17,4 +17,8 @@ export class DoctorApiService {
   getDoctorNameAndLastname(username: string): Observable<string> {
     return this.http.get<string>(endpoint + 'getDoctorNameAndLastname?username=' + username, {})
   }
+
+  getDoctorsList(): Observable<DoctorDto[]> {
+    return this.http.get<DoctorDto[]>(endpoint + 'getDoctorsList')
+  }
 }

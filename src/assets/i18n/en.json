@@ -75,6 +75,18 @@
             "region": "Region is required!"
         }
     },
+    "doctor": {
+        "name": "Name",
+        "lastname": "Last name",
+        "speciality": "Speciality",
+        "email": "E-Mail",
+        "phone.number": "Phone Number",
+        "list":{
+            "subtitle": "Doctors list",
+            "viewSchedule": "View Schedule",
+            "create": "Adauga un doctor"
+        }
+    },
     "menu": {
         "home": "Home",
         "patients": "Patients",
@@ -98,6 +110,7 @@
             "byPhone": "Search by phone",
             "byEmail": "Search by email",
             "byAddress": "Search by address",
+            "bySpeciality": "Search by speciality",
             "byStatus": "Search by status",
             "byCNP": "Search by personal number",
             "byDoctorName": "Search by doctor",

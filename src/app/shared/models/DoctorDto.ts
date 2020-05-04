@@ -1,11 +1,9 @@
-import { MedicalAreaDto } from './MedicalAreaDto';
-import { PatientDto } from './PatientDto';
-
-export class DoctorDto{
+export class DoctorDto {
 
     name: string;
     lastname: string;
     speciality: string;
-    patients: PatientDto[] =[];
     username: string;
+    email: string;
+    phone: string;
 }

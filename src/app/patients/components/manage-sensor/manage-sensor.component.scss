@@ -97,7 +97,7 @@
 /* Responsive */
 @media screen and (max-width: 64em) {
     :host ::ng-deep .ui-table {
-        &.ui-table-customers {
+        &.ui-table-patients {
             .ui-table-thead > tr > th,
             .ui-table-tfoot > tr > td {
                 display: none !important;

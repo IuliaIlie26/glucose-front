@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DoctorDto } from 'src/app/shared/models/DoctorDto';
+import { DoctorApiService } from 'src/app/api/doctor-api.service';
 
 @Component({
   selector: 'app-doctor-list',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorListComponent implements OnInit {
 
-  constructor() { }
+
+  doctorList: DoctorDto[];
+  specialities = [];
+
+  constructor(private doctorApi: DoctorApiService) { }
 
   ngOnInit() {
+    this.doctorApi.getDoctorsList().subscribe(list => this.doctorList = list);
   }
 
+  edit(doctor) {
+
+  }
+
+  viewSchedule(id) {
+
+  }
 }
