@@ -99,6 +99,7 @@
             "byEmail": "Cauta dupa email",
             "byAddress": "Cauta dupa adresa",
             "byCNP": "Cauta dupa CNP",
+            "byStatus": "Cauta dupa status",
             "byDoctorName": "Cauta dupa doctor",
             "bySensorId": "Cauta dupa seria senzorului",
             "byActivationDate": "Cauta dupa data activarii",

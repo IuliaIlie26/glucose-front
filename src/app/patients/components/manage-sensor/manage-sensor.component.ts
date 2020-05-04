@@ -3,6 +3,8 @@ import { PatientSensorDistributionDto } from '../../model/PatientSensorDistribut
 import { PatientApiService } from 'src/app/api/patient-api.service';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
+import { statuses } from '../../../shared/models/senors-status.model'
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-manage-sensor',
@@ -16,38 +18,25 @@ export class ManageSensorComponent implements OnInit {
 
   errorMessage = '';
   distributionList: PatientSensorDistributionDto[] = [];
+  translateSubscription: Subscription;
 
   newDistribution: PatientSensorDistributionDto = new PatientSensorDistributionDto();
 
-  statuses = [{
-    label: 'Active'
-  }, {
-    label: 'Inactive'
-  }, {
-    label: 'Deactivated'
-  }]
+  statuses: any[];
 
-  filter = { name: '', lastName: '', cnp: '' };
-
-  sensorId
   ngOnInit() {
     this.getAllPatientDistributionList();
+    this.translateStatus(this.translateService.defaultLang);
+    this.translateSubscription = this.translateService.onLangChange.subscribe(event => this.translateStatus(event.lang))
+  }
+
+  translateStatus(lang) {
+    this.statuses = statuses[lang]
   }
 
   private getAllPatientDistributionList() {
     this.patientApi.getSensorDistribution().subscribe(resultList => this.distributionList = resultList);
   }
-
-  getButtonLabel(status) {
-    let label;
-    status === 'Active' ? label = 'Deactivate' : label = 'Activate';
-    return label;
-  }
-
-  onStatusChange(id) {
-    console.log('schimba')
-  }
-
 
   assign() {
 

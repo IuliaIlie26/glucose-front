@@ -9,41 +9,19 @@
         font-size: 12px;
         letter-spacing: .3px;
 
-        &.status-activated {
+        &.status-active{
             background-color: #C8E6C9;
             color: #256029;
         }
 
-        &.status-deactivated {
+        &.status-deactivated{
             background-color: #FFCDD2;
             color: #C63737;
         }
 
-        &.status-inactive {
+        &.status-inactive{
             background-color: #B3E5FC;
             color: #23547B;
-        }
-    }
-
-    .flag {
-        vertical-align: middle;
-        width: 30px;
-        height: 20px;
-    }
-
-    .ui-multiselect-representative-option {
-        display: inline-block;
-        vertical-align: middle;
-
-        img {
-            vertical-align: middle;
-            width: 24px;
-        }
-
-        span {
-            margin-top: .125em;
-            vertical-align: middle;
-            margin-left: .5em
         }
     }
 
@@ -57,20 +35,11 @@
         }
     }
 
-    .ui-progressbar {
-        height: 8px;
-        background-color: #D8DADC;
-
-        .ui-progressbar-value {
-            background-color: #00ACAD;
-        }
-    }
-
     .ui-column-filter {
         display: block;
 
         input {
-            width: 100%;
+            width: 120%;
         }
     }
 
@@ -109,21 +78,11 @@
         &.ui-filter-column {
             border-top: 1px solid #c8c8c8;
         }
-
-        &:last-child {
-            width: 12em;
-            text-align: center;
-        }
     }
 
     .ui-table-tbody > tr > td {
         border: 0 none;
         cursor: auto;
-
-        &:last-child {
-            width: 12em;
-            text-align: center;
-        }
     }
 
     .ui-dropdown-label:not(.ui-placeholder) {

@@ -98,6 +98,7 @@
             "byPhone": "Search by phone",
             "byEmail": "Search by email",
             "byAddress": "Search by address",
+            "byStatus": "Search by status",
             "byCNP": "Search by personal number",
             "byDoctorName": "Search by doctor",
             "bySensorId": "Search by sensor serial",
