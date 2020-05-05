@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PatientSensorDistributionDto } from '../../model/PatientSensorDistributionDto';
 import { PatientApiService } from 'src/app/api/patient-api.service';
 import { ToastrService } from 'ngx-toastr';
@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './manage-sensor.component.html',
   styleUrls: ['./manage-sensor.component.scss']
 })
-export class ManageSensorComponent implements OnInit {
+export class ManageSensorComponent implements OnInit, OnDestroy {
 
 
   constructor(private patientApi: PatientApiService, private toastr: ToastrService, private translateService: TranslateService) { }
@@ -53,5 +53,9 @@ export class ManageSensorComponent implements OnInit {
       this.newDistribution.sensorId = '';
       this.newDistribution.patientCnp = '';
     })
+  }
+
+  ngOnDestroy() {
+    if (this.translateSubscription) this.translateSubscription.unsubscribe();
   }
 }

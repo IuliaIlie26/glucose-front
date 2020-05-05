@@ -6,12 +6,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PanelModule, InputTextModule, AccordionModule, DropdownModule, CalendarModule } from 'primeng';
 import { FormsModule } from '@angular/forms';
 import { NumbersOnlyDirective } from './directive/numbers-only.directive';
+import { DoctorFormComponent } from './components/doctor-form/doctor-form.component';
 
 @NgModule({
     declarations: [
         HomeComponent,
         PatientFormComponent,
-        NumbersOnlyDirective
+        NumbersOnlyDirective,
+        DoctorFormComponent
     ],
     imports: [
         CommonModule,
@@ -26,7 +28,8 @@ import { NumbersOnlyDirective } from './directive/numbers-only.directive';
     exports: [
         HomeComponent,
         PatientFormComponent,
-        NumbersOnlyDirective
+        NumbersOnlyDirective,
+        DoctorFormComponent
     ]
 })
 export class SharedModule { }

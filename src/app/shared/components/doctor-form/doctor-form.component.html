@@ -1,0 +1,69 @@
+<div class="col-8">
+    <div class="alert-danger" *ngIf="(name.invalid && (name.dirty || name.touched))">
+        {{'doctor.create.required.name' | translate}}
+    </div>
+    <div class="alert-danger" *ngIf="(lastname.invalid && (lastname.dirty || lastname.touched))">
+        {{'doctor.create.required.lastname' | translate}}
+    </div>
+    <div class="alert-danger" *ngIf="(phone.invalid && (phone.dirty || phone.touched))">
+        {{'doctor.create.required.phone' | translate}}
+    </div>
+    <div class="alert-danger" *ngIf="(speciality.invalid && (speciality.dirty || speciality.touched))">
+        {{'doctor.create.required.speciality' | translate}}
+    </div>
+    <div class="alert-danger" *ngIf="(email.invalid && (email.dirty || email.touched))">
+        {{'doctor.create.required.email' | translate}}
+    </div>
+    <div class="row form-group ">
+        <label class="text-right col-form-label col-2">
+            <sup>*</sup> {{"doctor.create.name" | translate}}:
+        </label>
+        <div class="col-8">
+            <input type="text" [(ngModel)]="doctor.name" required #name="ngModel" />
+        </div>
+    </div>
+    <div class="row form-group ">
+        <label class="text-right col-form-label col-2">
+            <sup>*</sup> {{"doctor.create.lastname" | translate}}: </label>
+        <div class="col-8">
+            <input type="text" [(ngModel)]="doctor.lastname" required #lastname="ngModel" />
+        </div>
+    </div>
+    <div class="row form-group ">
+        <label class="text-right col-form-label col-2">
+            <sup>*</sup> {{"doctor.create.email" | translate}}:
+        </label>
+        <div class="col-8">
+            <input type="text" [(ngModel)]="doctor.email" required #email="ngModel" />
+        </div>
+    </div>
+    <div class="row form-group ">
+        <label class="text-right col-form-label col-2">
+            <sup>*</sup> {{"doctor.create.phone" | translate}}:
+        </label>
+        <div class="col-8">
+            <input type="text" numbersOnly maxlength="10" [(ngModel)]="doctor.phone" required #phone="ngModel" />
+        </div>
+    </div>
+    <div class="row form-group ">
+        <label class="text-right col-form-label col-2">
+            <sup>*</sup> {{"doctor.create.medicalSpeciality" | translate}}:
+        </label>
+        <div class="col-8">
+            <p-dropdown [options]="specialities" filter='true' [(ngModel)]="selectedSpeciality"
+                [style]="{'width':'50%'}" [showClear]="true" required #speciality="ngModel" optionLabel="label"
+                [placeholder]="selectedSpeciality ? selectedSpeciality.label : translateService.instant('doctor.create.select')">
+            <ng-template let-option pTemplate="item">
+                <span>{{option.label}}</span>
+            </ng-template>
+            </p-dropdown>
+        </div>
+    </div>
+    <div class="row">
+        <div class="offset-3 mb-1">
+            <button type="submit" class="btn btn-outline-success my-2 my-sm-0"
+                (click)="emitDoctorInformation()">{{"doctor.create.save" | translate}}
+            </button>
+        </div>
+    </div>
+</div>

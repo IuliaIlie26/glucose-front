@@ -21,4 +21,8 @@ export class DoctorApiService {
   getDoctorsList(): Observable<DoctorDto[]> {
     return this.http.get<DoctorDto[]>(endpoint + 'getDoctorsList')
   }
+
+  saveDoctor(doctor: DoctorDto): Observable<void> {
+    return this.http.post<void>(endpoint + 'saveDoctor', doctor)
+  }
 }

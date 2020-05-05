@@ -1,29 +1,57 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DoctorDto } from 'src/app/shared/models/DoctorDto';
 import { DoctorApiService } from 'src/app/api/doctor-api.service';
+import { medicalSpeciality } from '../../shared/models/medical-speciality'
+import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-doctor-list',
   templateUrl: './doctor-list.component.html',
   styleUrls: ['./doctor-list.component.scss']
 })
-export class DoctorListComponent implements OnInit {
+export class DoctorListComponent implements OnInit, OnDestroy {
 
 
   doctorList: DoctorDto[];
   specialities = [];
 
-  constructor(private doctorApi: DoctorApiService) { }
+  newDoctor = new DoctorDto();
+  langSubscription: Subscription;
+  constructor(private doctorApi: DoctorApiService, private translateService: TranslateService, private toastr: ToastrService) { }
 
   ngOnInit() {
+    this.getAllDoctors();
+    this.translateMedicalSpeciality(this.translateService.defaultLang);
+    this.langSubscription = this.translateService.onLangChange.subscribe(event => this.translateMedicalSpeciality(event.lang))
+  }
+
+  private getAllDoctors() {
     this.doctorApi.getDoctorsList().subscribe(list => this.doctorList = list);
+  }
+
+  private translateMedicalSpeciality(lang) {
+    this.specialities = medicalSpeciality[lang];
   }
 
   edit(doctor) {
 
   }
 
+  saveDoctor(doctor: DoctorDto) {
+    console.log(doctor, "doctror")
+    this.doctorApi.saveDoctor(doctor).subscribe(() => {
+      this.toastr.success(this.translateService.instant('doctor.create.success'))
+      this.getAllDoctors();
+    });
+  }
+
   viewSchedule(id) {
 
+  }
+
+  ngOnDestroy() {
+    if (this.langSubscription) this.langSubscription.unsubscribe();
   }
 }

@@ -81,10 +81,27 @@
         "speciality": "Specialitate",
         "email": "E-Mail",
         "phone.number": "Telefon",
-        "list":{
+        "list": {
             "subtitle": "Lista doctorilor",
             "viewSchedule": "Vezi programul",
-            "create": "Adauga un doctor"
+            "create.legend": "Adauga un doctor"
+        },
+        "create": {
+            "name": "Nume",
+            "lastname": "Prenume",
+            "email": "E-Mail",
+            "phone": "Telefon",
+            "medicalSpeciality": "Specialitate",
+            "save": "Salveaza",
+            "select": "Selecteaza",
+            "success": "Succes!",
+            "required": {
+                "name": "Numele este obligatoriu!",
+                "lastname": "Prenumele este obligatoriu!",
+                "speciality": "Specializarea este obligatorie!",
+                "email": "E-Mail-ul este obligatoriu!",
+                "phone": "Numarul de telefon este obligatoriu!"
+            }
         }
     },
     "menu": {

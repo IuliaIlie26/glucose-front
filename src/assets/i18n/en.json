@@ -81,10 +81,27 @@
         "speciality": "Speciality",
         "email": "E-Mail",
         "phone.number": "Phone Number",
-        "list":{
+        "list": {
             "subtitle": "Doctors list",
             "viewSchedule": "View Schedule",
-            "create": "Adauga un doctor"
+            "create.legend": "Add a doctor"
+        },
+        "create": {
+            "name": "Name",
+            "lastname": "Last Name",
+            "email": "E-Mail",
+            "phone": "Phone",
+            "medicalSpeciality": "Speciality",
+            "save": "Save",
+            "select": "Select",
+            "success": "Success!",
+            "required": {
+                "name": "Name is required!",
+                "lastname": "Last name is required!",
+                "email": "E-Mail is required!",
+                "phone": "Phone number is required!",
+                "speciality": "Speciality is required!"
+            }
         }
     },
     "menu": {

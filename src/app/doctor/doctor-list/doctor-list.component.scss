@@ -17,6 +17,11 @@
         input {
             width: 120%;
         }
+
+    }
+    
+    .ui-dropdown-filter{
+        width: 100%
     }
 
     .ui-table-globalfilter-container {
@@ -52,6 +57,12 @@
             width: 5em;
             text-align: left;
         }
+
+        &:nth-child(3) {
+            width: 35em;
+            text-align: left;
+        }
+
 
         &.ui-filter-column {
             border-top: 1px solid #c8c8c8;
