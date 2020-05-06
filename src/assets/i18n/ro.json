@@ -76,6 +76,8 @@
         }
     },
     "doctor": {
+        "edit": "Editeaza informatiile despre doctor",
+        "edit.success": "Datele au fost actualizate cu succes!",
         "name": "Nume",
         "lastname": "Prenume",
         "speciality": "Specialitate",

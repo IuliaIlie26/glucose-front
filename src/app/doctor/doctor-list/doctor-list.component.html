@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="col-12">
-        <p-fieldset [legend]="'doctor.list.create.legend' | translate" [toggleable]="true" collapsed="true">
+        <p-fieldset [legend]="'doctor.list.create.legend' | translate" [toggleable]="true" [(collapsed)]="collapsed">
             <app-doctor-form *ngIf="newDoctor" [doctor]="newDoctor" (onSave)="saveDoctor($event)"></app-doctor-form>
         </p-fieldset>
         <div class="row mt-3">
@@ -90,12 +90,12 @@
 
                         <td>
                             <button pButton type="button" class="ui-button-secondary" icon="fa fa-edit"
-                                pTooltip="{{'patient.manage.edit' | translate}}" tooltipPosition="top"
+                                [pTooltip]="'patient.manage.edit' | translate" tooltipPosition="top"
                                 (click)="edit(doctor)"></button>
                         </td>
                         <td>
                             <button pButton type="button" class="ui-button-secondary" icon="fa fa-address-book"
-                                pTooltip="{{'doctor.list.viewSchedule' | translate}}" tooltipPosition="top"
+                                [pTooltip]="'doctor.list.viewSchedule' | translate" tooltipPosition="top"
                                 (click)="viewSchedule(doctor.id)"></button>
                         </td>
                     </tr>
@@ -108,5 +108,13 @@
                 </ng-template>
             </p-table>
         </div>
+    </div>
+    <div class="col-12">
+        <p-dialog *ngIf="selectedDoctorForEdit" [header]="'doctor.edit' | translate" [(visible)]="showEditDialog"
+            [style]="{width: '50vw'}">
+            <div class="col-12">
+                <app-doctor-form [doctor]="selectedDoctorForEdit" (onSave)="updateDoctor($event)"></app-doctor-form>
+            </div>
+        </p-dialog>
     </div>
 </div>

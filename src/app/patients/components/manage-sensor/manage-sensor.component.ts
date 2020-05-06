@@ -19,7 +19,7 @@ export class ManageSensorComponent implements OnInit, OnDestroy {
   errorMessage = '';
   distributionList: PatientSensorDistributionDto[] = [];
   translateSubscription: Subscription;
-
+  collapsed = true;
   newDistribution: PatientSensorDistributionDto = new PatientSensorDistributionDto();
 
   statuses: any[];
@@ -46,6 +46,7 @@ export class ManageSensorComponent implements OnInit, OnDestroy {
         this.getAllPatientDistributionList();
         let successMessage = this.translateService.instant('patient.manage.sensor.assign.success');
         this.toastr.success(successMessage);
+        this.collapsed = true;
       }
       else {
         this.errorMessage = this.translateService.instant(dto.message);

@@ -13,7 +13,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [SettingsComponent, DoctorScheduleComponent, DoctorListComponent, DoctorCreateComponent],
   imports: [

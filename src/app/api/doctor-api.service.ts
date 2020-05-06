@@ -25,4 +25,8 @@ export class DoctorApiService {
   saveDoctor(doctor: DoctorDto): Observable<void> {
     return this.http.post<void>(endpoint + 'saveDoctor', doctor)
   }
+
+  updateDoctor(doctor: DoctorDto): Observable<void> {
+    return this.http.post<void>(endpoint + 'updateDoctor', doctor)
+  }
 }

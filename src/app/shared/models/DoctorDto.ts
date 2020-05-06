@@ -1,5 +1,6 @@
 export class DoctorDto {
 
+    id: string;
     name: string;
     lastname: string;
     speciality: string;

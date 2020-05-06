@@ -16,7 +16,7 @@ export class DoctorFormComponent implements OnInit, OnDestroy {
   @Input() doctor: DoctorDto;
   @Output() onSave = new EventEmitter<DoctorDto>();
   selectedSpeciality: SelectItem;
-  specialities : Array<any>
+  specialities: Array<any>
   constructor(private toastr: ToastrService, private translateService: TranslateService) { }
   langSubscription: Subscription;
 
@@ -37,13 +37,17 @@ export class DoctorFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnChanges(change: SimpleChanges) {
+    if (this.doctor.speciality) {
+      this.selectedSpeciality = { 'label': this.doctor.speciality, 'value': this.doctor.speciality };
+    }
   }
 
   emitDoctorInformation() {
     if (this.isValid()) {
-      console.log(this.selectedSpeciality,"spec")
       this.doctor.speciality = this.selectedSpeciality.label;
       this.onSave.emit(this.doctor);
+      this.doctor = new DoctorDto();
+      this.selectedSpeciality = { 'label': '', 'value': null }
     } else {
       this.toastr.error(this.translateService.instant("error.fields.required"))
     }

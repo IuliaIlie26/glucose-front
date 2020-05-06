@@ -83,6 +83,11 @@
     }
 }
 
+.show-dialog{
+    width: 800px;
+    height: 800px;
+}
+
 /* Responsive */
 @media screen and (max-width: 64em) {
     :host ::ng-deep .ui-table {

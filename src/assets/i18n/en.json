@@ -76,6 +76,8 @@
         }
     },
     "doctor": {
+        "edit": "Edit doctor information",
+        "edit.success": "Data was successfully updated!",
         "name": "Name",
         "lastname": "Last name",
         "speciality": "Speciality",

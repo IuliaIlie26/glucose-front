@@ -93,12 +93,12 @@
                     </td>
                     <td>
                         <button pButton type="button" class="ui-button-secondary" icon="fa fa-edit"
-                            pTooltip="{{'patient.manage.edit' | translate}}" tooltipPosition="top"
+                            [pTooltip]="'patient.manage.edit' | translate" tooltipPosition="top"
                             (click)="edit(patient)"></button>
                     </td>
                     <td>
                         <button pButton type="button" class="ui-button-secondary" icon="fa fa-trash"
-                            pTooltip="{{'patient.manage.delete' | translate}}" tooltipPosition="top"
+                            [pTooltip]="'patient.manage.delete' | translate" tooltipPosition="top"
                             (click)="onDelete(patient.id)"></button>
                     </td>
                 </tr>

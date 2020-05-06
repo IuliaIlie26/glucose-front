@@ -16,7 +16,7 @@ export class DoctorListComponent implements OnInit, OnDestroy {
 
   doctorList: DoctorDto[];
   specialities = [];
-
+  collapsed = true;
   newDoctor = new DoctorDto();
   langSubscription: Subscription;
   constructor(private doctorApi: DoctorApiService, private translateService: TranslateService, private toastr: ToastrService) { }
@@ -34,21 +34,33 @@ export class DoctorListComponent implements OnInit, OnDestroy {
   private translateMedicalSpeciality(lang) {
     this.specialities = medicalSpeciality[lang];
   }
+  selectedDoctorForEdit: DoctorDto;
+  showEditDialog = false;
 
-  edit(doctor) {
-
+  edit(doctor: DoctorDto) {
+    this.selectedDoctorForEdit = doctor;
+    this.showEditDialog = true;
   }
 
   saveDoctor(doctor: DoctorDto) {
-    console.log(doctor, "doctror")
     this.doctorApi.saveDoctor(doctor).subscribe(() => {
       this.toastr.success(this.translateService.instant('doctor.create.success'))
       this.getAllDoctors();
+      this.collapsed = true;
     });
   }
 
   viewSchedule(id) {
 
+  }
+
+  updateDoctor(doctor: DoctorDto) {
+    let successMessage = this.translateService.instant('doctor.edit.success');
+    this.doctorApi.updateDoctor(doctor).subscribe(() => {
+      this.toastr.success(successMessage);
+      this.getAllDoctors();
+      this.showEditDialog = false;
+    })
   }
 
   ngOnDestroy() {
