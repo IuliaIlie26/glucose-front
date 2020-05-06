@@ -20,7 +20,7 @@ export class PatientFormComponent implements OnInit, OnChanges {
   selectedCountry: SelectItem;
   pipe = new DatePipe('en-us');
   maxDate = new Date();
-  constructor(private translateService: TranslateService, private toastr: ToastrService) { }
+  constructor(public translateService: TranslateService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.countryOptions = countryOptions;

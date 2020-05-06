@@ -17,7 +17,7 @@ export class DoctorFormComponent implements OnInit, OnDestroy {
   @Output() onSave = new EventEmitter<DoctorDto>();
   selectedSpeciality: SelectItem;
   specialities: Array<any>
-  constructor(private toastr: ToastrService, private translateService: TranslateService) { }
+  constructor(private toastr: ToastrService, public translateService: TranslateService) { }
   langSubscription: Subscription;
 
   ngOnInit() {

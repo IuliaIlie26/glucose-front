@@ -5,6 +5,7 @@ import { medicalSpeciality } from '../../shared/models/medical-speciality'
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor-list',
@@ -19,7 +20,7 @@ export class DoctorListComponent implements OnInit, OnDestroy {
   collapsed = true;
   newDoctor = new DoctorDto();
   langSubscription: Subscription;
-  constructor(private doctorApi: DoctorApiService, private translateService: TranslateService, private toastr: ToastrService) { }
+  constructor(private doctorApi: DoctorApiService, private translateService: TranslateService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit() {
     this.getAllDoctors();
@@ -51,7 +52,7 @@ export class DoctorListComponent implements OnInit, OnDestroy {
   }
 
   viewSchedule(id) {
-
+    this.router.navigate(['doctor', 'schedule', id])
   }
 
   updateDoctor(doctor: DoctorDto) {

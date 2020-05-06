@@ -11,7 +11,7 @@ const routes: Routes = [
     component: SettingsComponent
   },
   {
-    path: 'doctor/schedule',
+    path: 'doctor/schedule/:id',
     component: DoctorScheduleComponent
   },
   {

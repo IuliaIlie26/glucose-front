@@ -34,6 +34,10 @@ export class ManageSensorComponent implements OnInit, OnDestroy {
     this.statuses = statuses[lang]
   }
 
+  onDateSelect(event){
+
+  }
+
   private getAllPatientDistributionList() {
     this.patientApi.getSensorDistribution().subscribe(resultList => this.distributionList = resultList);
   }

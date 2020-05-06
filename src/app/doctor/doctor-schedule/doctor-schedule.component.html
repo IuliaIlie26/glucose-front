@@ -1,1 +1,25 @@
-<p>doctor-schedule works!</p>
+<div class="container-fluid">
+    <div class="col-12">
+        <button (click)="onEdit()">{{'doctor.schedule.edit' | translate}}</button>
+        <div class="row" *ngIf="editMode">
+            <div class="col-12">
+                <div class="row form-group ">
+                    <label class="text-right col-form-label col-2">
+                        {{"doctor.schedule.monday.start" | translate}}
+                    </label>
+                    <div class="col-2 mt-1">
+                        <p-calendar [timeOnly]="true"></p-calendar>
+                    </div>
+                </div>
+                <div class="row form-group ">
+                    <label class="text-right col-form-label col-2">
+                        {{"doctor.schedule.monday.end" | translate}}
+                    </label>
+                    <div class="col-2 mt-1">
+                        <p-calendar [timeOnly]="true"></p-calendar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

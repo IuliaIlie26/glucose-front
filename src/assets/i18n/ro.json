@@ -104,6 +104,23 @@
                 "email": "E-Mail-ul este obligatoriu!",
                 "phone": "Numarul de telefon este obligatoriu!"
             }
+        },
+        "schedule":{
+            "edit": "Editeaza orarul",
+            "monday.start" : "Ora de inceput pentru luni:",
+            "monday.end" : "Ora de sfarsit pentru luni:",
+            "tuesday.start" : "Ora de inceput pentru marti:",
+            "tuesday.end" : "Ora de sfarsit pentru marti:",
+            "wednesday.start" : "Ora de inceput pentru miercuri:",
+            "wednesday.end" : "Ora de sfarsit pentru miercuri:",
+            "thursday.start" : "Ora de inceput pentru joi:",
+            "thursday.end" : "Ora de sfarsit pentru joi:",
+            "friday.start" : "Ora de inceput pentru vineri:",
+            "friday.end" : "Ora de sfarsit pentru vineri:",
+            "saturday.end" : "Ora de sfarsit pentru sambata:",
+            "saturday.start" : "Ora de inceput pentru sambata:",
+            "sunday.end" : "Ora de sfarsit pentru duminica:",
+            "sunday.start" : "Ora de inceput pentru duminica:"
         }
     },
     "menu": {
