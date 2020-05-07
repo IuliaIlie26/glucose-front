@@ -37,7 +37,7 @@
         <div class="col-10">
             <p-dropdown [options]="specialities" filter='true' [(ngModel)]="selectedSpeciality"
                 [style]="{'width':'50%'}" [showClear]="true" optionLabel="label"
-                [placeholder]="selectedSpeciality ? selectedSpeciality.label : translateService.instant('doctor.create.select')">
+                [placeholder]="selectedSpeciality ? selectedSpeciality.label : translateService.instant('buttons.select')">
                 <ng-template let-option pTemplate="item">
                     <span>{{option.label}}</span>
                 </ng-template>
@@ -47,7 +47,7 @@
     <div class="row">
         <div class="offset-3 mb-1">
             <button type="submit" class="btn btn-outline-success my-2 my-sm-0"
-                (click)="emitDoctorInformation()">{{"doctor.create.save" | translate}}
+                (click)="emitDoctorInformation()">{{"buttons.save" | translate}}
             </button>
         </div>
     </div>

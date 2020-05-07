@@ -5,7 +5,6 @@
             "header.personal": "Personal Information",
             "header.contact": "Contact Information",
             "header.address": "Address",
-            "save": "Save",
             "name": "Name",
             "lastname": "Last name",
             "cnp": "Personal Number",
@@ -30,15 +29,11 @@
             "family.history.diabetes": "Family history of diabetes:",
             "smoker": "Smoker",
             "macrosomic.baby": "Previous macrosomic baby",
-            "previous.gdm": "Previous GDM",
-            "yes": "Yes",
-            "no": "No",
-            "select": "Select"
+            "previous.gdm": "Previous GDM"
         },
         "manage": {
             "title": "Manage patients",
             "subtitle": "Patients list",
-            "edit": "Edit",
             "delete": "Delete",
             "sensor": {
                 "title": "Manage sensors",
@@ -94,9 +89,6 @@
             "email": "E-Mail",
             "phone": "Phone",
             "medicalSpeciality": "Speciality",
-            "save": "Save",
-            "select": "Select",
-            "success": "Success!",
             "required": {
                 "name": "Name is required!",
                 "lastname": "Last name is required!",
@@ -105,22 +97,24 @@
                 "speciality": "Speciality is required!"
             }
         },
-        "schedule":{
+        "schedule": {
+            "title": "Schedule for doctor: ",
+            "dayOff": "Day off",
             "edit": "Edit schedule",
-            "monday.start" : "Monday starting time:",
-            "monday.end" : "Monday ending time:",
-            "tuesday.start" : "Tuesday starting time:",
-            "tuesday.end" : "Tuesday ending time:",
-            "wednesday.start" : "Wednesday starting time:",
-            "wednesday.end" : "Wednesday ending time:",
-            "thursday.start" : "Thursday starting time:",
-            "thursday.end" : "Thursday ending time:",
-            "friday.start" : "Friday starting time:",
-            "friday.end" : "Friday ending time:",
-            "saturday.end" : "Saturday ending time:",
-            "saturday.start" : "Saturday starting time:",
-            "sunday.end" : "Sunday ending time:",
-            "sunday.start" : "Sunday starting time:"
+            "monday.start": "Monday starting time:",
+            "monday.end": "Monday ending time:",
+            "tuesday.start": "Tuesday starting time:",
+            "tuesday.end": "Tuesday ending time:",
+            "wednesday.start": "Wednesday starting time:",
+            "wednesday.end": "Wednesday ending time:",
+            "thursday.start": "Thursday starting time:",
+            "thursday.end": "Thursday ending time:",
+            "friday.start": "Friday starting time:",
+            "friday.end": "Friday ending time:",
+            "saturday.end": "Saturday ending time:",
+            "saturday.start": "Saturday starting time:",
+            "sunday.end": "Sunday ending time:",
+            "sunday.start": "Sunday starting time:"
         }
     },
     "menu": {
@@ -180,7 +174,13 @@
         }
     },
     "buttons": {
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "save": "Save",
+        "edit": "Edit",
+        "success": "Success!",
+        "select": "Select",
+        "yes": "Yes",
+        "no": "No"
     },
     "info.required.fields": "Fields with * are required.",
     "datatable.no_data": "No data available!"

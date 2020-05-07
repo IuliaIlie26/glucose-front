@@ -31,6 +31,7 @@ import { PatientEditComponent } from './components/patient-edit/patient-edit.com
 import { PatientsListComponent } from './components/patients-list/patients-list.component';
 import { SharedModule } from '../shared/shared.module';
 import {FieldsetModule} from 'primeng/fieldset';
+import {CardModule} from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import {FieldsetModule} from 'primeng/fieldset';
     CommonModule,
     DialogModule,
     HttpClientModule,
+    CardModule,
     ConfirmDialogModule,
     FormsModule,
     CalendarModule,

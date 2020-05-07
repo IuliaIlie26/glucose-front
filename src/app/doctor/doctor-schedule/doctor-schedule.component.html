@@ -1,25 +1,135 @@
 <div class="container-fluid">
-    <div class="col-12">
-        <button (click)="onEdit()">{{'doctor.schedule.edit' | translate}}</button>
-        <div class="row" *ngIf="editMode">
-            <div class="col-12">
-                <div class="row form-group ">
-                    <label class="text-right col-form-label col-2">
-                        {{"doctor.schedule.monday.start" | translate}}
-                    </label>
-                    <div class="col-2 mt-1">
-                        <p-calendar [timeOnly]="true"></p-calendar>
+    <div class="row">
+        <div class="col-12">
+            <p-card>
+                <div class="col-12">
+                    <h5>{{'doctor.schedule.title' | translate}} {{fullName}}</h5>
+                    <div class="row form-group ">
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.monday.start" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true" [(ngModel)]="monday.start"></p-calendar>
+                        </div>
+
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.monday.end" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="monday.end"></p-calendar>
+                        </div>
+                        <span *ngIf="checkIfDayOff(1)"
+                            style="color: green; font-size: medium; font-weight: bold;">{{'doctor.schedule.dayOff' | translate}}</span>
+                    </div>
+                    <div class="row form-group ">
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.tuesday.start" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="tuesday.start"></p-calendar>
+                        </div>
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.tuesday.end" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="tuesday.end"></p-calendar>
+                        </div>
+                        <span *ngIf="checkIfDayOff(2)"
+                            style="color: green; font-size: medium; font-weight: bold;">{{'doctor.schedule.dayOff' | translate}}</span>
+                    </div>
+
+                    <div class="row form-group ">
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.wednesday.start" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="wednesday.start"></p-calendar>
+                        </div>
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.wednesday.end" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="wednesday.end"></p-calendar>
+                        </div>
+                        <span *ngIf="checkIfDayOff(3)"
+                            style="color: green; font-size: medium; font-weight: bold;">{{'doctor.schedule.dayOff' | translate}}</span>
+                    </div>
+
+                    <div class="row form-group ">
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.thursday.start" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="thursday.start"></p-calendar>
+                        </div>
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.thursday.end" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="thursday.end"></p-calendar>
+                        </div>
+                        <span *ngIf="checkIfDayOff(4)"
+                            style="color: green; font-size: medium; font-weight: bold;">{{'doctor.schedule.dayOff' | translate}}</span>
+                    </div>
+
+                    <div class="row form-group ">
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.friday.start" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="friday.start"></p-calendar>
+                        </div>
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.friday.end" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="friday.end"></p-calendar>
+                        </div>
+                        <span *ngIf="checkIfDayOff(5)"
+                            style="color: green; font-size: medium; font-weight: bold;">{{'doctor.schedule.dayOff' | translate}}</span>
+                    </div>
+
+                    <div class="row form-group ">
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.saturday.start" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="saturday.end"></p-calendar>
+                        </div>
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.saturday.end" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="saturday.end"></p-calendar>
+                        </div>
+                        <span *ngIf="checkIfDayOff(6)"
+                            style="color: green; font-size: medium; font-weight: bold;">{{'doctor.schedule.dayOff' | translate}}</span>
+                    </div>
+
+                    <div class="row form-group ">
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.sunday.start" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="sunday.start"></p-calendar>
+                        </div>
+                        <label class="text-right col-form-label col-2">
+                            {{"doctor.schedule.sunday.end" | translate}}
+                        </label>
+                        <div class="col-2 mt-1">
+                            <p-calendar [disabled]="!editMode" [timeOnly]="true"  [(ngModel)]="sunday.end"></p-calendar>
+                        </div>
+                        <span *ngIf="checkIfDayOff(7)"
+                            style="color: green; font-size: medium; font-weight: bold;">{{'doctor.schedule.dayOff' | translate}}</span>
+                    </div>
+                    <div class="col-5 offset-4">
+                        <button (click)="onEdit()" *ngIf="!editMode"
+                            class="btn btn-outline-success my-2 my-sm-0">{{'doctor.schedule.edit' | translate}}</button>
+                        <button type="submit" (click)="saveSchedule()" *ngIf="editMode"
+                            class="btn btn-success my-2 my-sm-0">{{'buttons.save' | translate}}</button>
                     </div>
                 </div>
-                <div class="row form-group ">
-                    <label class="text-right col-form-label col-2">
-                        {{"doctor.schedule.monday.end" | translate}}
-                    </label>
-                    <div class="col-2 mt-1">
-                        <p-calendar [timeOnly]="true"></p-calendar>
-                    </div>
-                </div>
-            </div>
+            </p-card>
         </div>
     </div>
 </div>

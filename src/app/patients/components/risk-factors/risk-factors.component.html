@@ -34,7 +34,7 @@
                     </label>
                     <div class="col-7">
                         <p-dropdown [style]="{'width':'50%'}" [options]="races" [(ngModel)]="selectedRacialOrigin"
-                            optionLabel='label' [placeholder]="translateService.instant('patient.risk.select')"
+                            optionLabel='label' [placeholder]="translateService.instant('buttons.select')"
                             showClear='true'>
                         </p-dropdown>
                     </div>
@@ -47,7 +47,7 @@
                     <div class="col-7">
                         <p-dropdown [style]="{'width':'50%'}" [options]="conceptions"
                             [(ngModel)]="selectedConceptionMethod" optionLabel='label'
-                            [placeholder]="translateService.instant('patient.risk.select')" showClear='true'>
+                            [placeholder]="translateService.instant('buttons.select')" showClear='true'>
                         </p-dropdown>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                     <div class="col-7">
                         <p-dropdown [style]="{'width':'50%'}" [options]="familyHistory"
                             [(ngModel)]="selectedFamilyHistory" optionLabel='label'
-                            [placeholder]="translateService.instant('patient.risk.select')" showClear='true'>
+                            [placeholder]="translateService.instant('buttons.select')" showClear='true'>
                         </p-dropdown>
                     </div>
                 </div>
@@ -67,10 +67,10 @@
                         <sup>*</sup>{{'patient.risk.smoker' | translate}}:
                     </label>
                     <div class="col-7">
-                        <p-radioButton class="mr-2" value="true" [label]="translateService.instant('patient.risk.yes')"
+                        <p-radioButton class="mr-2" value="true" [label]="translateService.instant('buttons.yes')"
                             [(ngModel)]="riskFactors.smoker">
                         </p-radioButton>
-                        <p-radioButton class="mr-2" value="false" [label]="translateService.instant('patient.risk.no')"
+                        <p-radioButton class="mr-2" value="false" [label]="translateService.instant('buttons.no')"
                             [(ngModel)]="riskFactors.smoker">
                         </p-radioButton>
                     </div>
@@ -80,10 +80,10 @@
                         <sup>*</sup>{{'patient.risk.macrosomic.baby' | translate}}:
                     </label>
                     <div class="col-7">
-                        <p-radioButton class="mr-2" value="true" [label]="translateService.instant('patient.risk.yes')"
+                        <p-radioButton class="mr-2" value="true" [label]="translateService.instant('buttons.yes')"
                             [(ngModel)]="riskFactors.macrosomicBaby">
                         </p-radioButton>
-                        <p-radioButton class="mr-2" value="false" [label]="translateService.instant('patient.risk.no')"
+                        <p-radioButton class="mr-2" value="false" [label]="translateService.instant('buttons.no')"
                             [(ngModel)]="riskFactors.macrosomicBaby">
                         </p-radioButton>
                     </div>
@@ -93,10 +93,10 @@
                         <sup>*</sup>{{'patient.risk.previous.gdm' | translate}}:
                     </label>
                     <div class="col-7">
-                        <p-radioButton class="mr-2" value="true" [label]="translateService.instant('patient.risk.yes')"
+                        <p-radioButton class="mr-2" value="true" [label]="translateService.instant('buttons.yes')"
                             [(ngModel)]="riskFactors.previousGDM">
                         </p-radioButton>
-                        <p-radioButton class="mr-2" value="false" [label]="translateService.instant('patient.risk.no')"
+                        <p-radioButton class="mr-2" value="false" [label]="translateService.instant('buttons.no')"
                             [(ngModel)]="riskFactors.previousGDM">
                         </p-radioButton>
                     </div>

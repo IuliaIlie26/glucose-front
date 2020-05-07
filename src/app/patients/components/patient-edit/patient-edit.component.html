@@ -1,4 +1,9 @@
 <div class="container-fluid">
-    <h5 class="titleLabel">{{"patient.edit.title" | translate}} </h5>
-    <app-patient-form *ngIf="selectedPatient" [patient]="selectedPatient" (onSave)="updatePatient($event)"></app-patient-form>
+    <div class="col-12">
+        <p-card>
+            <h5 class="titleLabel">{{"patient.edit.title" | translate}} </h5>
+            <app-patient-form *ngIf="selectedPatient" [patient]="selectedPatient" (onSave)="updatePatient($event)">
+            </app-patient-form>
+        </p-card>
+    </div>
 </div>

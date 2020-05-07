@@ -15,8 +15,8 @@ export class DoctorApiService {
     return this.http.get<DoctorDto>(endpoint + 'getDoctorByUsername?username=' + username, {})
   }
 
-  getDoctorNameAndLastname(username: string): Observable<string> {
-    return this.http.get<string>(endpoint + 'getDoctorNameAndLastname?username=' + username, {})
+  getDoctorNameAndLastname(id: number): Observable<string> {
+    return this.http.get<string>(endpoint + 'getDoctorNameAndLastname?id=' + id, { responseType: 'text' as 'json' })
   }
 
   getDoctorsList(): Observable<DoctorDto[]> {
@@ -33,5 +33,9 @@ export class DoctorApiService {
 
   getScheduleForDoctor(id: number): Observable<DoctorScheduleDto> {
     return this.http.get<DoctorScheduleDto>(endpoint + 'getScheduleForDoctor?id=' + id)
+  }
+
+  saveSchedule(schedule: DoctorScheduleDto): Observable<void> {
+    return this.http.post<void>(endpoint + 'saveSchedule', schedule)
   }
 }

@@ -5,7 +5,6 @@
             "header.personal": "Informatii personale",
             "header.contact": "Contact",
             "header.address": "Adresa",
-            "save": "Salveaza",
             "name": "Nume",
             "lastname": "Prenume",
             "cnp": "Cod numeric personal",
@@ -30,15 +29,11 @@
             "family.history.diabetes": "Istoric de diabet in familie:",
             "smoker": "Fumator",
             "macrosomic.baby": "Copil macrosomic anterior",
-            "previous.gdm": "GDM anterior",
-            "yes": "Da",
-            "no": "Nu",
-            "select": "Selecteaza"
+            "previous.gdm": "GDM anterior"
         },
         "manage": {
             "title": "Administreaza pacienti",
             "subtitle": "Lista pacientilor",
-            "edit": "Editeaza",
             "delete": "Sterge",
             "sensor": {
                 "title": "Administreaza senzorii",
@@ -94,9 +89,6 @@
             "email": "E-Mail",
             "phone": "Telefon",
             "medicalSpeciality": "Specialitate",
-            "save": "Salveaza",
-            "select": "Selecteaza",
-            "success": "Succes!",
             "required": {
                 "name": "Numele este obligatoriu!",
                 "lastname": "Prenumele este obligatoriu!",
@@ -105,22 +97,24 @@
                 "phone": "Numarul de telefon este obligatoriu!"
             }
         },
-        "schedule":{
+        "schedule": {
+            "title": "Programul doctorului: ",
+            "dayOff":"Zi libera",
             "edit": "Editeaza orarul",
-            "monday.start" : "Ora de inceput pentru luni:",
-            "monday.end" : "Ora de sfarsit pentru luni:",
-            "tuesday.start" : "Ora de inceput pentru marti:",
-            "tuesday.end" : "Ora de sfarsit pentru marti:",
-            "wednesday.start" : "Ora de inceput pentru miercuri:",
-            "wednesday.end" : "Ora de sfarsit pentru miercuri:",
-            "thursday.start" : "Ora de inceput pentru joi:",
-            "thursday.end" : "Ora de sfarsit pentru joi:",
-            "friday.start" : "Ora de inceput pentru vineri:",
-            "friday.end" : "Ora de sfarsit pentru vineri:",
-            "saturday.end" : "Ora de sfarsit pentru sambata:",
-            "saturday.start" : "Ora de inceput pentru sambata:",
-            "sunday.end" : "Ora de sfarsit pentru duminica:",
-            "sunday.start" : "Ora de inceput pentru duminica:"
+            "monday.start": "Ora de inceput pentru luni:",
+            "monday.end": "Ora de sfarsit pentru luni:",
+            "tuesday.start": "Ora de inceput pentru marti:",
+            "tuesday.end": "Ora de sfarsit pentru marti:",
+            "wednesday.start": "Ora de inceput pentru miercuri:",
+            "wednesday.end": "Ora de sfarsit pentru miercuri:",
+            "thursday.start": "Ora de inceput pentru joi:",
+            "thursday.end": "Ora de sfarsit pentru joi:",
+            "friday.start": "Ora de inceput pentru vineri:",
+            "friday.end": "Ora de sfarsit pentru vineri:",
+            "saturday.end": "Ora de sfarsit pentru sambata:",
+            "saturday.start": "Ora de inceput pentru sambata:",
+            "sunday.end": "Ora de sfarsit pentru duminica:",
+            "sunday.start": "Ora de inceput pentru duminica:"
         }
     },
     "menu": {
@@ -175,7 +169,13 @@
         }
     },
     "buttons": {
-        "cancel": "Anuleaza"
+        "cancel": "Anuleaza",
+        "save": "Salveaza",
+        "edit": "Editeaza",
+        "yes": "Da",
+        "no": "Nu",
+        "select": "Selecteaza",
+        "success": "Succes!"
     },
     "error": {
         "height.nan": "Inaltimea este numerica!",

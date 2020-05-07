@@ -1,5 +1,6 @@
 import { DailyScheduleDto } from './DailyScheduleDto';
 
 export class DoctorScheduleDto {
-    schedule: Map<number, DailyScheduleDto>;
+    doctorId: number;
+    schedule: Array<DailyScheduleDto> = [];
 }

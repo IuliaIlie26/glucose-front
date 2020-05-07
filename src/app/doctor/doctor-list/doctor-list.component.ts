@@ -45,7 +45,7 @@ export class DoctorListComponent implements OnInit, OnDestroy {
 
   saveDoctor(doctor: DoctorDto) {
     this.doctorApi.saveDoctor(doctor).subscribe(() => {
-      this.toastr.success(this.translateService.instant('doctor.create.success'))
+      this.toastr.success(this.translateService.instant('buttons.success'))
       this.getAllDoctors();
       this.collapsed = true;
     });
