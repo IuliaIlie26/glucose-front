@@ -54,9 +54,12 @@ export class DoctorScheduleComponent implements OnInit, OnDestroy {
   saveSchedule() {
 
     if (this.weeklySchedule.find(day => (day.start == '' && day.end != '') || (day.end == '' && day.start != ''))) {
-      this.toastr.error(this.translateService.instant('doctor.schedule.error.start.end'))
-    } else {
-
+      this.toastr.error(this.translateService.instant('doctor.schedule.error.start.end.required'))
+    }
+    else if (this.weeklySchedule.find(day => day.start > day.end)) {
+      this.toastr.error(this.translateService.instant('doctor.schedule.error.start.after.end'))
+    }
+    else {
       this.doctorSchedule.schedule = this.weeklySchedule;
       this.doctorApi.saveSchedule(this.doctorSchedule).subscribe(() => {
         this.toastr.success(this.translateService.instant('buttons.success'));

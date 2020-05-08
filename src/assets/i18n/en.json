@@ -103,7 +103,10 @@
             "edit": "Edit schedule",
             "start": "{{dayOfWeek}} from:",
             "end": "to:",
-            "error.start.end": "Start and end time are required for selected day!"
+            "error": {
+                "start.end.required": "Start and end time are required for selected day!",
+                "start.before.end": "Start hour cannot be after end hour!"
+            }
         }
     },
     "menu": {

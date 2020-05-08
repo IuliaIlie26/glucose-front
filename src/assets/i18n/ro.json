@@ -103,7 +103,10 @@
             "edit": "Editeaza orarul",
             "start": "{{dayOfWeek}} de la:",
             "end": "la:",
-            "error.start.end": "Orele de inceput si de sfarsit sunt obligatorii pentru zilele de lucru!"
+            "error": {
+                "start.end.required": "Orele de inceput si de sfarsit sunt obligatorii pentru zilele de lucru!",
+                "start.after.end": "Ora de inceput nu poate fi dupa ora de sfarsit!"
+            }
         }
     },
     "menu": {
