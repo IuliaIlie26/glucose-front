@@ -52,11 +52,17 @@ export class DoctorScheduleComponent implements OnInit, OnDestroy {
   }
 
   saveSchedule() {
-    this.doctorSchedule.schedule = this.weeklySchedule;
-    this.doctorApi.saveSchedule(this.doctorSchedule).subscribe(() => {
-      this.toastr.success(this.translateService.instant('buttons.success'));
-      this.editMode = false;
-    })
+
+    if (this.weeklySchedule.find(day => (day.start == '' && day.end != '') || (day.end == '' && day.start != ''))) {
+      this.toastr.error(this.translateService.instant('doctor.schedule.error.start.end'))
+    } else {
+
+      this.doctorSchedule.schedule = this.weeklySchedule;
+      this.doctorApi.saveSchedule(this.doctorSchedule).subscribe(() => {
+        this.toastr.success(this.translateService.instant('buttons.success'));
+        this.editMode = false;
+      })
+    }
   }
 
   getDay(iterator) {

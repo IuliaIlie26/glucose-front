@@ -99,10 +99,11 @@
         },
         "schedule": {
             "title": "Programul doctorului: ",
-            "dayOff":"Zi libera",
+            "dayOff": "Zi libera",
             "edit": "Editeaza orarul",
             "start": "{{dayOfWeek}} de la:",
-            "end": "la:"
+            "end": "la:",
+            "error.start.end": "Orele de inceput si de sfarsit sunt obligatorii pentru zilele de lucru!"
         }
     },
     "menu": {
