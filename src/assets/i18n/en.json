@@ -101,20 +101,8 @@
             "title": "Schedule for doctor: ",
             "dayOff": "Day off",
             "edit": "Edit schedule",
-            "monday.start": "Monday starting time:",
-            "monday.end": "Monday ending time:",
-            "tuesday.start": "Tuesday starting time:",
-            "tuesday.end": "Tuesday ending time:",
-            "wednesday.start": "Wednesday starting time:",
-            "wednesday.end": "Wednesday ending time:",
-            "thursday.start": "Thursday starting time:",
-            "thursday.end": "Thursday ending time:",
-            "friday.start": "Friday starting time:",
-            "friday.end": "Friday ending time:",
-            "saturday.end": "Saturday ending time:",
-            "saturday.start": "Saturday starting time:",
-            "sunday.end": "Sunday ending time:",
-            "sunday.start": "Sunday starting time:"
+            "start": "{{dayOfWeek}} from:",
+            "end": "to:"
         }
     },
     "menu": {
