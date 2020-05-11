@@ -30,6 +30,8 @@
                             class="btn btn-outline-success my-2 my-sm-0">{{'doctor.schedule.edit' | translate}}</button>
                         <button type="submit" (click)="saveSchedule()" *ngIf="editMode"
                             class="btn btn-success my-2 my-sm-0">{{'buttons.save' | translate}}</button>
+                        <button type="button" (click)="cancel()" *ngIf="editMode"
+                            class="btn btn-success my-2 my-sm-0 ml-2">{{'buttons.cancel' | translate}}</button>
                     </div>
                 </div>
             </p-card>

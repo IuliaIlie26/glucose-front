@@ -68,6 +68,10 @@ export class DoctorScheduleComponent implements OnInit, OnDestroy {
     }
   }
 
+  cancel() {
+    this.editMode = false;
+  }
+
   getDay(iterator) {
     return this.daysOfWeek.find(e => e.value == iterator + 1).label;
   }
