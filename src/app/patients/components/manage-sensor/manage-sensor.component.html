@@ -12,7 +12,7 @@
                             {{"patient.create.cnp" | translate}}:
                         </label>
                         <div class="col-6">
-                            <input type="text" maxlength="13" [(ngModel)]="newDistribution.patientCnp" />
+                            <input type="text" maxlength="13" numbersOnly [(ngModel)]="newDistribution.patientCnp" />
                         </div>
                     </div>
 
@@ -34,7 +34,7 @@
                 </div>
             </p-fieldset>
             <br />
-            <p-table [value]="distributionList" dataKey="id" styleClass="ui-table-patients" [rowHover]="true"
+            <p-table #dt [value]="distributionList" dataKey="id" styleClass="ui-table-patients" [rowHover]="true"
                 [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true"
                 currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
                 [globalFilterFields]="['patientName', 'cnp','doctorName']">

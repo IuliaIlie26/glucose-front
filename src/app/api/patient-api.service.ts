@@ -49,4 +49,10 @@ export class PatientApiService {
   getSensorDistribution(): Observable<PatientSensorDistributionDto[]> {
     return this.http.get<PatientSensorDistributionDto[]>(endpoint + 'getSensorDistribution');
   }
+
+  getPatientNameByCnp(cnp: string): Observable<string>
+  {
+    return this.http.get<string>(endpoint + 'getPatientNameByCnp?cnp=' + cnp, { responseType: 'text' as 'json' })
+  }
+
 }

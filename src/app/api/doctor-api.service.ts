@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { DoctorDto } from '../shared/models/DoctorDto';
 import { DoctorScheduleDto } from '../doctor/model/DoctorScheduleDto';
+import { ConsultationDto } from '../shared/models/ConsultationDto';
 const endpoint = 'http://localhost:8080/api/doctor/';
 @Injectable({
   providedIn: 'root'

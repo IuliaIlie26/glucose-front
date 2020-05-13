@@ -75,7 +75,7 @@
         "edit.success": "Datele au fost actualizate cu succes!",
         "name": "Nume",
         "lastname": "Prenume",
-        "speciality": "Specialitate",
+        "speciality": "Specializare",
         "email": "E-Mail",
         "phone.number": "Telefon",
         "list": {
@@ -88,7 +88,7 @@
             "lastname": "Prenume",
             "email": "E-Mail",
             "phone": "Telefon",
-            "medicalSpeciality": "Specialitate",
+            "medicalSpeciality": "Specializare",
             "required": {
                 "name": "Numele este obligatoriu!",
                 "lastname": "Prenumele este obligatoriu!",
@@ -109,6 +109,19 @@
             }
         }
     },
+    "consultations": {
+        "create": {
+            "title": "Adauga o consultatie noua",
+            "check": "Verifica CNP",
+            "patientName": "Nume pacient",
+            "speciality": "Specializare",
+            "doctor" : "Doctor",
+            "reserve": "Rezerveaza",
+            "dateRange" : "Interval date",
+            "start": "Ora",
+            "date": "Data"
+        }
+    },
     "menu": {
         "home": "Acasa",
         "patients": "Pacienti",
@@ -125,7 +138,6 @@
         },
         "patients.alerts": "Alerte de pacienti",
         "search": {
-            "search": "Cauta",
             "global": "Cautare globala",
             "byName": "Cauta dupa prenume",
             "byLastName": "Cauta dupa nume",
@@ -167,7 +179,8 @@
         "yes": "Da",
         "no": "Nu",
         "select": "Selecteaza",
-        "success": "Succes!"
+        "success": "Succes!",
+        "search" : "Cauta"
     },
     "error": {
         "height.nan": "Inaltimea este numerica!",

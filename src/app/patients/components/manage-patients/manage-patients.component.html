@@ -4,7 +4,7 @@
             <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000"></p-confirmDialog>
             <p-messages [value]="message"></p-messages>
             <div class="row col-12">
-                <p-table [value]="patients" dataKey="id" styleClass="ui-table-patients" [rowHover]="true"
+                <p-table #dt [value]="patients" dataKey="id" styleClass="ui-table-patients" [rowHover]="true"
                     [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true"
                     currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
                     [globalFilterFields]="['name','lastname','cnp','fullAddress', 'email']">

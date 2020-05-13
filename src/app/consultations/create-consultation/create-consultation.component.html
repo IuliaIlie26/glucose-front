@@ -1,1 +1,116 @@
-<p>create-consultation works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <p-card>
+                <h5>{{'consultations.create.title' | translate}}</h5>
+                <div class="col-12">
+                    <div class="row form-group ">
+                        <label class="text-right col-form-label col-2">
+                            <sup>*</sup> {{"patient.create.cnp" | translate}}:
+                        </label>
+                        <div class="col-4">
+                            <input type="text" numbersOnly maxlength="13" [(ngModel)]="patientCnp" />
+                            <button [disabled]="patientCnp.length != 13"
+                                class="btn btn-outline-success my-2 my-sm-0 ml-4"
+                                (click)="checkCnp()">{{"consultations.create.check" | translate}}
+                            </button>
+                        </div>
+                        <label class="text-right col-form-label col-1">
+                            {{"consultations.create.patientName" | translate}}:
+                        </label>
+                        <div class="col-5">
+                            <input style="width: 75%;" type="text" disabled='true' [placeholder]="pacientName" />
+                        </div>
+                    </div>
+                    <div class="row form-group ">
+                        <label class="text-right col-form-label col-2">
+                            <sup>*</sup> {{"consultations.create.speciality" | translate}}:
+                        </label>
+                        <div class="col-6">
+                            <p-dropdown [options]="specialities" filter='true' [(ngModel)]="selectedSpeciality"
+                                [style]="{'width':'50%'}" [showClear]="true" optionLabel="label"
+                                [placeholder]="selectedSpeciality ? selectedSpeciality.label : translateService.instant('buttons.select')">
+                                <ng-template let-option pTemplate="item">
+                                    <span>{{option.label}}</span>
+                                </ng-template>
+                            </p-dropdown>
+                        </div>
+                    </div>
+                    <div class="row form-group ">
+                        <label class="text-right col-form-label col-2">
+                            <sup>*</sup> {{"consultations.create.dateRange" | translate}}:
+                        </label>
+                        <div class="col-5">
+                            <p-calendar [style]="{'width':'60%'}" [(ngModel)]="rangeDates" selectionMode="range"
+                                [readonlyInput]="true" [minDate]="today"></p-calendar>
+                        </div>
+                    </div>
+                    <div class="row col-12 offset-5">
+                        <button class="btn btn-success my-2 my-sm-0 "
+                            (click)="findConsultationSpots()">{{"buttons.search" | translate}}
+                        </button>
+                    </div>
+                </div>
+                <div class="row mt-3" *ngIf="spots">
+                    <p-table #dt [value]="spots" dataKey="id" styleClass="ui-table-doctors" [rowHover]="true"
+                        [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true"
+                        currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
+                        [globalFilterFields]="['doctorName','doctorLastName']">
+                        <ng-template pTemplate="caption">
+                            <span style="color: green;">{{"doctor.list.subtitle" | translate}}</span>
+                            <div class="ui-table-globalfilter-container">
+                                <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                                    [placeholder]="'menu.search.global' | translate" />
+                            </div>
+                        </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th pSortableColumn="name">{{'doctor.name'|translate}}
+                                    <p-sortIcon field="name"></p-sortIcon>
+                                </th>
+                                <th pSortableColumn="lastname">{{'doctor.lastname'|translate}}
+                                    <p-sortIcon field="lastname"></p-sortIcon>
+                                </th>
+                                <th>{{'doctor.speciality'|translate}} </th>
+                                <th>{{'consultations.create.date'|translate}} </th>
+                                <th>{{'consultations.create.start'|translate}} </th>
+                                <th></th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-spot>
+                            <tr class="ui-selectable-row">
+                                <td>
+                                    <span style="vertical-align: middle; margin-left: .5em"> {{spot.doctorName}}</span>
+                                </td>
+                                <td>
+                                    <span
+                                        style="vertical-align: middle; margin-left: .5em">{{spot.doctorLastName}}</span>
+                                </td>
+                                <td>
+                                    <span style="vertical-align: middle; margin-left: .5em">{{spot.speciality}}</span>
+                                </td>
+                                <td>
+                                    <span style="vertical-align: middle; margin-left: .5em">{{spot.date}}</span>
+                                </td>
+                                <td>
+                                    <span style="vertical-align: middle; margin-left: .5em">{{spot.start}}</span>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success my-2 my-sm-0"
+                                        (click)="reserve(spot)">{{'consultations.create.reserve' | translate}}</button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="emptymessage">
+                            <tr>
+                                <td colspan="6" style="text-align:center; color:indianred;">
+                                    {{'datatable.no_data' | translate}}
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </p-card>
+        </div>
+    </div>
+</div>

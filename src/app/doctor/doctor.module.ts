@@ -8,14 +8,13 @@ import { TableModule, ButtonModule, TooltipModule, DropdownModule, InputTextModu
 import { ToastrModule } from 'ngx-toastr';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
-import { DoctorCreateComponent } from './doctor-create/doctor-create.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import {CardModule} from 'primeng/card';
 
 @NgModule({
-  declarations: [SettingsComponent, DoctorScheduleComponent, DoctorListComponent, DoctorCreateComponent],
+  declarations: [SettingsComponent, DoctorScheduleComponent, DoctorListComponent],
   imports: [
     CommonModule,
     DialogModule,

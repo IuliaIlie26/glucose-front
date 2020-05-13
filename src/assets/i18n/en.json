@@ -109,6 +109,19 @@
             }
         }
     },
+    "consultations": {
+        "create": {
+            "title": "Add a new consultation",
+            "check": "Check patient",
+            "patientName": "Patient's name",
+            "speciality": "Speciality",
+            "doctor" : "Doctor",
+            "reserve": "Reserve",
+            "dateRange": "Date range",
+            "start": "Time",
+            "date": "Date"
+        }
+    },
     "menu": {
         "home": "Home",
         "patients": "Patients",
@@ -125,7 +138,6 @@
         },
         "patients.alerts": "Patient Alerts",
         "search": {
-            "search": "Search",
             "global": "Global search",
             "byName": "Search by name",
             "byLastName": "Search by last name",
@@ -172,7 +184,8 @@
         "success": "Success!",
         "select": "Select",
         "yes": "Yes",
-        "no": "No"
+        "no": "No",
+        "search" :"Search"
     },
     "info.required.fields": "Fields with * are required.",
     "datatable.no_data": "No data available!"
