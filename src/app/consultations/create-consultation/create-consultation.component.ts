@@ -7,8 +7,8 @@ import { ConsultationsApiService } from 'src/app/api/consultations-api.service';
 import { PatientApiService } from 'src/app/api/patient-api.service';
 import { ToastrService } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
-import { ConsultationFilterDto } from 'src/app/shared/models/ConsultationDto';
-import { ConsultationDto } from 'src/app/shared/models/ConsultationSpotDto';
+import { ConsultationFilterDto } from 'src/app/shared/models/ConsultationFilterDto';
+import { ConsultationDto } from 'src/app/shared/models/ConsultationDto';
 
 @Component({
   selector: 'app-create-consultation',

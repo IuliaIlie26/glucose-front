@@ -115,12 +115,22 @@
             "check": "Verifica CNP",
             "patientName": "Nume pacient",
             "speciality": "Specializare",
-            "doctor" : "Doctor",
+            "doctor": "Doctor",
             "reserve": "Rezerveaza",
-            "dateRange" : "Interval date",
+            "dateRange": "Interval date",
             "start": "Ora",
             "date": "Data",
             "checkCnp": "Inainte de cautare, verifica daca pacientul exista in sistem!"
+        },
+        "manage": {
+            "subtitle": "Lista consultatiilor",
+            "patient.name":"Prenumele pacientului",
+            "patient.lastname":"Numele pacientului",
+            "doctor.name":"Prenumele doctorului",
+            "doctor.lastname":"Numele doctorului",
+            "patient.cnp": "CNP-ul pacientului",
+            "speciality":"Specializarea",
+            "date": "Data"
         }
     },
     "menu": {
@@ -151,7 +161,8 @@
             "byDoctorName": "Cauta dupa doctor",
             "bySensorId": "Cauta dupa seria senzorului",
             "byActivationDate": "Cauta dupa data activarii",
-            "byDeactivationDate": "Cauta dupa data deactivarii"
+            "byDeactivationDate": "Cauta dupa data deactivarii",
+            "byDate":"Cauta dupa data"
         },
         "settings": "Setari",
         "logout": "Delogare",
@@ -181,7 +192,8 @@
         "no": "Nu",
         "select": "Selecteaza",
         "success": "Succes!",
-        "search" : "Cauta"
+        "search": "Cauta",
+        "delete": "Sterge"
     },
     "error": {
         "height.nan": "Inaltimea este numerica!",

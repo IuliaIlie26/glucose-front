@@ -121,6 +121,16 @@
             "start": "Time",
             "date": "Date",
             "checkCnp": "Please check if the patient is in the system first!"
+        },
+        "manage": {
+            "subtitle": "Consultations list",
+            "patient.name":"Patient's name",
+            "patient.lastname":"Patient's lastname",
+            "doctor.name":"Doctor's name",
+            "doctor.lastname":"Doctor's lastname",
+            "patient.cnp": "Patient's personal number",
+            "speciality":"Speciality",
+            "date": "Date"
         }
     },
     "menu": {
@@ -151,7 +161,8 @@
             "byDoctorName": "Search by doctor",
             "bySensorId": "Search by sensor serial",
             "byActivationDate": "Search by activation date",
-            "byDeactivationDate": "Search by deactivation date"
+            "byDeactivationDate": "Search by deactivation date",
+            "byDate": "Search by date"
         },
         "settings": "Settings",
         "logout": "Logout",
@@ -186,7 +197,8 @@
         "select": "Select",
         "yes": "Yes",
         "no": "No",
-        "search" :"Search"
+        "search" :"Search",
+        "delete": "Delete"
     },
     "info.required.fields": "Fields with * are required.",
     "datatable.no_data": "No data available!"
