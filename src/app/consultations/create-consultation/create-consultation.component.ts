@@ -7,8 +7,9 @@ import { ConsultationsApiService } from 'src/app/api/consultations-api.service';
 import { PatientApiService } from 'src/app/api/patient-api.service';
 import { ToastrService } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
-import { ConsultationDto } from 'src/app/shared/models/ConsultationDto';
-import { ConsultationSpotDto } from 'src/app/shared/models/ConsultationSpotDto';
+import { ConsultationFilterDto } from 'src/app/shared/models/ConsultationDto';
+import { ConsultationDto } from 'src/app/shared/models/ConsultationSpotDto';
+
 @Component({
   selector: 'app-create-consultation',
   templateUrl: './create-consultation.component.html',
@@ -41,29 +42,32 @@ export class CreateConsultationComponent implements OnInit, OnDestroy {
     this.patientApi.getPatientNameByCnp(this.patientCnp).subscribe(name => this.pacientName = name);
   }
 
-  reserve(spot: ConsultationSpotDto) {
-    let consultation= new ConsultationDto();
-    consultation.day =spot.date;
-    consultation.start=spot.start
-    consultation.speciality=spot.speciality
-    consultation.doctorId =spot.doctorId;
-    consultation.patientCnp=this.patientCnp;
-    this.consultationApi
+  showTable = true;
+
+  reserve(spot: ConsultationDto) {
+    spot.patientCnp = this.patientCnp;
+    this.consultationApi.reserve(spot).subscribe(() => {
+      this.toastr.success(this.translateService.instant('buttons.success'));
+      this.showTable = false;
+    });
 
   }
 
-  consultationFilter = new ConsultationDto();
+  consultationFilter = new ConsultationFilterDto();
 
-  spots: ConsultationSpotDto[];
+  spots: ConsultationDto[];
 
   findConsultationSpots() {
+
     if (!this.patientCnp || !this.selectedSpeciality || !this.rangeDates) {
       this.toastr.error(this.translateService.instant('error.fields.required'));
+    } else if (this.pacientName == '') {
+      this.toastr.error(this.translateService.instant('consultations.create.checkCnp'));
     } else {
-      this.consultationFilter.start = this.pipe.transform(this.rangeDates[0], 'yyyy-MM-dd');
-      this.consultationFilter.end = this.pipe.transform(this.rangeDates[1], 'yyyy-MM-dd');
+      this.consultationFilter.startDate = this.pipe.transform(this.rangeDates[0], 'yyyy-MM-dd');
+      this.consultationFilter.endDate = this.pipe.transform(this.rangeDates[1], 'yyyy-MM-dd');
       this.consultationFilter.speciality = this.selectedSpeciality.label;
-
+      this.showTable = true;
       this.consultationApi.findConsultationSpots(this.consultationFilter).subscribe(doctors => this.spots = doctors);
     }
   }

@@ -1,9 +1,6 @@
-export class ConsultationDto {
+export class ConsultationFilterDto {
 
-    doctorId: number;
-    patientCnp: string;
-    start: string;
-    end: string;
-    day: string;
+    startDate: string;
+    endDate: string;
     speciality: string;
 }

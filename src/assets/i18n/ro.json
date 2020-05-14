@@ -119,7 +119,8 @@
             "reserve": "Rezerveaza",
             "dateRange" : "Interval date",
             "start": "Ora",
-            "date": "Data"
+            "date": "Data",
+            "checkCnp": "Inainte de cautare, verifica daca pacientul exista in sistem!"
         }
     },
     "menu": {

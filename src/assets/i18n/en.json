@@ -119,7 +119,8 @@
             "reserve": "Reserve",
             "dateRange": "Date range",
             "start": "Time",
-            "date": "Date"
+            "date": "Date",
+            "checkCnp": "Please check if the patient is in the system first!"
         }
     },
     "menu": {

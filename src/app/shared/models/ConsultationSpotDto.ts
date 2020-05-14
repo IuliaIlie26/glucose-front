@@ -1,8 +1,9 @@
-export class ConsultationSpotDto {
+export class ConsultationDto {
     doctorName: string;
     doctorLastName: string
     speciality: string
     date: string
-    start: string
+    startTime: string
     doctorId: number;
+    patientCnp: string;
 }
