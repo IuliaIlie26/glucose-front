@@ -37,7 +37,6 @@
                             <p-sortIcon field="date"></p-sortIcon>
                         </th>
                         <th></th>
-                        <th></th>
                     </tr>
                     <tr>
                         <th>
@@ -59,15 +58,13 @@
                             <input pInputText type="text" style="width: fit-content;"
                                 (input)="dt.filter($event.target.value, 'doctorName', 'startsWith')"
                                 [placeholder]="'menu.search.byName' | translate" class="ui-column-filter">
-                        </th> <th>
+                        </th>
+                        <th>
                             <input pInputText type="text" style="width: fit-content;"
                                 (input)="dt.filter($event.target.value, 'doctorLastName', 'startsWith')"
                                 [placeholder]="'menu.search.byLastName' | translate" class="ui-column-filter">
                         </th>
-                        <th>
-                        </th>
-                        <th>
-                        </th>
+                        <th></th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -99,11 +96,6 @@
                             <span style="vertical-align: middle; margin-left: .5em">{{consultation.date}}</span>
                         </td>
 
-                        <td>
-                            <button pButton type="button" class="ui-button-secondary" icon="fa fa-edit"
-                                [pTooltip]="'buttons.edit' | translate" tooltipPosition="top"
-                                (click)="edit(consultation)"></button>
-                        </td>
                         <td>
                             <button pButton type="button" class="ui-button-secondary" icon="fa fa-trash"
                                 [pTooltip]="'buttons.delete' | translate" tooltipPosition="top"

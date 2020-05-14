@@ -32,10 +32,6 @@ export class ManageConsultationsComponent implements OnInit, OnDestroy {
     this.consultationApi.getAllConsultations().subscribe(list => this.consultationList = list)
   }
 
-  edit(consultation) {
-
-  }
-
   delete(consultation) {
     this.consultationApi.delete(consultation).subscribe(() => {
       this.toastr.success(this.translateService.instant("buttons.success"));
