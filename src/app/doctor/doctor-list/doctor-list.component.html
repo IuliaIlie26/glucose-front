@@ -3,7 +3,8 @@
         <p-card>
             <p-fieldset [legend]="'doctor.list.create.legend' | translate" [toggleable]="true"
                 [(collapsed)]="collapsed">
-                <app-doctor-form *ngIf="newDoctor" [doctor]="newDoctor" (onSave)="saveDoctor($event)"></app-doctor-form>
+                <app-doctor-form *ngIf="newDoctor" [doctor]="newDoctor" (onSave)="saveDoctor($event)">
+                </app-doctor-form>
             </p-fieldset>
             <div class="row mt-3">
                 <p-table #dt [value]="doctorList" dataKey="id" styleClass="ui-table-doctors" [rowHover]="true"

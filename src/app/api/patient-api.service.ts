@@ -12,6 +12,10 @@ const endpoint = 'http://localhost:8080/api/patient/';
 })
 export class PatientApiService {
 
+  getRiskFactors(patientId: number): Observable<RiskFactorsDto> {
+    return this.http.get<RiskFactorsDto>(endpoint + 'getFullFormatAgeById?id=' + patientId)
+  }
+
   constructor(private http: HttpClient) { }
 
   savePatient(dto: PatientDto): Observable<void> {
@@ -50,8 +54,7 @@ export class PatientApiService {
     return this.http.get<PatientSensorDistributionDto[]>(endpoint + 'getSensorDistribution');
   }
 
-  getPatientNameByCnp(cnp: string): Observable<string>
-  {
+  getPatientNameByCnp(cnp: string): Observable<string> {
     return this.http.get<string>(endpoint + 'getPatientNameByCnp?cnp=' + cnp, { responseType: 'text' as 'json' })
   }
 

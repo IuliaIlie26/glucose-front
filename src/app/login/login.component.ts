@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem("loggedUsername", this.userDto.username);
       let permission = [];
       permission.push(role);
-      console.log(role)
       this.permissionService.loadPermissions(permission);
       this.route.navigate(['/home']);
     })

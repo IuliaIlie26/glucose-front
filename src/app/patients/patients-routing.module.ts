@@ -7,6 +7,7 @@ import { ManagePatientsComponent } from './components/manage-patients/manage-pat
 import { ManageSensorComponent } from './components/manage-sensor/manage-sensor.component';
 import { PatientEditComponent } from './components/patient-edit/patient-edit.component';
 import { PatientsListComponent } from './components/patients-list/patients-list.component';
+import { PatientChartComponent } from './components/patient-chart/patient-chart.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
     path: 'patient/create-patient',
     component: CreatePatientComponent,
   }, {
-    path: 'patient/create-patient/risk-factors/:patientId',
+    path: 'patient/risk-factors/:patientId',
     component: RiskFactorsComponent
   },
   {
@@ -34,6 +35,9 @@ const routes: Routes = [
   {
     path: 'patient/patients-list',
     component: PatientsListComponent
+  }, {
+    path: 'patient/medical-chart/:patientId',
+    component: PatientChartComponent
   }
 ];
 

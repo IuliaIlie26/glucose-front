@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="col-12">
+        <p-card *ngIf="selectedPatient">
+            <h4>{{'patient.medical.chart.title' | translate}}</h4>
+            <div class="col-10">
+                <div class="row form-group">
+                    <label>{{'patient.medical.chart.name' | translate}}: {{selectedPatient.name}}
+                        {{selectedPatient.lastname}}</label>
+                </div>
+                <div class="row form-group">
+                    <label>{{'patient.medical.chart.age' | translate}}: {{age}} </label>
+                </div>
+                <div class="row form-group">
+                    <label>{{'patient.medical.chart.pregnant' | translate}}: </label>
+                    <p-radioButton [disabled]='!editMode' class="ml-2 mr-2" value="true"
+                        [label]="translateService.instant('buttons.yes')">
+                    </p-radioButton>
+                    <p-radioButton [disabled]='!editMode' class="mr-2" value="false"
+                        [label]="translateService.instant('buttons.no')">
+                    </p-radioButton>
+                </div>
+                <div class="row form-group">
+                    <label>{{'patient.medical.chart.due.date' | translate}}: </label>
+                    <div class="ui-g-12 ui-md-4">
+                        <p-calendar class="ui-calendar" [disabled]='!editMode' [showIcon]="true" icon="fa fa-calendar"
+                            [monthNavigator]="true" [yearNavigator]="true" [maxDate]="maxDate" yearRange="1950:2020"
+                            dateFormat="dd/mm/yy">
+                        </p-calendar>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label>{{'patient.medical.chart.pregancy.week' | translate}}: </label>
+                </div>
+                <div class="row form-group">
+                    <label>{{'patient.medical.chart.risk.factors' | translate}}: </label>
+                    <span style="color: indianred; margin-left: 5px; font-weight: bold;"
+                        *ngIf="!riskFactors">{{'patient.medical.chart.setRiskFactors' | translate}}</span>
+                    <div>
+                        <button type="button" class="btn btn-outline-success ml-3"
+                            (click)="openChart(patient.id)">{{'patient.medical.chart.addrisk' | translate}}</button>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <label>{{'patient.medical.chart.score' | translate}}: {{score}}</label>
+                </div>
+                <div class="row form-group">
+                    <label>{{'patient.medical.chart.sensor' | translate}}:</label>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>

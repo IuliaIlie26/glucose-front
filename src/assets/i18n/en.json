@@ -68,6 +68,19 @@
             "city": "City is required!",
             "country": "Country is required!",
             "region": "Region is required!"
+        },
+        "medical.chart": {
+            "title": "Patient chart",
+            "name": "Patient's name",
+            "age": "Patient's age",
+            "pregnant": "Pregnant",
+            "pregancy.week": "Pregnancy week",
+            "due.date":"Due date",
+            "risk.factors": "Risk factors",
+            "score": "Risk score",
+            "setRiskFactors": "Risk factors chart is not filled!",
+            "addrisk":"View risk factors",
+            "sensor": "Sensor's status"
         }
     },
     "doctor": {
@@ -107,6 +120,10 @@
                 "start.end.required": "Start and end time are required for selected day!",
                 "start.before.end": "Start hour cannot be after end hour!"
             }
+        },
+        "my.patients":{
+            "list": "My patients list",
+            "view.chart" :"View chart"
         }
     },
     "consultations": {

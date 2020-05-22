@@ -68,6 +68,20 @@
             "city": "Orasul este obligatoriu!",
             "country": "Tara este obligatorie!",
             "region": "Judetul este obligatoriu!"
+        },
+        "medical.chart": {
+            "title": "Fisa pacientului",
+            "name": "Numele pacientului",
+            "age": "Varsta pacientului",
+            "pregnant": "Insarcinata",
+            "pregancy.week": "Saptamana de sarcina",
+            "due.date": "Termen",
+            "risk.factors": "Factori de risc",
+            "score": "Scor de risc",
+            "setRiskFactors": "Fisa factorilor de risc nu este completata!",
+            "addrisk":"Vezi factori de risc",
+            "sensor": "Statusul senzorului"
+
         }
     },
     "doctor": {
@@ -107,6 +121,10 @@
                 "start.end.required": "Orele de inceput si de sfarsit sunt obligatorii pentru zilele de lucru!",
                 "start.after.end": "Ora de inceput nu poate fi dupa ora de sfarsit!"
             }
+        },
+        "my.patients": {
+            "list": "Lista mea de pacienti",
+            "view.chart": "Vezi fisa"
         }
     },
     "consultations": {
@@ -124,12 +142,12 @@
         },
         "manage": {
             "subtitle": "Lista consultatiilor",
-            "patient.name":"Prenumele pacientului",
-            "patient.lastname":"Numele pacientului",
-            "doctor.name":"Prenumele doctorului",
-            "doctor.lastname":"Numele doctorului",
+            "patient.name": "Prenumele pacientului",
+            "patient.lastname": "Numele pacientului",
+            "doctor.name": "Prenumele doctorului",
+            "doctor.lastname": "Numele doctorului",
             "patient.cnp": "CNP-ul pacientului",
-            "speciality":"Specializarea",
+            "speciality": "Specializarea",
             "date": "Data"
         }
     },
@@ -162,7 +180,7 @@
             "bySensorId": "Cauta dupa seria senzorului",
             "byActivationDate": "Cauta dupa data activarii",
             "byDeactivationDate": "Cauta dupa data deactivarii",
-            "byDate":"Cauta dupa data"
+            "byDate": "Cauta dupa data"
         },
         "settings": "Setari",
         "logout": "Delogare",

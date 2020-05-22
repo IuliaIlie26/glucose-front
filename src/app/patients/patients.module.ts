@@ -32,6 +32,7 @@ import { PatientsListComponent } from './components/patients-list/patients-list.
 import { SharedModule } from '../shared/shared.module';
 import {FieldsetModule} from 'primeng/fieldset';
 import {CardModule} from 'primeng/card';
+import { PatientChartComponent } from './components/patient-chart/patient-chart.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {CardModule} from 'primeng/card';
     ManagePatientsComponent,
     ManageSensorComponent,
     PatientEditComponent,
-    PatientsListComponent],
+    PatientsListComponent,
+    PatientChartComponent],
   imports: [
     CommonModule,
     DialogModule,
