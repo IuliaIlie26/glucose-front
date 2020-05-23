@@ -4,47 +4,93 @@
             <h4>{{'patient.medical.chart.title' | translate}}</h4>
             <div class="col-10">
                 <div class="row form-group">
-                    <label>{{'patient.medical.chart.name' | translate}}: {{selectedPatient.name}}
-                        {{selectedPatient.lastname}}</label>
+                    <div class="col-2 text-right">
+                        <label>{{'patient.medical.chart.name' | translate}}: </label>
+                    </div>
+                    <span>{{selectedPatient.name}}
+                        {{selectedPatient.lastname}}</span>
                 </div>
                 <div class="row form-group">
-                    <label>{{'patient.medical.chart.age' | translate}}: {{age}} </label>
+                    <div class="col-2 text-right">
+                        <label>{{'patient.medical.chart.age' | translate}}: </label>
+                    </div>
+                    <span> {{age}}</span>
                 </div>
                 <div class="row form-group">
-                    <label>{{'patient.medical.chart.pregnant' | translate}}: </label>
-                    <p-radioButton [disabled]='!editMode' class="ml-2 mr-2" value="true"
-                        [label]="translateService.instant('buttons.yes')">
-                    </p-radioButton>
-                    <p-radioButton [disabled]='!editMode' class="mr-2" value="false"
-                        [label]="translateService.instant('buttons.no')">
-                    </p-radioButton>
+                    <div class="col-2 text-right">
+                        <label>{{'patient.medical.chart.pregnant' | translate}}: </label>
+                    </div>
+                    <span>{{isPregnant}}</span>
                 </div>
                 <div class="row form-group">
-                    <label>{{'patient.medical.chart.due.date' | translate}}: </label>
+                    <div class="col-2 text-right">
+                        <label class="mt-3">{{'patient.medical.chart.due.date' | translate}}: </label>
+                    </div>
                     <div class="ui-g-12 ui-md-4">
                         <p-calendar class="ui-calendar" [disabled]='!editMode' [showIcon]="true" icon="fa fa-calendar"
-                            [monthNavigator]="true" [yearNavigator]="true" [maxDate]="maxDate" yearRange="1950:2020"
-                            dateFormat="dd/mm/yy">
+                            [monthNavigator]="true" [yearNavigator]="true" [minDate]="today" [maxDate]="maxDate"
+                            yearRange="1950:2030" dateFormat="dd/mm/yy" [(ngModel)]="selectedDueDate">
                         </p-calendar>
+
+                        <button *ngIf="!editMode" type="button" class="btn btn-outline-success"
+                            (click)="editMode = true">{{'buttons.edit' | translate}}</button>
+                        <button *ngIf="editMode" type="button" class="btn btn-outline-success"
+                            (click)="savePregnancyInfo()">{{'buttons.save' | translate}}</button>
                     </div>
                 </div>
-                <div class="row form-group">
-                    <label>{{'patient.medical.chart.pregancy.week' | translate}}: </label>
+                <div class="row form-group mt-3">
+                    <div class="col-2 text-right">
+                        <label>{{'patient.medical.chart.pregancy.week' | translate}}: </label>
+                    </div>
+                    <span>
+                        {{week}}
+                    </span>
                 </div>
                 <div class="row form-group">
-                    <label>{{'patient.medical.chart.risk.factors' | translate}}: </label>
+                    <div class="col-2 text-right mt-2">
+                        <label>{{'patient.medical.chart.score' | translate}}:</label>
+                    </div>
                     <span style="color: indianred; margin-left: 5px; font-weight: bold;"
-                        *ngIf="!riskFactors">{{'patient.medical.chart.setRiskFactors' | translate}}</span>
-                    <div>
-                        <button type="button" class="btn btn-outline-success ml-3"
-                            (click)="openChart(patient.id)">{{'patient.medical.chart.addrisk' | translate}}</button>
+                        *ngIf="riskFactors && !riskFactors.patientId">{{'patient.medical.chart.setRiskFactors' | translate}}</span>
+                    <ul *ngIf="riskScore">
+                        <li class="row col-10">
+                            <span class="mt-2">
+                                {{'patient.medical.chart.naylorScore' |translate}} - {{riskScore.naylorScore}}</span>
+                        </li>
+                        <li class="row col-10">
+                            <span class="mt-2">
+                                {{'patient.medical.chart.caliskanScore' |translate}} -
+                                {{riskScore.caliskanScore}}</span>
+                        </li>
+                        <li class="row col-10">
+                            <span class="mt-2">
+                                {{'patient.medical.chart.vanLeeuwenScore' |translate}} -
+                                {{riskScore.vanLeeuwenScore}}</span>
+                        </li>
+                        <li class="row col-10">
+                            <span class="mt-2">
+                                {{'patient.medical.chart.teedeScore' |translate}} - {{riskScore.teedeScore}}</span>
+                        </li>
+                        <li class="row col-10">
+                            <span class="mt-2">
+                                {{'patient.medical.chart.nandaScore' |translate}} - {{riskScore.nandaScore}}</span>
+                        </li>
+                        <div>
+                            <button type="button" class="btn btn-outline-success mt-3"
+                                (click)="openChart()">{{'patient.medical.chart.addrisk' | translate}}</button>
+                        </div>
+                    </ul>
+                </div>
+                <div class="row form-group">
+                    <div class="col-2 text-right">
+                        <label>{{'patient.medical.chart.bmi' | translate}}:</label>
                     </div>
+                    <span>{{bmi}}</span>
                 </div>
                 <div class="row form-group">
-                    <label>{{'patient.medical.chart.score' | translate}}: {{score}}</label>
-                </div>
-                <div class="row form-group">
-                    <label>{{'patient.medical.chart.sensor' | translate}}:</label>
+                    <div class="col-2 text-right">
+                        <label>{{'patient.medical.chart.sensor' | translate}}:</label>
+                    </div>
                 </div>
             </div>
         </p-card>

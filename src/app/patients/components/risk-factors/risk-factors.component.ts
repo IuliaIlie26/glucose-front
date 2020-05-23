@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RiskFactorsDto } from 'src/app/shared/models/PatientRiskFactorsDto';
 import { PatientApiService } from 'src/app/api/patient-api.service';
 import { ToastrService } from 'ngx-toastr';
@@ -17,9 +17,9 @@ import { SelectItem } from 'primeng/primeng';
 })
 export class RiskFactorsComponent implements OnInit, OnDestroy {
 
-  constructor(private patientApi: PatientApiService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, public translateService: TranslateService) { }
+  constructor(private patientApi: PatientApiService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, public translateService: TranslateService, private router: Router) { }
 
-  riskFactors = new RiskFactorsDto();
+  riskFactors: RiskFactorsDto;
   patientId: string;
   age: string;
   races: Array<any> = [];
@@ -27,9 +27,26 @@ export class RiskFactorsComponent implements OnInit, OnDestroy {
   familyHistory: Array<any> = [];
   languageSubscription: Subscription;
 
+  selectedConceptionMethod: SelectItem;
+  selectedRacialOrigin: SelectItem;
+  selectedFamilyHistory: SelectItem;
+
   ngOnInit() {
     this.patientId = this.activatedRoute.snapshot.paramMap.get('patientId');
     this.patientApi.getFullFormatAgeById(+this.patientId).subscribe(age => this.age = age);
+    this.patientApi.getRiskFactors(+this.patientId).subscribe(risk => {
+      this.riskFactors = risk;
+      if (this.riskFactors.conceptionMethod) {
+        this.selectedConceptionMethod = { 'label': this.riskFactors.conceptionMethod, 'value': this.riskFactors.conceptionMethod }
+      }
+      if (this.riskFactors.familyHistoryOfDiabetes) {
+        this.selectedFamilyHistory = { 'label': this.riskFactors.familyHistoryOfDiabetes, 'value': this.riskFactors.familyHistoryOfDiabetes }
+      }
+      if (this.riskFactors.racialOrigin) {
+        this.selectedRacialOrigin = { 'label': this.riskFactors.racialOrigin, 'value': this.riskFactors.racialOrigin }
+      }
+
+    })
     this.setDropdownValues(this.translateService.defaultLang);
     this.translateOnLangChange();
   }
@@ -47,9 +64,6 @@ export class RiskFactorsComponent implements OnInit, OnDestroy {
     this.familyHistory = familyHistoryOfDiabetes[lang];
   }
 
-  selectedRacialOrigin: SelectItem;
-  selectedConceptionMethod: SelectItem;
-  selectedFamilyHistory: SelectItem;
   saveRiskFactors() {
 
     if (this.validated()) {
@@ -63,7 +77,7 @@ export class RiskFactorsComponent implements OnInit, OnDestroy {
 
   validated() {
     if (!(this.selectedFamilyHistory && this.riskFactors.height && this.riskFactors.weight &&
-      this.selectedConceptionMethod && this.selectedRacialOrigin && this.riskFactors.smoker && this.riskFactors.macrosomicBaby && this.riskFactors.previousGDM)) {
+      this.selectedConceptionMethod && this.selectedRacialOrigin)) {
       this.toastr.error(this.translateService.instant("error.fields.required"))
       return false;
     }
@@ -79,6 +93,10 @@ export class RiskFactorsComponent implements OnInit, OnDestroy {
     }
 
     return true;
+  }
+
+  back() {
+    this.router.navigate(['patient', 'medical-chart', this.patientId])
   }
 
   ngOnDestroy() {

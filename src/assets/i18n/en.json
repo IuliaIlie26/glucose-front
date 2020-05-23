@@ -29,7 +29,10 @@
             "family.history.diabetes": "Family history of diabetes:",
             "smoker": "Smoker",
             "macrosomic.baby": "Previous macrosomic baby",
-            "previous.gdm": "Previous GDM"
+            "previous.gdm": "Previous GDM",
+            "historyOfAdverseOutcomes": "History of adverse outcomes",
+            "historyOfAdverseOutcomes.legend":"Includes recurrent spontaneous abortions, previous fetal anomaly or death before 20 weeks of gestation.",
+            "multipara": "Multipara pregnancies"
         },
         "manage": {
             "title": "Manage patients",
@@ -80,7 +83,13 @@
             "score": "Risk score",
             "setRiskFactors": "Risk factors chart is not filled!",
             "addrisk":"View risk factors",
-            "sensor": "Sensor's status"
+            "sensor": "Sensor's status",
+            "bmi": "BMI",
+            "naylorScore": "Naylor GDM risk score",
+            "caliskanScore" : "Caliskan GDM risk score",
+            "vanLeeuwenScore" : "van Leeuwen GDM risk score",
+            "teedeScore" : "Teede GDM risk score",
+            "nandaScore" : "Nanda GDM risk score"
         }
     },
     "doctor": {
@@ -215,7 +224,8 @@
         "yes": "Yes",
         "no": "No",
         "search" :"Search",
-        "delete": "Delete"
+        "delete": "Delete",
+        "back":"Back"
     },
     "info.required.fields": "Fields with * are required.",
     "datatable.no_data": "No data available!"

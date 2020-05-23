@@ -8,4 +8,6 @@ export class RiskFactorsDto {
     smoker: boolean;
     macrosomicBaby: boolean;
     previousGDM: boolean;
+    historyOfAdverseOutcomes: boolean;
+    multipara: boolean;
 }

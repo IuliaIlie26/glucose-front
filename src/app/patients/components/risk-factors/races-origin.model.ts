@@ -6,7 +6,7 @@ export const racialOrigin = {
         { label: 'East Asian', value: 'EAST_ASIAN' },
         { label: 'Middle Eastern', value: 'MIDDLE_EASTERN' },
         { label: 'Mixed', value: 'MIXED' },
-        { label: 'South Asian', value: 'SSOUTH_ASIAN' }
+        { label: 'South Asian', value: 'SOUTH_ASIAN' }
     ],
     ro: [
         { label: 'African/Negru', value: 'AFRICAN_BLACK' },
@@ -15,6 +15,6 @@ export const racialOrigin = {
         { label: 'Asiatic (Est)', value: 'EAST_ASIAN' },
         { label: 'Asiatic (Orientul Mijlociu)', value: 'MIDDLE_EASTERN' },
         { label: 'Mixt', value: 'MIXED' },
-        { label: 'Asiatic (Sud)', value: 'SSOUTH_ASIAN' }
+        { label: 'Asiatic (Sud)', value: 'SOUTH_ASIAN' }
     ]
 }

@@ -5,6 +5,8 @@ import { RiskFactorsDto } from '../shared/models/PatientRiskFactorsDto';
 import { PatientDto } from '../shared/models/PatientDto';
 import { PatientSensorDistributionDto } from '../patients/model/PatientSensorDistributionDto';
 import { MessageDto } from '../shared/models/MessageDto';
+import { PregnancyInfoDto } from '../shared/models/PregnancyInfoDto';
+import { RiskScoreDto } from '../shared/models/RiskScoreDto';
 const endpoint = 'http://localhost:8080/api/patient/';
 
 @Injectable({
@@ -12,8 +14,21 @@ const endpoint = 'http://localhost:8080/api/patient/';
 })
 export class PatientApiService {
 
+
+  calculateRiskScore(patientId: number): Observable<RiskScoreDto> {
+    return this.http.get<RiskScoreDto>(endpoint + 'calculateRiskScore?patientId=' + patientId)
+  }
+
+  savePregancyInfo(pregnancyInfo: PregnancyInfoDto): Observable<void> {
+    return this.http.post<void>(endpoint + 'savePregancyInfo', pregnancyInfo, {})
+  }
+
+  getPregancyInfo(patientId: number): Observable<PregnancyInfoDto> {
+    return this.http.get<PregnancyInfoDto>(endpoint + 'getPregancyInfo?patientId=' + patientId)
+  }
+
   getRiskFactors(patientId: number): Observable<RiskFactorsDto> {
-    return this.http.get<RiskFactorsDto>(endpoint + 'getFullFormatAgeById?id=' + patientId)
+    return this.http.get<RiskFactorsDto>(endpoint + 'getRiskFactors?patientId=' + patientId)
   }
 
   constructor(private http: HttpClient) { }

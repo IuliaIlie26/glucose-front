@@ -29,7 +29,10 @@
             "family.history.diabetes": "Istoric de diabet in familie:",
             "smoker": "Fumator",
             "macrosomic.baby": "Copil macrosomic anterior",
-            "previous.gdm": "GDM anterior"
+            "previous.gdm": "GDM anterior",
+            "historyOfAdverseOutcomes": "Istoric de reactii adverse",
+            "historyOfAdverseOutcomes.legend":"Include avorturi spontane, anomalii sau decesul fatului inainte de 20 de saptamani de gestatie.",
+            "multipara": "Sarcini multipara"
         },
         "manage": {
             "title": "Administreaza pacienti",
@@ -79,9 +82,14 @@
             "risk.factors": "Factori de risc",
             "score": "Scor de risc",
             "setRiskFactors": "Fisa factorilor de risc nu este completata!",
-            "addrisk":"Vezi factori de risc",
-            "sensor": "Statusul senzorului"
-
+            "addrisk": "Vezi factori de risc",
+            "sensor": "Statusul senzorului",
+            "bmi": "BMI",
+            "naylorScore": "Scorul Naylor de risc GDM",
+            "caliskanScore" : "Scorul Caliskan de risc GDM",
+            "vanLeeuwenScore" : "Scorul van Leeuwen de risc GDM",
+            "teedeScore" : "Scorul Teede de risc GDM",
+            "nandaScore" : "Scorul Nanda de risc GDM"
         }
     },
     "doctor": {
@@ -211,7 +219,8 @@
         "select": "Selecteaza",
         "success": "Succes!",
         "search": "Cauta",
-        "delete": "Sterge"
+        "delete": "Sterge",
+        "back": "Inapoi"
     },
     "error": {
         "height.nan": "Inaltimea este numerica!",
