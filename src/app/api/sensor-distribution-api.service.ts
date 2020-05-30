@@ -25,4 +25,11 @@ export class SensorDistributionApiService {
         return this.http.get<SensorDistributionDto[]>(endpoint + 'getSensorDistribution');
     }
 
+    activateSensor(dto: SensorDistributionDto): Observable<SensorDistributionDto>{
+        return this.http.post<SensorDistributionDto>(endpoint + 'activateSensor', dto);
+    }
+
+    deactivateSensor(dto: SensorDistributionDto): Observable<SensorDistributionDto>{
+        return this.http.post<SensorDistributionDto>(endpoint + 'deactivateSensor', dto);
+    }
 }

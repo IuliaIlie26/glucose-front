@@ -6,4 +6,5 @@ export class SensorDistributionDto {
     deactivationDate: string;
     status: string;
     doctorName: string;
+    doctorUsername : string;
 }

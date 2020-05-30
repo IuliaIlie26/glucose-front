@@ -94,6 +94,15 @@
                     <div class="col-2 text-right">
                         <label>{{'patient.medical.chart.sensor' | translate}}:</label>
                     </div>
+                    <span>{{sensorInfo.status}}</span>
+                    <span *ngIf="sensorInfo.status != 'ACTIVE'">
+                        <button type="button" class="btn btn-outline-success ml-3"
+                            (click)="activate()">{{'patient.medical.chart.activateSensor' | translate}}</button>
+                    </span>
+                    <span *ngIf="sensorInfo.status == 'ACTIVE'">
+                        <button type="button" class="btn btn-outline-success ml-3"
+                            (click)="deactivate()">{{'patient.medical.chart.deactivateSensor' | translate}}</button>
+                    </span>
                 </div>
             </div>
         </p-card>

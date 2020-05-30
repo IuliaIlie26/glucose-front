@@ -80,6 +80,22 @@ export class PatientChartComponent implements OnInit {
     }
   }
 
+  activate() {
+    this.sensorInfo.doctorUsername = sessionStorage.getItem('loggedUsername')
+    this.sensorDistributionApi.activateSensor(this.sensorInfo).subscribe(sensorInfo => {
+      this.sensorInfo = sensorInfo;
+      this.toastr.success(this.translateService.instant("buttons.success"))
+    });
+  }
+
+  deactivate() {
+    this.sensorInfo.doctorUsername = sessionStorage.getItem('loggedUsername')
+    this.sensorDistributionApi.deactivateSensor(this.sensorInfo).subscribe(sensorInfo => {
+      this.sensorInfo = sensorInfo;
+      this.toastr.success(this.translateService.instant("buttons.success"))
+    });
+  }
+
   openChart() {
     this.router.navigate(['patient', 'risk-factors', this.selectedPatient.id])
   }

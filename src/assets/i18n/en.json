@@ -89,7 +89,9 @@
             "caliskanScore" : "Caliskan GDM risk score",
             "vanLeeuwenScore" : "van Leeuwen GDM risk score",
             "teedeScore" : "Teede GDM risk score",
-            "nandaScore" : "Nanda GDM risk score"
+            "nandaScore" : "Nanda GDM risk score",
+            "activateSensor": "Activate",
+            "deactivateSensor": "Deactivate"
         }
     },
     "doctor": {
