@@ -52,34 +52,37 @@
                     </div>
                     <span style="color: indianred; margin-left: 5px; font-weight: bold;"
                         *ngIf="riskFactors && !riskFactors.patientId">{{'patient.medical.chart.setRiskFactors' | translate}}</span>
-                    <ul *ngIf="riskScore">
-                        <li class="row col-10">
-                            <span class="mt-2">
-                                {{'patient.medical.chart.naylorScore' |translate}} - {{riskScore.naylorScore}}</span>
-                        </li>
-                        <li class="row col-10">
-                            <span class="mt-2">
-                                {{'patient.medical.chart.caliskanScore' |translate}} -
-                                {{riskScore.caliskanScore}}</span>
-                        </li>
-                        <li class="row col-10">
-                            <span class="mt-2">
-                                {{'patient.medical.chart.vanLeeuwenScore' |translate}} -
-                                {{riskScore.vanLeeuwenScore}}</span>
-                        </li>
-                        <li class="row col-10">
-                            <span class="mt-2">
-                                {{'patient.medical.chart.teedeScore' |translate}} - {{riskScore.teedeScore}}</span>
-                        </li>
-                        <li class="row col-10">
-                            <span class="mt-2">
-                                {{'patient.medical.chart.nandaScore' |translate}} - {{riskScore.nandaScore}}</span>
-                        </li>
-                        <div>
-                            <button type="button" class="btn btn-outline-success mt-3"
-                                (click)="openChart()">{{'patient.medical.chart.addrisk' | translate}}</button>
-                        </div>
-                    </ul>
+                    <div class="col-10">
+                        <ul *ngIf="riskScore">
+                            <li class="row">
+                                <span class="mt-2">
+                                    {{'patient.medical.chart.naylorScore' |translate}} -
+                                    {{riskScore.naylorScore}}</span>
+                            </li>
+                            <li class="row">
+                                <span class="mt-2">
+                                    {{'patient.medical.chart.caliskanScore' |translate}} -
+                                    {{riskScore.caliskanScore}}</span>
+                            </li>
+                            <li class="row">
+                                <span class="mt-2">
+                                    {{'patient.medical.chart.vanLeeuwenScore' |translate}} -
+                                    {{riskScore.vanLeeuwenScore}}</span>
+                            </li>
+                            <li class="row">
+                                <span class="mt-2">
+                                    {{'patient.medical.chart.teedeScore' |translate}} - {{riskScore.teedeScore}}</span>
+                            </li>
+                            <li class="row">
+                                <span class="mt-2">
+                                    {{'patient.medical.chart.nandaScore' |translate}} - {{riskScore.nandaScore}}</span>
+                            </li>
+                            <div>
+                                <button type="button" class="btn btn-outline-success mt-3"
+                                    (click)="openChart()">{{'patient.medical.chart.addrisk' | translate}}</button>
+                            </div>
+                        </ul>
+                    </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-2 text-right">

@@ -1,4 +1,4 @@
-export class PatientSensorDistributionDto {
+export class SensorDistributionDto {
     patientCnp: string;
     patientName: string;
     sensorId: string;

@@ -84,7 +84,7 @@
             "setRiskFactors": "Fisa factorilor de risc nu este completata!",
             "addrisk": "Vezi factori de risc",
             "sensor": "Statusul senzorului",
-            "bmi": "BMI",
+            "bmi": "Indice de masa corporala",
             "naylorScore": "Scorul Naylor de risc GDM",
             "caliskanScore" : "Scorul Caliskan de risc GDM",
             "vanLeeuwenScore" : "Scorul van Leeuwen de risc GDM",

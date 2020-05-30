@@ -9,6 +9,7 @@ import { conceptionMethods } from './conception-methods.model'
 import { familyHistoryOfDiabetes } from './family-history.model'
 import { Subscription } from 'rxjs';
 import { SelectItem } from 'primeng/primeng';
+import { MedicalChartApiService } from 'src/app/api/medical-chart-api.service';
 
 @Component({
   selector: 'app-risk-factors',
@@ -17,7 +18,7 @@ import { SelectItem } from 'primeng/primeng';
 })
 export class RiskFactorsComponent implements OnInit, OnDestroy {
 
-  constructor(private patientApi: PatientApiService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, public translateService: TranslateService, private router: Router) { }
+  constructor(private patientApi: PatientApiService, private medicalChartApi: MedicalChartApiService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, public translateService: TranslateService, private router: Router) { }
 
   riskFactors: RiskFactorsDto;
   patientId: string;
@@ -34,7 +35,7 @@ export class RiskFactorsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.patientId = this.activatedRoute.snapshot.paramMap.get('patientId');
     this.patientApi.getFullFormatAgeById(+this.patientId).subscribe(age => this.age = age);
-    this.patientApi.getRiskFactors(+this.patientId).subscribe(risk => {
+    this.medicalChartApi.getRiskFactors(+this.patientId).subscribe(risk => {
       this.riskFactors = risk;
       if (this.riskFactors.conceptionMethod) {
         this.selectedConceptionMethod = { 'label': this.riskFactors.conceptionMethod, 'value': this.riskFactors.conceptionMethod }
@@ -71,7 +72,7 @@ export class RiskFactorsComponent implements OnInit, OnDestroy {
       this.riskFactors.conceptionMethod = this.selectedConceptionMethod.value;
       this.riskFactors.familyHistoryOfDiabetes = this.selectedFamilyHistory.value;
       this.riskFactors.patientId = +this.patientId;
-      this.patientApi.saveRiskFactors(this.riskFactors).subscribe(() => this.toastr.success('Success!'))
+      this.medicalChartApi.saveRiskFactors(this.riskFactors).subscribe(() => this.toastr.success('Success!'))
     }
   }
 

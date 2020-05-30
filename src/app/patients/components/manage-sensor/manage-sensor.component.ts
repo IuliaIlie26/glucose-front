@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PatientSensorDistributionDto } from '../../model/PatientSensorDistributionDto';
-import { PatientApiService } from 'src/app/api/patient-api.service';
+import { SensorDistributionDto } from '../../model/SensorDistributionDto';
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 import { statuses } from '../../../shared/models/senors-status.model'
 import { Subscription } from 'rxjs';
+import { SensorDistributionApiService } from 'src/app/api/sensor-distribution-api.service';
 
 @Component({
   selector: 'app-manage-sensor',
@@ -14,13 +14,13 @@ import { Subscription } from 'rxjs';
 export class ManageSensorComponent implements OnInit, OnDestroy {
 
 
-  constructor(private patientApi: PatientApiService, private toastr: ToastrService, private translateService: TranslateService) { }
-
+  constructor(private sensorDistributionApi: SensorDistributionApiService, private toastr: ToastrService, private translateService: TranslateService) { }
+  
   errorMessage = '';
-  distributionList: PatientSensorDistributionDto[] = [];
+  distributionList: SensorDistributionDto[] = [];
   translateSubscription: Subscription;
   collapsed = true;
-  newDistribution: PatientSensorDistributionDto = new PatientSensorDistributionDto();
+  newDistribution: SensorDistributionDto = new SensorDistributionDto();
 
   statuses: any[];
 
@@ -39,12 +39,12 @@ export class ManageSensorComponent implements OnInit, OnDestroy {
   }
 
   private getAllPatientDistributionList() {
-    this.patientApi.getSensorDistribution().subscribe(resultList => this.distributionList = resultList);
+    this.sensorDistributionApi.getSensorDistribution().subscribe(resultList => this.distributionList = resultList);
   }
 
   assign() {
 
-    this.patientApi.assignSensor(this.newDistribution).subscribe(dto => {
+    this.sensorDistributionApi.assignSensor(this.newDistribution).subscribe(dto => {
       if (!dto.message) {
         this.errorMessage = '';
         this.getAllPatientDistributionList();

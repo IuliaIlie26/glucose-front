@@ -8,6 +8,9 @@ import { PregnancyInfoDto } from 'src/app/shared/models/PregnancyInfoDto';
 import { ToastrService } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
 import { RiskScoreDto } from 'src/app/shared/models/RiskScoreDto';
+import { SensorDistributionDto } from '../../model/SensorDistributionDto';
+import { MedicalChartApiService } from 'src/app/api/medical-chart-api.service';
+import { SensorDistributionApiService } from 'src/app/api/sensor-distribution-api.service';
 
 @Component({
   selector: 'app-patient-chart',
@@ -16,7 +19,8 @@ import { RiskScoreDto } from 'src/app/shared/models/RiskScoreDto';
 })
 export class PatientChartComponent implements OnInit {
 
-  constructor(private toastr: ToastrService, private activatedRoute: ActivatedRoute, private router: Router, private patientApi: PatientApiService, public translateService: TranslateService) { }
+  constructor(private toastr: ToastrService, private medicalChartApi: MedicalChartApiService, private sensorDistributionApi: SensorDistributionApiService,
+    private activatedRoute: ActivatedRoute, private router: Router, private patientApi: PatientApiService, public translateService: TranslateService) { }
   editMode = false;
   patientId: string;
   selectedPatient: PatientDto;
@@ -32,6 +36,7 @@ export class PatientChartComponent implements OnInit {
   bmi = '';
   pipe = new DatePipe('en-us');
   riskScore: RiskScoreDto;
+  sensorInfo: SensorDistributionDto;
 
   ngOnInit() {
     this.maxDate.setMonth(this.today.getMonth() + 10);
@@ -39,12 +44,13 @@ export class PatientChartComponent implements OnInit {
     this.patientId = this.activatedRoute.snapshot.paramMap.get('patientId');
     this.patientApi.getPatientById(+this.patientId).subscribe(patient => this.selectedPatient = patient);
     this.patientApi.getFullFormatAgeById(+this.patientId).subscribe(age => this.age = age)
-    this.patientApi.getRiskFactors(+this.patientId).subscribe(risks => {
+    this.medicalChartApi.getRiskFactors(+this.patientId).subscribe(risks => {
       this.riskFactors = risks
       this.bmi = (this.riskFactors.weight / Math.pow((this.riskFactors.height / 100), 2)).toFixed(2)
     })
-    this.patientApi.calculateRiskScore(+this.patientId).subscribe(scores => this.riskScore = scores)
-    this.patientApi.getPregancyInfo(+this.patientId).subscribe(info => this.setPregnancyInfoForm(info))
+    this.medicalChartApi.calculateRiskScore(+this.patientId).subscribe(scores => this.riskScore = scores)
+    this.medicalChartApi.getPregancyInfo(+this.patientId).subscribe(info => this.setPregnancyInfoForm(info));
+    this.sensorDistributionApi.getSensorStatus(+this.patientId).subscribe(sensorInfo => this.sensorInfo = sensorInfo)
   }
 
   private setPregnancyInfoForm(info: PregnancyInfoDto) {
@@ -63,7 +69,6 @@ export class PatientChartComponent implements OnInit {
     else {
       this.translateService.get("buttons.no").subscribe(res => this.isPregnant = res);
     }
-    console.log(this.isPregnant, 'is preg')
   }
 
   private calculatePregancyWeek() {
@@ -83,7 +88,7 @@ export class PatientChartComponent implements OnInit {
     this.translateService.get("buttons.yes").subscribe(res => this.isPregnant = res)
     this.pregnancyInfo.patientId = +this.patientId;
     this.pregnancyInfo.dueDate = this.pipe.transform(this.selectedDueDate, 'yyyy-MM-dd');
-    this.patientApi.savePregancyInfo(this.pregnancyInfo).subscribe(() => this.toastr.success(this.translateService.instant("buttons.success")));
+    this.medicalChartApi.savePregancyInfo(this.pregnancyInfo).subscribe(() => this.toastr.success(this.translateService.instant("buttons.success")));
     this.editMode = false;
     this.calculatePregancyWeek();
   }

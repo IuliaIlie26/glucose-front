@@ -27,6 +27,8 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 import { UsersApiService } from './api/users-api.service';
 import { PasswordModule } from 'primeng/password';
 import { SharedModule } from './shared/shared.module';
+import { SensorDistributionApiService } from './api/sensor-distribution-api.service';
+import { MedicalChartApiService } from './api/medical-chart-api.service';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import { SharedModule } from './shared/shared.module';
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestsInterceptor, multi: true },
     PatientApiService,
     DoctorApiService,
-    UsersApiService
+    UsersApiService,
+    SensorDistributionApiService,
+    MedicalChartApiService
   ]
 })
 export class AppModule { }

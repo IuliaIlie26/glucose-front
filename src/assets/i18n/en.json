@@ -84,7 +84,7 @@
             "setRiskFactors": "Risk factors chart is not filled!",
             "addrisk":"View risk factors",
             "sensor": "Sensor's status",
-            "bmi": "BMI",
+            "bmi": "Body mass index",
             "naylorScore": "Naylor GDM risk score",
             "caliskanScore" : "Caliskan GDM risk score",
             "vanLeeuwenScore" : "van Leeuwen GDM risk score",
