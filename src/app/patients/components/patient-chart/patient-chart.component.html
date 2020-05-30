@@ -94,17 +94,76 @@
                     <div class="col-2 text-right">
                         <label>{{'patient.medical.chart.sensor' | translate}}:</label>
                     </div>
-                    <span>{{sensorInfo.status}}</span>
-                    <span *ngIf="sensorInfo.status != 'ACTIVE'">
+                    <span *ngIf="sensorInfo">{{sensorInfo.status}}</span>
+                    <span *ngIf="sensorInfo && sensorInfo.status != 'ACTIVE'">
                         <button type="button" class="btn btn-outline-success ml-3"
                             (click)="activate()">{{'patient.medical.chart.activateSensor' | translate}}</button>
                     </span>
-                    <span *ngIf="sensorInfo.status == 'ACTIVE'">
+                    <span *ngIf="sensorInfo && sensorInfo.status == 'ACTIVE'">
                         <button type="button" class="btn btn-outline-success ml-3"
                             (click)="deactivate()">{{'patient.medical.chart.deactivateSensor' | translate}}</button>
                     </span>
                 </div>
             </div>
+        </p-card>
+
+        <!--
+            Consultation history
+        -->
+        <p-card *ngIf="selectedPatient">
+            <h4>{{'patient.consultation.history.title' | translate}}</h4>
+            <p-table #dt [value]="consultationList" dataKey="id" styleClass="ui-table-consultations" [rowHover]="true"
+                [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true"
+                currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="doctorName">{{'consultations.manage.doctor.name'|translate}}
+                            <p-sortIcon field="doctorName"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="doctorLastName">{{'consultations.manage.doctor.lastname'|translate}}
+                            <p-sortIcon field="doctorLastName"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="speciality">{{'consultations.manage.speciality'|translate}}
+                            <p-sortIcon field="speciality"> </p-sortIcon>
+                        </th>
+                        <th pSortableColumn="date">{{'consultations.manage.date'|translate}}
+                            <p-sortIcon field="date"></p-sortIcon>
+                        </th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-consultation>
+                    <tr class="ui-selectable-row">
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em"> {{consultation.doctorName}}</span>
+                        </td>
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em">
+                                {{consultation.doctorLastName}}</span>
+                        </td>
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em">{{consultation.speciality}}</span>
+                        </td>
+
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em">{{consultation.date}}</span>
+                        </td>
+
+                        <td>
+                            <button pButton type="button" class="ui-button-secondary" icon="fa fa-address-book"
+                                [pTooltip]="'patient.consultation.history.viewNotes' | translate" tooltipPosition="top"
+                                (click)="viewNotes()"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="5" style="text-align:center; color:indianred;">
+                            {{'datatable.no_data' | translate}}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
         </p-card>
     </div>
 </div>

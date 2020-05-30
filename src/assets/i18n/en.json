@@ -92,6 +92,10 @@
             "nandaScore" : "Nanda GDM risk score",
             "activateSensor": "Activate",
             "deactivateSensor": "Deactivate"
+        },
+        "consultation.history":{
+            "title": "Consultation history",
+            "viewNotes": "View notes"
         }
     },
     "doctor": {

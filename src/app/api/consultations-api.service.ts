@@ -31,4 +31,8 @@ export class ConsultationsApiService {
   getPatientsForDoctor(username: string): Observable<PatientDto[]> {
     return this.http.get<PatientDto[]>(endpoint + 'getPatientsForDoctor?username=' + username)
   }
+
+  getPatientConsultations(patientId: number): Observable<ConsultationDto[]> {
+    return this.http.get<ConsultationDto[]>(endpoint + 'getPatientConsultations?patientId=' + patientId)
+  }
 }

@@ -11,6 +11,8 @@ import { RiskScoreDto } from 'src/app/shared/models/RiskScoreDto';
 import { SensorDistributionDto } from '../../model/SensorDistributionDto';
 import { MedicalChartApiService } from 'src/app/api/medical-chart-api.service';
 import { SensorDistributionApiService } from 'src/app/api/sensor-distribution-api.service';
+import { ConsultationDto } from 'src/app/shared/models/ConsultationDto';
+import { ConsultationsApiService } from 'src/app/api/consultations-api.service';
 
 @Component({
   selector: 'app-patient-chart',
@@ -20,7 +22,7 @@ import { SensorDistributionApiService } from 'src/app/api/sensor-distribution-ap
 export class PatientChartComponent implements OnInit {
 
   constructor(private toastr: ToastrService, private medicalChartApi: MedicalChartApiService, private sensorDistributionApi: SensorDistributionApiService,
-    private activatedRoute: ActivatedRoute, private router: Router, private patientApi: PatientApiService, public translateService: TranslateService) { }
+    private activatedRoute: ActivatedRoute, private router: Router, private patientApi: PatientApiService, public translateService: TranslateService, private consultationApi: ConsultationsApiService) { }
   editMode = false;
   patientId: string;
   selectedPatient: PatientDto;
@@ -37,6 +39,7 @@ export class PatientChartComponent implements OnInit {
   pipe = new DatePipe('en-us');
   riskScore: RiskScoreDto;
   sensorInfo: SensorDistributionDto;
+  consultationList: ConsultationDto[];
 
   ngOnInit() {
     this.maxDate.setMonth(this.today.getMonth() + 10);
@@ -51,6 +54,7 @@ export class PatientChartComponent implements OnInit {
     this.medicalChartApi.calculateRiskScore(+this.patientId).subscribe(scores => this.riskScore = scores)
     this.medicalChartApi.getPregancyInfo(+this.patientId).subscribe(info => this.setPregnancyInfoForm(info));
     this.sensorDistributionApi.getSensorStatus(+this.patientId).subscribe(sensorInfo => this.sensorInfo = sensorInfo)
+    this.consultationApi.getPatientConsultations(+this.patientId).subscribe(list => this.consultationList = list)
   }
 
   private setPregnancyInfoForm(info: PregnancyInfoDto) {
@@ -94,6 +98,10 @@ export class PatientChartComponent implements OnInit {
       this.sensorInfo = sensorInfo;
       this.toastr.success(this.translateService.instant("buttons.success"))
     });
+  }
+
+  viewNotes() {
+
   }
 
   openChart() {

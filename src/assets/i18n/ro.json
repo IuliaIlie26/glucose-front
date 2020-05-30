@@ -31,7 +31,7 @@
             "macrosomic.baby": "Copil macrosomic anterior",
             "previous.gdm": "GDM anterior",
             "historyOfAdverseOutcomes": "Istoric de reactii adverse",
-            "historyOfAdverseOutcomes.legend":"Include avorturi spontane, anomalii sau decesul fatului inainte de 20 de saptamani de gestatie.",
+            "historyOfAdverseOutcomes.legend": "Include avorturi spontane, anomalii sau decesul fatului inainte de 20 de saptamani de gestatie.",
             "multipara": "Sarcini multipara"
         },
         "manage": {
@@ -86,12 +86,16 @@
             "sensor": "Statusul senzorului",
             "bmi": "Indice de masa corporala",
             "naylorScore": "Scorul Naylor de risc GDM",
-            "caliskanScore" : "Scorul Caliskan de risc GDM",
-            "vanLeeuwenScore" : "Scorul van Leeuwen de risc GDM",
-            "teedeScore" : "Scorul Teede de risc GDM",
-            "nandaScore" : "Scorul Nanda de risc GDM",
+            "caliskanScore": "Scorul Caliskan de risc GDM",
+            "vanLeeuwenScore": "Scorul van Leeuwen de risc GDM",
+            "teedeScore": "Scorul Teede de risc GDM",
+            "nandaScore": "Scorul Nanda de risc GDM",
             "activateSensor": "Activeaza",
             "deactivateSensor": "Dezactiveaza"
+        },
+        "consultation.history": {
+            "title": "Istoricul consultatiilor",
+            "viewNotes": "Vezi notite"
         }
     },
     "doctor": {
