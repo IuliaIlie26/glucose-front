@@ -31,7 +31,7 @@
             "macrosomic.baby": "Previous macrosomic baby",
             "previous.gdm": "Previous GDM",
             "historyOfAdverseOutcomes": "History of adverse outcomes",
-            "historyOfAdverseOutcomes.legend":"Includes recurrent spontaneous abortions, previous fetal anomaly or death before 20 weeks of gestation.",
+            "historyOfAdverseOutcomes.legend": "Includes recurrent spontaneous abortions, previous fetal anomaly or death before 20 weeks of gestation.",
             "multipara": "Multipara pregnancies"
         },
         "manage": {
@@ -72,30 +72,39 @@
             "country": "Country is required!",
             "region": "Region is required!"
         },
-        "medical.chart": {
-            "title": "Patient chart",
+        "pregnancy.chart": {
+            "title": "Pregnancy chart",
             "name": "Patient's name",
             "age": "Patient's age",
             "pregnant": "Pregnant",
             "pregancy.week": "Pregnancy week",
-            "due.date":"Due date",
+            "due.date": "Due date",
             "risk.factors": "Risk factors",
             "score": "Risk score",
             "setRiskFactors": "Risk factors chart is not filled!",
-            "addrisk":"View risk factors",
+            "addrisk": "View risk factors",
             "sensor": "Sensor's status",
             "bmi": "Body mass index",
             "naylorScore": "Naylor GDM risk score",
-            "caliskanScore" : "Caliskan GDM risk score",
-            "vanLeeuwenScore" : "van Leeuwen GDM risk score",
-            "teedeScore" : "Teede GDM risk score",
-            "nandaScore" : "Nanda GDM risk score",
+            "caliskanScore": "Caliskan GDM risk score",
+            "vanLeeuwenScore": "van Leeuwen GDM risk score",
+            "teedeScore": "Teede GDM risk score",
+            "nandaScore": "Nanda GDM risk score",
             "activateSensor": "Activate",
-            "deactivateSensor": "Deactivate"
+            "deactivateSensor": "Deactivate",
+            "viewCharts":"View charts"
         },
-        "consultation.history":{
+        "consultation.history": {
             "title": "Consultation history",
             "viewNotes": "View notes"
+        },
+        "blood.analysis": {
+            "title": "Investigations and blood analysis",
+            "investigationName": "Name",
+            "investigationValue": "Value",
+            "status": "Status",
+            "date": "Date",
+            "requestedBy": "Requested by"
         }
     },
     "doctor": {
@@ -136,9 +145,9 @@
                 "start.before.end": "Start hour cannot be after end hour!"
             }
         },
-        "my.patients":{
+        "my.patients": {
             "list": "My patients list",
-            "view.chart" :"View chart"
+            "view.chart": "View chart"
         }
     },
     "consultations": {
@@ -147,7 +156,7 @@
             "check": "Check patient",
             "patientName": "Patient's name",
             "speciality": "Speciality",
-            "doctor" : "Doctor",
+            "doctor": "Doctor",
             "reserve": "Reserve",
             "dateRange": "Date range",
             "start": "Time",
@@ -156,13 +165,23 @@
         },
         "manage": {
             "subtitle": "Consultations list",
-            "patient.name":"Patient's name",
-            "patient.lastname":"Patient's lastname",
-            "doctor.name":"Doctor's name",
-            "doctor.lastname":"Doctor's lastname",
+            "patient.name": "Patient's name",
+            "patient.lastname": "Patient's lastname",
+            "doctor.name": "Doctor's name",
+            "doctor.lastname": "Doctor's lastname",
             "patient.cnp": "Patient's personal number",
-            "speciality":"Speciality",
+            "speciality": "Speciality",
             "date": "Date"
+        },
+        "notes":{
+            "title":"Consultation notes",
+            "not.available":"Notes not available!",
+            "history" : "History",
+            "recommandations": "Recommandations",
+            "symptoms":"Symptoms",
+            "diagnosis":"Diagnosis",
+            "notes": "Notes",
+            "investigationTicket": "Investigations ticket"
         }
     },
     "menu": {
@@ -229,9 +248,9 @@
         "select": "Select",
         "yes": "Yes",
         "no": "No",
-        "search" :"Search",
+        "search": "Search",
         "delete": "Delete",
-        "back":"Back"
+        "back": "Back"
     },
     "info.required.fields": "Fields with * are required.",
     "datatable.no_data": "No data available!"

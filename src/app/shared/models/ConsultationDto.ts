@@ -8,4 +8,5 @@ export class ConsultationDto {
     patientCnp: string;
     patientName: string;
     patientLastName: string;
+    consultationId : string;
 }

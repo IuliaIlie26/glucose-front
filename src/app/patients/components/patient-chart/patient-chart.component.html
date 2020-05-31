@@ -1,30 +1,30 @@
 <div class="container-fluid">
     <div class="col-12">
         <p-card *ngIf="selectedPatient">
-            <h4>{{'patient.medical.chart.title' | translate}}</h4>
+            <h4>{{'patient.pregnancy.chart.title' | translate}}</h4>
             <div class="col-10">
                 <div class="row form-group">
                     <div class="col-2 text-right">
-                        <label>{{'patient.medical.chart.name' | translate}}: </label>
+                        <label>{{'patient.pregnancy.chart.name' | translate}}: </label>
                     </div>
                     <span>{{selectedPatient.name}}
                         {{selectedPatient.lastname}}</span>
                 </div>
                 <div class="row form-group">
                     <div class="col-2 text-right">
-                        <label>{{'patient.medical.chart.age' | translate}}: </label>
+                        <label>{{'patient.pregnancy.chart.age' | translate}}: </label>
                     </div>
                     <span> {{age}}</span>
                 </div>
                 <div class="row form-group">
                     <div class="col-2 text-right">
-                        <label>{{'patient.medical.chart.pregnant' | translate}}: </label>
+                        <label>{{'patient.pregnancy.chart.pregnant' | translate}}: </label>
                     </div>
                     <span>{{isPregnant}}</span>
                 </div>
                 <div class="row form-group">
                     <div class="col-2 text-right">
-                        <label class="mt-3">{{'patient.medical.chart.due.date' | translate}}: </label>
+                        <label class="mt-3">{{'patient.pregnancy.chart.due.date' | translate}}: </label>
                     </div>
                     <div class="ui-g-12 ui-md-4">
                         <p-calendar class="ui-calendar" [disabled]='!editMode' [showIcon]="true" icon="fa fa-calendar"
@@ -40,7 +40,7 @@
                 </div>
                 <div class="row form-group mt-3">
                     <div class="col-2 text-right">
-                        <label>{{'patient.medical.chart.pregancy.week' | translate}}: </label>
+                        <label>{{'patient.pregnancy.chart.pregancy.week' | translate}}: </label>
                     </div>
                     <span>
                         {{week}}
@@ -48,61 +48,67 @@
                 </div>
                 <div class="row form-group">
                     <div class="col-2 text-right mt-2">
-                        <label>{{'patient.medical.chart.score' | translate}}:</label>
+                        <label>{{'patient.pregnancy.chart.score' | translate}}:</label>
                     </div>
                     <span style="color: indianred; margin-left: 5px; font-weight: bold;"
-                        *ngIf="riskFactors && !riskFactors.patientId">{{'patient.medical.chart.setRiskFactors' | translate}}</span>
+                        *ngIf="riskFactors && !riskFactors.patientId">{{'patient.pregnancy.chart.setRiskFactors' | translate}}</span>
                     <div class="col-10">
                         <ul *ngIf="riskScore">
                             <li class="row">
                                 <span class="mt-2">
-                                    {{'patient.medical.chart.naylorScore' |translate}} -
+                                    {{'patient.pregnancy.chart.naylorScore' |translate}} -
                                     {{riskScore.naylorScore}}</span>
                             </li>
                             <li class="row">
                                 <span class="mt-2">
-                                    {{'patient.medical.chart.caliskanScore' |translate}} -
+                                    {{'patient.pregnancy.chart.caliskanScore' |translate}} -
                                     {{riskScore.caliskanScore}}</span>
                             </li>
                             <li class="row">
                                 <span class="mt-2">
-                                    {{'patient.medical.chart.vanLeeuwenScore' |translate}} -
+                                    {{'patient.pregnancy.chart.vanLeeuwenScore' |translate}} -
                                     {{riskScore.vanLeeuwenScore}}</span>
                             </li>
                             <li class="row">
                                 <span class="mt-2">
-                                    {{'patient.medical.chart.teedeScore' |translate}} - {{riskScore.teedeScore}}</span>
+                                    {{'patient.pregnancy.chart.teedeScore' |translate}} -
+                                    {{riskScore.teedeScore}}</span>
                             </li>
                             <li class="row">
                                 <span class="mt-2">
-                                    {{'patient.medical.chart.nandaScore' |translate}} - {{riskScore.nandaScore}}</span>
+                                    {{'patient.pregnancy.chart.nandaScore' |translate}} -
+                                    {{riskScore.nandaScore}}</span>
                             </li>
                             <div>
                                 <button type="button" class="btn btn-outline-success mt-3"
-                                    (click)="openChart()">{{'patient.medical.chart.addrisk' | translate}}</button>
+                                    (click)="openRiskFactorsChart()">{{'patient.pregnancy.chart.addrisk' | translate}}</button>
                             </div>
                         </ul>
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-2 text-right">
-                        <label>{{'patient.medical.chart.bmi' | translate}}:</label>
+                        <label>{{'patient.pregnancy.chart.bmi' | translate}}:</label>
                     </div>
                     <span>{{bmi}}</span>
                 </div>
                 <div class="row form-group">
                     <div class="col-2 text-right">
-                        <label>{{'patient.medical.chart.sensor' | translate}}:</label>
+                        <label>{{'patient.pregnancy.chart.sensor' | translate}}:</label>
                     </div>
                     <span *ngIf="sensorInfo">{{sensorInfo.status}}</span>
-                    <span *ngIf="sensorInfo && sensorInfo.status != 'ACTIVE'">
-                        <button type="button" class="btn btn-outline-success ml-3"
-                            (click)="activate()">{{'patient.medical.chart.activateSensor' | translate}}</button>
-                    </span>
-                    <span *ngIf="sensorInfo && sensorInfo.status == 'ACTIVE'">
-                        <button type="button" class="btn btn-outline-success ml-3"
-                            (click)="deactivate()">{{'patient.medical.chart.deactivateSensor' | translate}}</button>
-                    </span>
+                    <div>
+                        <span *ngIf="sensorInfo && sensorInfo.status != 'ACTIVE'">
+                            <button type="button" class="btn btn-outline-success ml-3"
+                                (click)="activate()">{{'patient.pregnancy.chart.activateSensor' | translate}}</button>
+                        </span>
+                        <span *ngIf="sensorInfo && sensorInfo.status == 'ACTIVE'">
+                            <button type="button" class="btn btn-outline-success ml-3"
+                                (click)="deactivate()">{{'patient.pregnancy.chart.deactivateSensor' | translate}}</button>
+                                <button type="button" class="btn btn-outline-success ml-3"
+                                (click)="viewCharts()">{{'patient.pregnancy.chart.viewCharts' | translate}}</button>
+                        </span>
+                    </div>
                 </div>
             </div>
         </p-card>
@@ -110,11 +116,19 @@
         <!--
             Consultation history
         -->
-        <p-card *ngIf="selectedPatient">
+        <p-card *ngIf="selectedPatient" class="col-12 mt-20">
             <h4>{{'patient.consultation.history.title' | translate}}</h4>
             <p-table #dt [value]="consultationList" dataKey="id" styleClass="ui-table-consultations" [rowHover]="true"
                 [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true"
-                currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0">
+                currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
+                [globalFilterFields]="['doctorName', 'doctorLastName','speciality', 'date']">
+                <ng-template pTemplate="caption">
+                    <span style="color: green;">{{"patient.manage.sensor.subtitle" | translate}}</span>
+                    <div class="ui-table-globalfilter-container">
+                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                            [placeholder]="'menu.search.global' | translate" />
+                    </div>
+                </ng-template>
                 <ng-template pTemplate="header">
                     <tr>
                         <th pSortableColumn="doctorName">{{'consultations.manage.doctor.name'|translate}}
@@ -129,7 +143,7 @@
                         <th pSortableColumn="date">{{'consultations.manage.date'|translate}}
                             <p-sortIcon field="date"></p-sortIcon>
                         </th>
-                        <th></th>
+                        <th style="width: 5em"></th>
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-consultation>
@@ -152,7 +166,74 @@
                         <td>
                             <button pButton type="button" class="ui-button-secondary" icon="fa fa-address-book"
                                 [pTooltip]="'patient.consultation.history.viewNotes' | translate" tooltipPosition="top"
-                                (click)="viewNotes()"></button>
+                                (click)="viewNotes(consultation.consultationId)"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="5" style="text-align:center; color:indianred;">
+                            {{'datatable.no_data' | translate}}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </p-card>
+        <!--
+            Analize
+        -->
+        <p-card class="col-12 mt-20">
+            <h4>{{'patient.blood.analysis.title' | translate}}</h4>
+            <p-table #dt [value]="investigationsList" dataKey="id" styleClass="ui-table-consultations" [rowHover]="true"
+                [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true"
+                currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
+                [globalFilterFields]="['investigationName']">
+                <ng-template pTemplate="caption">
+                    <span style="color: green;">{{"patient.manage.sensor.subtitle" | translate}}</span>
+                    <div class="ui-table-globalfilter-container">
+                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                            [placeholder]="'menu.search.global' | translate" />
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="investigationName">{{'patient.blood.analysis.investigationName'|translate}}
+                            <p-sortIcon field="investigationName"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="value">{{'patient.blood.analysis.investigationValue'|translate}}
+                            <p-sortIcon field="value"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="status">{{'patient.blood.analysis.status'|translate}}
+                            <p-sortIcon field="status"> </p-sortIcon>
+                        </th>
+                        <th pSortableColumn="date">{{'patient.blood.analysis.date'|translate}}
+                            <p-sortIcon field="date"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="requestedBy">{{'patient.blood.analysis.requestedBy'|translate}}
+                            <p-sortIcon field="requestedBy"></p-sortIcon>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-investigation>
+                    <tr class="ui-selectable-row">
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em">
+                                {{investigation.investigationName}}</span>
+                        </td>
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em">
+                                {{investigation.investigationValue}}</span>
+                        </td>
+                        <td>
+                            <span
+                                [class]="'investigation-badge status-' + investigation.status.toLowerCase()">{{investigation.status}}</span>
+                        </td>
+
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em">{{investigation.date}}</span>
+                        </td>
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em">{{investigation.requestedBy}}</span>
                         </td>
                     </tr>
                 </ng-template>

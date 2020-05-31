@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CreateConsultationComponent } from './create-consultation/create-consultation.component';
 import { ManageConsultationsComponent } from './manage-consultations/manage-consultations.component';
 import { ViewConsultationsComponent } from './view-consultations/view-consultations.component';
+import { ConsultationNotesComponent } from './consultation-notes/consultation-notes.component';
 
 const routes: Routes = [{
   path: 'consultation/manage-consultations',
@@ -15,6 +16,10 @@ const routes: Routes = [{
 {
   path: 'consultation/view-consultations',
   component: ViewConsultationsComponent
+},
+{
+  path: 'consultation/consultation-notes/:id',
+  component: ConsultationNotesComponent
 }
 ];
 

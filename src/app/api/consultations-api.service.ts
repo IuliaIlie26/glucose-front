@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ConsultationFilterDto } from '../shared/models/ConsultationFilterDto';
 import { ConsultationDto } from '../shared/models/ConsultationDto';
 import { PatientDto } from '../shared/models/PatientDto';
+import { ConsultationNotesDto } from '../shared/models/ConsultationNotesDto';
 const endpoint = 'http://localhost:8080/api/consultations/';
 @Injectable({
   providedIn: 'root'
@@ -34,5 +35,13 @@ export class ConsultationsApiService {
 
   getPatientConsultations(patientId: number): Observable<ConsultationDto[]> {
     return this.http.get<ConsultationDto[]>(endpoint + 'getPatientConsultations?patientId=' + patientId)
+  }
+
+  getConsultationNote(consultationId: string): Observable<ConsultationNotesDto> {
+    return this.http.get<ConsultationNotesDto>(endpoint + 'getConsultationNote?consultationId=' + consultationId)
+  }
+
+  getConsultationById(consultationId: string): Observable<ConsultationDto> {
+    return this.http.get<ConsultationDto>(endpoint + 'getConsultationById?consultationId=' + consultationId)
   }
 }

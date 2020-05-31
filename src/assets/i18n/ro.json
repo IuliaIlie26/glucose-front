@@ -72,8 +72,8 @@
             "country": "Tara este obligatorie!",
             "region": "Judetul este obligatoriu!"
         },
-        "medical.chart": {
-            "title": "Fisa pacientului",
+        "pregnancy.chart": {
+            "title": "Fisa de sarcina",
             "name": "Numele pacientului",
             "age": "Varsta pacientului",
             "pregnant": "Insarcinata",
@@ -91,11 +91,20 @@
             "teedeScore": "Scorul Teede de risc GDM",
             "nandaScore": "Scorul Nanda de risc GDM",
             "activateSensor": "Activeaza",
-            "deactivateSensor": "Dezactiveaza"
+            "deactivateSensor": "Dezactiveaza",
+            "viewCharts": "Vezi graficele"
         },
         "consultation.history": {
             "title": "Istoricul consultatiilor",
             "viewNotes": "Vezi notite"
+        },
+        "blood.analysis":{
+            "title" : "Investigatii si analize de sange",
+            "investigationName": "Nume",
+            "investigationValue": "Valoare",
+            "status": "Status",
+            "date": "Data",
+            "requestedBy": "Cerut de"
         }
     },
     "doctor": {
@@ -163,6 +172,16 @@
             "patient.cnp": "CNP-ul pacientului",
             "speciality": "Specializarea",
             "date": "Data"
+        },
+        "notes":{
+            "title":"Notitele consultatiei",
+            "not.available": "Notitele nu sunt disponibile!",
+            "history" : "Istoric",
+            "recommandations": "Recomandari",
+            "symptoms":"Simptome",
+            "diagnosis":"Diagnostic",
+            "notes": "Notite",
+            "investigationTicket": "Bilet de trimitere"
         }
     },
     "menu": {

@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="col-12">
+        <p-card class="col-12">
+            <h4>{{'consultations.notes.title' | translate}}</h4>
+            <span style="color: indianred; font-size: larger; font-weight: bold;"
+                *ngIf="!consultationNotes || !consultationNotes.consultationId">{{'consultations.notes.not.available' | translate}}</span>
+            <div class="col-12">
+                <div class="row form-group">
+                    <div class="col-2 text-right">
+                        <label>{{'consultations.notes.history' | translate}}: </label>
+                    </div>
+                    <div class="col-9">
+                        <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                            [(ngModel)]="consultationNotes.history"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-2 text-right">
+                        <label>{{'consultations.notes.symptoms' | translate}}: </label>
+                    </div>
+                    <div class="col-9">
+                        <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                            [(ngModel)]="consultationNotes.symptoms"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-2 text-right">
+                        <label>{{'consultations.notes.diagnosis' | translate}}: </label>
+                    </div>
+                    <div class="col-9">
+                        <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                            [(ngModel)]="consultationNotes.diagnosis"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-2 text-right">
+                        <label>{{'consultations.notes.recommandations' | translate}}: </label>
+                    </div>
+                    <div class="col-9">
+                        <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                            [(ngModel)]="consultationNotes.recommandations"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-2 text-right">
+                        <label>{{'consultations.notes.investigationTicket' | translate}}: </label>
+                    </div>
+                    <div class="col-9">
+                        <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                            [(ngModel)]="investigationList"></textarea>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-2 text-right">
+                        <label>{{'consultations.notes.notes' | translate}}: </label>
+                    </div>
+                    <div class="col-9">
+                        <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                            [(ngModel)]="consultationNotes.notes"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-6 offset-5">
+                <button class="btn btn-outline-success my-2 my-sm-0" (click)="back()">{{'buttons.back' | translate}}
+                </button>
+            </div>
+        </p-card>
+    </div>
+</div>

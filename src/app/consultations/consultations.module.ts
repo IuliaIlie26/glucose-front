@@ -11,13 +11,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
-
+import { ConsultationNotesComponent } from './consultation-notes/consultation-notes.component';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
     CreateConsultationComponent,
     ManageConsultationsComponent,
-    ViewConsultationsComponent
+    ViewConsultationsComponent,
+    ConsultationNotesComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { SharedModule } from '../shared/shared.module';
     DialogModule,
     CardModule,
     HttpClientModule,
+    InputTextareaModule,
     ConfirmDialogModule,
     FormsModule,
     CalendarModule,

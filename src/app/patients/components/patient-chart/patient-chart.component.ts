@@ -100,11 +100,15 @@ export class PatientChartComponent implements OnInit {
     });
   }
 
-  viewNotes() {
-
+  viewNotes(consultationId: string) {
+    this.router.navigate(['consultation', 'consultation-notes', consultationId])
   }
 
-  openChart() {
+  viewCharts() {
+    this.router.navigate(['patient', 'glucose-charts', this.patientId])
+  }
+
+  openRiskFactorsChart() {
     this.router.navigate(['patient', 'risk-factors', this.selectedPatient.id])
   }
 
