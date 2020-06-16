@@ -49,7 +49,10 @@ export class PatientChartComponent implements OnInit {
     this.patientApi.getFullFormatAgeById(+this.patientId).subscribe(age => this.age = age)
     this.medicalChartApi.getRiskFactors(+this.patientId).subscribe(risks => {
       this.riskFactors = risks
-      this.bmi = (this.riskFactors.weight / Math.pow((this.riskFactors.height / 100), 2)).toFixed(2)
+      let bmi = (this.riskFactors.weight / Math.pow((this.riskFactors.height / 100), 2)).toFixed(2);
+      if (!isNaN(+bmi)) {
+        this.bmi = bmi
+      }
     })
     this.medicalChartApi.calculateRiskScore(+this.patientId).subscribe(scores => this.riskScore = scores)
     this.medicalChartApi.getPregancyInfo(+this.patientId).subscribe(info => this.setPregnancyInfoForm(info));

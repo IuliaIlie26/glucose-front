@@ -23,7 +23,7 @@ import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { TooltipModule } from 'primeng/tooltip';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ConfirmationService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { DialogModule } from 'primeng/dialog';
@@ -34,6 +34,7 @@ import {FieldsetModule} from 'primeng/fieldset';
 import {CardModule} from 'primeng/card';
 import { PatientChartComponent } from './components/patient-chart/patient-chart.component';
 import { GlucoseChartsComponent } from './glucose-charts/glucose-charts.component';
+import {ChartModule} from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { GlucoseChartsComponent } from './glucose-charts/glucose-charts.componen
     DropdownModule,
     CheckboxModule,
     InputTextModule,
+    ChartModule,
     PanelModule,
     ReactiveFormsModule,
     TranslateModule,
@@ -73,6 +75,6 @@ import { GlucoseChartsComponent } from './glucose-charts/glucose-charts.componen
     MessageModule,
     SharedModule
     ],
-  providers: [ConfirmationService]
+  providers: [ConfirmationService, MessageService]
 })
 export class PatientsModule { }

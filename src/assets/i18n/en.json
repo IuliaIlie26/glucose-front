@@ -94,6 +94,9 @@
             "deactivateSensor": "Deactivate",
             "viewCharts":"View charts"
         },
+        "glucose":{
+            "title": "Glucose values chart for {{patientName}}"
+        },
         "consultation.history": {
             "title": "Consultation history",
             "viewNotes": "View notes"
@@ -104,7 +107,9 @@
             "investigationValue": "Value",
             "status": "Status",
             "date": "Date",
-            "requestedBy": "Requested by"
+            "requestedBy": "Requested by",
+            "new": "New investigation ticket"
+            
         }
     },
     "doctor": {

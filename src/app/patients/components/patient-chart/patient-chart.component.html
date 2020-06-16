@@ -50,10 +50,11 @@
                     <div class="col-2 text-right mt-2">
                         <label>{{'patient.pregnancy.chart.score' | translate}}:</label>
                     </div>
-                    <span style="color: indianred; margin-left: 5px; font-weight: bold;"
-                        *ngIf="riskFactors && !riskFactors.patientId">{{'patient.pregnancy.chart.setRiskFactors' | translate}}</span>
                     <div class="col-10">
-                        <ul *ngIf="riskScore">
+                        <span style="color: indianred; margin-left: 5px; font-weight: bold;"
+                            *ngIf="riskFactors && !riskFactors.patientId">{{'patient.pregnancy.chart.setRiskFactors' | translate}}</span>
+
+                        <ul *ngIf="riskScore && riskScore.naylorScore">
                             <li class="row">
                                 <span class="mt-2">
                                     {{'patient.pregnancy.chart.naylorScore' |translate}} -
@@ -79,11 +80,11 @@
                                     {{'patient.pregnancy.chart.nandaScore' |translate}} -
                                     {{riskScore.nandaScore}}</span>
                             </li>
-                            <div>
-                                <button type="button" class="btn btn-outline-success mt-3"
-                                    (click)="openRiskFactorsChart()">{{'patient.pregnancy.chart.addrisk' | translate}}</button>
-                            </div>
                         </ul>
+                        <div>
+                            <button type="button" class="btn btn-outline-success mt-3"
+                                (click)="openRiskFactorsChart()">{{'patient.pregnancy.chart.addrisk' | translate}}</button>
+                        </div>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -105,7 +106,7 @@
                         <span *ngIf="sensorInfo && sensorInfo.status == 'ACTIVE'">
                             <button type="button" class="btn btn-outline-success ml-3"
                                 (click)="deactivate()">{{'patient.pregnancy.chart.deactivateSensor' | translate}}</button>
-                                <button type="button" class="btn btn-outline-success ml-3"
+                            <button type="button" class="btn btn-outline-success ml-3"
                                 (click)="viewCharts()">{{'patient.pregnancy.chart.viewCharts' | translate}}</button>
                         </span>
                     </div>
@@ -123,7 +124,6 @@
                 currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
                 [globalFilterFields]="['doctorName', 'doctorLastName','speciality', 'date']">
                 <ng-template pTemplate="caption">
-                    <span style="color: green;">{{"patient.manage.sensor.subtitle" | translate}}</span>
                     <div class="ui-table-globalfilter-container">
                         <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
                             [placeholder]="'menu.search.global' | translate" />
@@ -184,12 +184,15 @@
         -->
         <p-card class="col-12 mt-20">
             <h4>{{'patient.blood.analysis.title' | translate}}</h4>
+            <p-fieldset [legend]="'patient.blood.analysis.new' | translate" [toggleable]="true"
+            [(collapsed)]="collapsed">
+           
+        </p-fieldset>
             <p-table #dt [value]="investigationsList" dataKey="id" styleClass="ui-table-consultations" [rowHover]="true"
                 [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true"
                 currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
                 [globalFilterFields]="['investigationName']">
                 <ng-template pTemplate="caption">
-                    <span style="color: green;">{{"patient.manage.sensor.subtitle" | translate}}</span>
                     <div class="ui-table-globalfilter-container">
                         <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
                             [placeholder]="'menu.search.global' | translate" />

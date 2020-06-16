@@ -93,6 +93,9 @@
             "activateSensor": "Activeaza",
             "deactivateSensor": "Dezactiveaza",
             "viewCharts": "Vezi graficele"
+        },,
+        "glucose":{
+            "title": "Grafic cu valorile glicemice pentru {{patientName}}"
         },
         "consultation.history": {
             "title": "Istoricul consultatiilor",
@@ -104,7 +107,8 @@
             "investigationValue": "Valoare",
             "status": "Status",
             "date": "Data",
-            "requestedBy": "Cerut de"
+            "requestedBy": "Cerut de",
+            "new": "Bilet de trimitere"
         }
     },
     "doctor": {

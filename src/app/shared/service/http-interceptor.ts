@@ -14,9 +14,10 @@ export class HttpRequestsInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((err: any) => {
-        console.log("err interceptor",err)
+
         if (err instanceof HttpErrorResponse) {
-          this.toasterService.error('An error occurred');
+          this.toasterService.error('An error occurred:' + err.error.errorCode);
+
         }
         return of(err);
       }));

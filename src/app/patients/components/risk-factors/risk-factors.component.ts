@@ -21,7 +21,7 @@ export class RiskFactorsComponent implements OnInit, OnDestroy {
   constructor(private patientApi: PatientApiService, private medicalChartApi: MedicalChartApiService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, public translateService: TranslateService, private router: Router) { }
 
   riskFactors: RiskFactorsDto;
-  patientId: string;
+  patientId: string; 
   age: string;
   races: Array<any> = [];
   conceptions: Array<any> = [];
