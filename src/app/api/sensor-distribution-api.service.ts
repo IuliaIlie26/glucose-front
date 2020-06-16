@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { SensorDistributionDto } from '../patients/model/SensorDistributionDto';
 import { MessageDto } from '../shared/models/MessageDto';
+import { GlycemiaValuesDto } from '../shared/models/GlycemiaValuesDto';
 
 const endpoint = 'http://localhost:8080/api/sensor-distribution/';
 
@@ -31,5 +32,9 @@ export class SensorDistributionApiService {
 
     deactivateSensor(dto: SensorDistributionDto): Observable<SensorDistributionDto>{
         return this.http.post<SensorDistributionDto>(endpoint + 'deactivateSensor', dto);
+    }
+
+    getGlycemiaForPatient(patientId: number): Observable<GlycemiaValuesDto[]>{
+        return this.http.get<GlycemiaValuesDto[]>(endpoint + 'getGlycemiaForPatient?patientId=' + patientId)
     }
 }

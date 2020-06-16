@@ -95,7 +95,10 @@
             "viewCharts":"View charts"
         },
         "glucose":{
-            "title": "Glucose values chart for {{patientName}}"
+            "title": "Glucose values chart for {{patientName}}",
+            "table.view": "Table view",
+            "timestamp": "Date and Time",
+            "value": "Salivary glycemia value"
         },
         "consultation.history": {
             "title": "Consultation history",

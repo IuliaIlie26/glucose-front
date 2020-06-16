@@ -104,11 +104,16 @@ export class PatientChartComponent implements OnInit {
   }
 
   viewNotes(consultationId: string) {
-    this.router.navigate(['consultation', 'consultation-notes', consultationId])
+    this.consultationApi.getConsultationNote(consultationId).subscribe(() =>
+      this.router.navigate(['consultation', 'consultation-notes', consultationId]))
   }
 
   viewCharts() {
-    this.router.navigate(['patient', 'glucose-charts', this.patientId])
+
+    this.sensorDistributionApi.getGlycemiaForPatient(+this.patientId).subscribe(() =>
+      this.router.navigate(['patient', 'glucose-charts', this.patientId])
+    )
+
   }
 
   openRiskFactorsChart() {

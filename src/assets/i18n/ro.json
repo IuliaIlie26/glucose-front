@@ -93,9 +93,12 @@
             "activateSensor": "Activeaza",
             "deactivateSensor": "Dezactiveaza",
             "viewCharts": "Vezi graficele"
-        },,
+        },
         "glucose":{
-            "title": "Grafic cu valorile glicemice pentru {{patientName}}"
+            "title": "Grafic cu valorile glicemice pentru {{patientName}}",
+            "table.view": "Tabelul inregistrarilor",
+            "timestamp": "Data si ora",
+            "value": "Nivelul glicemic salivar"
         },
         "consultation.history": {
             "title": "Istoricul consultatiilor",

@@ -3,9 +3,53 @@
     <div class="col-12">
         <p-card>
             <h5 class="titleLabel">{{"patient.glucose.title" | translate:{'patientName': patientName} }} </h5>
-            <div class="col-6">
-
+            <div class="col-8">
                 <p-chart type="line" [data]="data" (onDataSelect)="selectData($event)"></p-chart>
+
+                <div class="mt-3">
+                    <p-chart type="pie" [data]="dataPie"></p-chart>
+                </div>
+            </div>
+
+        </p-card>
+        <p-card>
+            <div class="row col-12 mt-20">
+                <p-table #dt [value]="glycemiaValues" dataKey="id" styleClass="ui-table-patients" [rowHover]="true"
+                    [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true"
+                    currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0">
+                    <ng-template pTemplate="caption">
+                        <span style="color: green;">{{"patient.glucose.table.view" | translate}}</span>
+
+                    </ng-template>
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>{{'patient.glucose.timestamp'|translate}}
+                            </th>
+                            <th>{{'patient.glucose.value'|translate}}
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-glucose>
+                        <tr class="ui-selectable-row">
+                            <td>
+                                <span style="vertical-align: middle; margin-left: .5em"> {{glucose.timestamp}}</span>
+                            </td>
+                            <td>
+                                <span [ngClass]="{'above': (glucose.value >8.0)}">{{glucose.value}}</span>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="8" style="text-align:center; color:indianred;">
+                                {{'datatable.no_data' | translate}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+                <div class="row col-6 offset-6 mt-3">
+                    <button class="btn btn-outline-success my-2 my-sm-0" (click)="back()">{{'buttons.back' | translate}}
+                    </button>
+                </div>
             </div>
         </p-card>
     </div>

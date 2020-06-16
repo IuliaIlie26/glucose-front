@@ -77,14 +77,6 @@
                         </div>
                     </li>
 
-                    <!--Doctor: calendar-->
-                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['DOCTOR']">
-                        <a class="nav-link dropdown-toggle" [routerLink]="['doctor/schedule']"
-                            routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">
-                            {{"menu.calendar" | translate}}
-                        </a>
-                    </li>
-
                 </ul>
                 <fa-icon class="fa fa-globe fa-lg"></fa-icon>
                 <button class="btn mr-1" (click)="changeLanguage()">{{language}}</button>
