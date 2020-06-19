@@ -1,13 +1,5 @@
-:host ::ng-deep .ui-table-patients {
+:host ::ng-deep .ui-table-consultations {
     box-shadow: 0 1px 3px 0 green, 0 1px 1px 0 green, 0 2px 1px -1px green;
-    margin-left: 20px;
-    margin-top: 30px;
-    
-    .flag {
-        vertical-align: middle;
-        width: 30px;
-        height: 20px;
-    }
 
     .ui-paginator {
         .ui-dropdown {
@@ -19,13 +11,13 @@
         }
     }
 
-    
     .ui-column-filter {
         display: block;
 
         input {
-            width: 100%;
+            width: 120%;
         }
+
     }
 
     .ui-table-globalfilter-container {
@@ -51,13 +43,17 @@
     .ui-table-thead > tr > th {
         border: 0 none;
         text-align: left;
-
         &.ui-filter-column {
             border-top: 1px solid #c8c8c8;
         }
 
+        &:nth-last-child(2) {
+            width: 15em;
+            text-align: left;
+        }
+
         &:last-child {
-            width: 10em;
+            width: 15em;
             text-align: left;
         }
     }
@@ -65,11 +61,10 @@
     .ui-table-tbody > tr > td {
         border: 0 none;
         cursor: auto;
+    }
 
-       &:last-child {
-            width: 8em;
-            text-align: center;
-        }
+    .ui-dropdown-label:not(.ui-placeholder) {
+        text-transform: uppercase;
     }
 
     .ui-table-tbody > tr > td .ui-column-title {
@@ -77,10 +72,15 @@
     }
 }
 
+.show-dialog{
+    width: 800px;
+    height: 800px;
+}
+
 /* Responsive */
 @media screen and (max-width: 64em) {
     :host ::ng-deep .ui-table {
-        &.ui-table-patients {
+        &.ui-table-consultations {
             .ui-table-thead > tr > th,
             .ui-table-tfoot > tr > td {
                 display: none !important;
@@ -106,3 +106,4 @@
         }
     }
 }
+

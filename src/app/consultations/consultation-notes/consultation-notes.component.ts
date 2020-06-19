@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { InvestigationsTicketDto } from 'src/app/shared/models/InvestigationsTicketDto';
 import { InvestiagationsApiService } from 'src/app/api/investigations-api.service';
+import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-consultation-notes',
@@ -13,20 +15,25 @@ import { InvestiagationsApiService } from 'src/app/api/investigations-api.servic
 })
 export class ConsultationNotesComponent implements OnInit {
 
-  consultationNotes: ConsultationNotesDto ;
+  consultationNotes: ConsultationNotesDto;
   investigationTicket: InvestigationsTicketDto;
   consultationId: string;
-  collapsed = true;
-  constructor(private consultationApi: ConsultationsApiService,private investigationsApi: InvestiagationsApiService, private activatedRoute: ActivatedRoute, private _location: Location) { }
+  isDisabled = true;
+  constructor(private consultationApi: ConsultationsApiService, private toastr: ToastrService, private translateService: TranslateService, private investigationsApi: InvestiagationsApiService, private activatedRoute: ActivatedRoute, private _location: Location) { }
 
   ngOnInit() {
     this.consultationId = this.activatedRoute.snapshot.paramMap.get('id');
     this.consultationApi.getConsultationNote(this.consultationId).subscribe(note => this.consultationNotes = note)
-    this.investigationsApi.getInvestigationTicket(this.consultationId).subscribe(ticket => this.investigationTicket= ticket)
+    this.investigationsApi.getInvestigationTicket(this.consultationId).subscribe(ticket => this.investigationTicket = ticket)
+    this.isDisabled = sessionStorage.getItem("notesDisabled") == 'true';
   }
 
   back() {
     this._location.back();
   }
 
+  save() {
+    this.consultationNotes.consultationId = this.consultationId;
+    this.consultationApi.saveNotes(this.consultationNotes).subscribe(() => this.toastr.success(this.translateService.instant('buttons.success')));
+  }
 }

@@ -6,7 +6,7 @@
                 currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
                 [globalFilterFields]="['patientName','patientLastname']">
                 <ng-template pTemplate="caption">
-                    <span style="color: green;">{{"consultations.manage.subtitle" | translate}}</span>
+                    <span style="color: green;">{{"consultations.view.title" | translate}}</span>
                     <div class="ui-table-globalfilter-container">
                         <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
                             [placeholder]="'menu.search.global' | translate" />

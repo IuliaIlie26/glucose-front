@@ -245,5 +245,37 @@
                 </ng-template>
             </p-table>
         </p-card>
+        <!--
+            Alerts
+        -->
+        <p-card class="col-3 mt 20">
+            <h4>{{'patient.chart.alerts.title' | translate}}</h4>
+            <p-table #dt [value]="alertsList" dataKey="id" styleClass="ui-table-consultations" [rowHover]="true"
+                [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true"
+                currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="date">{{'patient.chart.alerts.date'|translate}}
+                            <p-sortIcon field="date"></p-sortIcon>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-alert>
+                    <tr class="ui-selectable-row">
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em">
+                                {{alert.timestamp}}</span>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="1" style="text-align:center; color:indianred;">
+                            {{'datatable.no_data' | translate}}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </p-card>
     </div>
 </div>

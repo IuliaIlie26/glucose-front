@@ -11,6 +11,12 @@ const endpoint = 'http://localhost:8080/api/consultations/';
 })
 export class ConsultationsApiService {
 
+  constructor(private http: HttpClient) { }
+
+  getTodaysConsultations(name: string): Observable<ConsultationDto[]> {
+    return this.http.get<ConsultationDto[]>(endpoint + 'getTodaysConsultations?username=' + name)
+  }
+
   saveNotes(currentConsultation: ConsultationNotesDto): Observable<void> {
     return this.http.post<void>(endpoint + 'saveNotes', currentConsultation)
   }
@@ -18,8 +24,6 @@ export class ConsultationsApiService {
   getCurrentConsultation(username: string): Observable<ConsultationDto> {
     return this.http.get<ConsultationDto>(endpoint + 'getCurrentConsultation?username=' + username)
   }
-
-  constructor(private http: HttpClient) { }
 
   findConsultationSpots(filter: ConsultationFilterDto): Observable<ConsultationDto[]> {
     return this.http.post<ConsultationDto[]>(endpoint + 'getFreeSpots', filter)

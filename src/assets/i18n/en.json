@@ -92,9 +92,9 @@
             "nandaScore": "Nanda GDM risk score",
             "activateSensor": "Activate",
             "deactivateSensor": "Deactivate",
-            "viewCharts":"View charts"
+            "viewCharts": "View charts"
         },
-        "glucose":{
+        "glucose": {
             "line": "Glucose values line chart for {{patientName}}",
             "pie": "Glucose values distribution pie chart for {{patientName}}",
             "table.view": "Table view",
@@ -113,7 +113,16 @@
             "date": "Date",
             "requestedBy": "Requested by",
             "new": "New investigation ticket"
-            
+        },
+        "alerts": {
+            "title": "Patient alerts",
+            "not.found": "You have no alerts!",
+            "found": "Following patients have high glycemic values:",
+            "delete": "Delete"
+        },
+        "chart.alerts": {
+            "title": "Alerts history",
+            "date": "Date"
         }
     },
     "doctor": {
@@ -157,6 +166,15 @@
         "my.patients": {
             "list": "My patients list",
             "view.chart": "View chart"
+        },
+        "home": {
+            "consultations": {
+                "today": "Today's consultations",
+                "open": {
+                    "chart": "Open the chart",
+                    "notes": "Open the notes"
+                }
+            }
         }
     },
     "consultations": {
@@ -182,21 +200,24 @@
             "speciality": "Speciality",
             "date": "Date"
         },
-        "notes":{
-            "title":"Consultation notes",
-            "not.available":"Notes not available!",
-            "history" : "History",
+        "view": {
+            "title": "Future consultations"
+        },
+        "notes": {
+            "title": "Consultation notes",
+            "not.available": "Notes not available!",
+            "history": "History",
             "recommandations": "Recommandations",
-            "symptoms":"Symptoms",
-            "diagnosis":"Diagnosis",
+            "symptoms": "Symptoms",
+            "diagnosis": "Diagnosis",
             "notes": "Notes",
             "investigationTicket": "Investigations ticket"
         },
-        "current":{
+        "current": {
             "not.open": "There is no ongoing consultation!",
-            "viewChart":"View chart",
+            "viewChart": "View chart",
             "addNotes": "Add notes",
-            "title":"Consultation with {{patientName}}"
+            "title": "Consultation with {{patientName}}"
         }
     },
     "menu": {
@@ -268,8 +289,12 @@
         "delete": "Delete",
         "back": "Back"
     },
-    "home":{
-        "goToConsultations":"Go to consultation"
+    "home": {
+        "welcome": "Welcome to the Glucose Measure Application, {{name}}!",
+        "alerts": {
+            "found": "There are alerts about your patients!",
+            "open": "Go to alerts"
+        }
     },
     "info.required.fields": "Fields with * are required.",
     "datatable.no_data": "No data available!"

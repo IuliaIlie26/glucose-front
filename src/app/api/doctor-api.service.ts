@@ -8,7 +8,9 @@ const endpoint = 'http://localhost:8080/api/doctor/';
   providedIn: 'root'
 })
 export class DoctorApiService {
-
+  getDoctorNameAndLastnameByUsername(username: string) : Observable<string> {
+    return this.http.get<string>(endpoint + 'getDoctorNameAndLastnameByUsername?username=' + username, { responseType: 'text' as 'json' })
+  }
   constructor(private http: HttpClient) { }
 
   getDoctorNameAndLastname(id: number): Observable<string> {

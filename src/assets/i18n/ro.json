@@ -94,7 +94,7 @@
             "deactivateSensor": "Dezactiveaza",
             "viewCharts": "Vezi graficele"
         },
-        "glucose":{
+        "glucose": {
             "line": "Grafic liniar cu valorile glicemice pentru {{patientName}}",
             "pie": "Distributia nivelului pentru {{patientName}}",
             "table.view": "Tabelul inregistrarilor",
@@ -105,14 +105,24 @@
             "title": "Istoricul consultatiilor",
             "viewNotes": "Vezi notite"
         },
-        "blood.analysis":{
-            "title" : "Investigatii si analize de sange",
+        "blood.analysis": {
+            "title": "Investigatii si analize de sange",
             "investigationName": "Nume",
             "investigationValue": "Valoare",
             "status": "Status",
             "date": "Data",
             "requestedBy": "Cerut de",
             "new": "Bilet de trimitere"
+        },
+        "alerts": {
+            "title": "Alerte de pacienti",
+            "not.found": "Nu exista alerte!",
+            "found": "Urmatorii pacienti au nivelul glicemic ridicat:",
+            "delete": "Sterge"
+        },
+        "chart.alerts": {
+            "title": "Istoric de alerte",
+            "date": "Data"
         }
     },
     "doctor": {
@@ -156,6 +166,15 @@
         "my.patients": {
             "list": "Lista mea de pacienti",
             "view.chart": "Vezi fisa"
+        },
+        "home": {
+            "consultations": {
+                "today": "Consultatiile de astazi",
+                "open": {
+                    "chart": "Deschide fisa",
+                    "notes": "Deschide notitele"
+                }
+            }
         }
     },
     "consultations": {
@@ -181,21 +200,24 @@
             "speciality": "Specializarea",
             "date": "Data"
         },
-        "notes":{
-            "title":"Notitele consultatiei",
+        "view": {
+            "title": "Consultatii viitoare"
+        },
+        "notes": {
+            "title": "Notitele consultatiei",
             "not.available": "Notitele nu sunt disponibile!",
-            "history" : "Istoric",
+            "history": "Istoric",
             "recommandations": "Recomandari",
-            "symptoms":"Simptome",
-            "diagnosis":"Diagnostic",
+            "symptoms": "Simptome",
+            "diagnosis": "Diagnostic",
             "notes": "Notite",
             "investigationTicket": "Bilet de trimitere"
         },
-        "current":{
+        "current": {
             "not.open": "Nu aveti nicio consultatie in desfasurare!",
-            "viewChart":"Vezi fisa",
+            "viewChart": "Vezi fisa",
             "addNotes": "Adauga notite",
-            "title":"Consultatia cu {{patientName}}"
+            "title": "Consultatia cu {{patientName}}"
         }
     },
     "menu": {
@@ -267,8 +289,12 @@
         "weight.nan": "Greutatea este numerica!",
         "fields.required": "Completati toate campurile oblgatorii!"
     },
-    "home":{
-        "goToConsultations":"Mergi la consultatie"
+    "home": {
+        "welcome": "Bine ai venit, {{name}}!",
+        "alert": {
+            "found": "Aveti alerte de pacienti deschise!",
+            "open": "Mergi la alerte"
+        }
     },
     "info.required.fields": "Campurile cu * sunt obligatorii.",
     "datatable.no_data": "Nu exista date!"

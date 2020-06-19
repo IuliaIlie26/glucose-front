@@ -11,7 +11,7 @@
                         <label>{{'consultations.notes.history' | translate}}: </label>
                     </div>
                     <div class="col-9">
-                        <textarea pInputTextarea disabled='true' [rows]="5" [cols]="100" autoResize="autoResize"
+                        <textarea pInputTextarea [disabled]='isDisabled' [rows]="5" [cols]="100" autoResize="autoResize"
                             [(ngModel)]="consultationNotes.history"></textarea>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                         <label>{{'consultations.notes.symptoms' | translate}}: </label>
                     </div>
                     <div class="col-9">
-                        <textarea pInputTextarea disabled='true' [rows]="5" [cols]="100" autoResize="autoResize"
+                        <textarea pInputTextarea [disabled]='isDisabled' [rows]="5" [cols]="100" autoResize="autoResize"
                             [(ngModel)]="consultationNotes.symptoms"></textarea>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <label>{{'consultations.notes.diagnosis' | translate}}: </label>
                     </div>
                     <div class="col-9">
-                        <textarea pInputTextarea disabled='true' [rows]="5" [cols]="100" autoResize="autoResize"
+                        <textarea pInputTextarea [disabled]='isDisabled' [rows]="5" [cols]="100" autoResize="autoResize"
                             [(ngModel)]="consultationNotes.diagnosis"></textarea>
                     </div>
                 </div>
@@ -38,16 +38,16 @@
                         <label>{{'consultations.notes.recommandations' | translate}}: </label>
                     </div>
                     <div class="col-9">
-                        <textarea pInputTextarea disabled='true' [rows]="5" [cols]="100" autoResize="autoResize"
+                        <textarea pInputTextarea [disabled]='isDisabled' [rows]="5" [cols]="100" autoResize="autoResize"
                             [(ngModel)]="consultationNotes.recommandations"></textarea>
                     </div>
                 </div>
-                <div class="row form-group">
+                <div class="row form-group" *ngIf="isDisabled">
                     <div class="col-2 text-right">
                         <label>{{'consultations.notes.investigationTicket' | translate}}: </label>
                     </div>
                     <div class="col-9">
-                        <textarea pInputTextarea disabled='true' [rows]="5" [cols]="100" autoResize="autoResize"
+                        <textarea pInputTextarea [disabled]='isDisabled' [rows]="5" [cols]="100" autoResize="autoResize"
                             [(ngModel)]="investigationTicket.investigationsList"></textarea>
                     </div>
                 </div>
@@ -56,13 +56,15 @@
                         <label>{{'consultations.notes.notes' | translate}}: </label>
                     </div>
                     <div class="col-9">
-                        <textarea pInputTextarea disabled='true' [rows]="5" [cols]="100" autoResize="autoResize"
+                        <textarea pInputTextarea [disabled]='isDisabled' [rows]="5" [cols]="100" autoResize="autoResize"
                             [(ngModel)]="consultationNotes.notes"></textarea>
                     </div>
                 </div>
             </div>
             <div class="row col-6 offset-5">
                 <button class="btn btn-outline-success my-2 my-sm-0" (click)="back()">{{'buttons.back' | translate}}
+                </button>
+                <button *ngIf="!isDisabled" class="btn btn-outline-success my-2 my-sm-0 ml-3" (click)="save()">{{'buttons.save' | translate}}
                 </button>
             </div>
         </p-card>

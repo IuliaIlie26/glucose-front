@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PatientDto } from '../shared/models/PatientDto';
+import { PatientAlertsDto } from '../shared/models/PatientAlertsDto';
 
 const endpoint = 'http://localhost:8080/api/patient/';
 
@@ -10,6 +11,12 @@ const endpoint = 'http://localhost:8080/api/patient/';
 })
 export class PatientApiService {
 
+  deleteAlertsForDoctor(username: string): Observable<void> {
+    return this.http.post<void>(endpoint + 'deleteAlertsForDoctor', username, {})
+  }
+  getAlertsListForPatient(patientId: number): Observable<PatientAlertsDto[]> {
+    return this.http.get<PatientAlertsDto[]>(endpoint + 'getAlertsListForPatient?patientId=' + patientId);
+  }
   constructor(private http: HttpClient) { }
 
   savePatient(dto: PatientDto): Observable<void> {
@@ -39,6 +46,10 @@ export class PatientApiService {
 
   getPatientNameByCnp(cnp: string): Observable<string> {
     return this.http.get<string>(endpoint + 'getPatientNameByCnp?cnp=' + cnp, { responseType: 'text' as 'json' })
+  }
+
+  getAllPatientAlertsForDoctor(username: string): Observable<PatientDto[]> {
+    return this.http.get<PatientDto[]>(endpoint + 'getAllPatientAlertsForDoctor?username=' + username);
   }
 
 }

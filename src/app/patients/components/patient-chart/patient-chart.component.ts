@@ -13,6 +13,7 @@ import { MedicalChartApiService } from 'src/app/api/medical-chart-api.service';
 import { SensorDistributionApiService } from 'src/app/api/sensor-distribution-api.service';
 import { ConsultationDto } from 'src/app/shared/models/ConsultationDto';
 import { ConsultationsApiService } from 'src/app/api/consultations-api.service';
+import { PatientAlertsDto } from 'src/app/shared/models/PatientAlertsDto';
 
 @Component({
   selector: 'app-patient-chart',
@@ -40,13 +41,15 @@ export class PatientChartComponent implements OnInit {
   riskScore: RiskScoreDto;
   sensorInfo: SensorDistributionDto;
   consultationList: ConsultationDto[];
+  alertsList: PatientAlertsDto[] =[];
 
   ngOnInit() {
     this.maxDate.setMonth(this.today.getMonth() + 10);
-
+    sessionStorage.setItem("notesDisabled", "true")
     this.patientId = this.activatedRoute.snapshot.paramMap.get('patientId');
     this.patientApi.getPatientById(+this.patientId).subscribe(patient => this.selectedPatient = patient);
     this.patientApi.getFullFormatAgeById(+this.patientId).subscribe(age => this.age = age)
+    this.patientApi.getAlertsListForPatient(+this.patientId).subscribe(list => this.alertsList = list)
     this.medicalChartApi.getRiskFactors(+this.patientId).subscribe(risks => {
       this.riskFactors = risks
       let bmi = (this.riskFactors.weight / Math.pow((this.riskFactors.height / 100), 2)).toFixed(2);
