@@ -7,6 +7,7 @@ export class ConsultationDto {
     doctorId: number;
     patientCnp: string;
     patientName: string;
+    patientId: number;
     patientLastName: string;
     consultationId : string;
 }

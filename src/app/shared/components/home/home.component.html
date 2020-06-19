@@ -1,1 +1,12 @@
-<p>Welcome {{name}}!</p>
+<div class="container-fluid">
+    <div class="col-12">
+        <p>Welcome {{name}}!</p>
+        <div class="col-6" *ngxPermissionsOnly="['DOCTOR']">
+            <div *ngIf="hasOpen">
+                <span>You have an ongoing consultation</span>
+                <button type="button" class="btn btn-outline-success"
+                    (click)="goToConsultations()">{{'home.goToConsultations' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>

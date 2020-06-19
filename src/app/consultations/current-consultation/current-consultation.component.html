@@ -1,0 +1,89 @@
+<div class="container-fluid">
+    <div class="col-12">
+        <div *ngIf="!(currentConsultation && currentConsultation.patientName)">
+            <p-card>
+                <span
+                    style="color: indianred; font-size: larger; font-weight: bold;">{{"consultations.current.not.open" | translate }}</span>
+            </p-card>
+        </div>
+        <div *ngIf="currentConsultation.patientName && currentConsultationNotes">
+            <p-card class="mt 20">
+                <div class="col-12">
+                    <h4>{{'consultations.current.title' | translate : {'patientName': currentConsultation.patientName + ' '+ currentConsultation.patientLastName} }}
+                    </h4>
+                    <div class="col-2 offset-1 mb-3 mt-3">
+
+                        <button type="button" class="btn btn-outline-success"
+                            (click)="goToChart()">{{'consultations.current.viewChart' | translate}}</button>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-2 text-right">
+                            <label>{{'consultations.notes.history' | translate}}: </label>
+                        </div>
+                        <div class="col-9">
+                            <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                                [(ngModel)]="currentConsultationNotes.history"></textarea>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-2 text-right">
+                            <label>{{'consultations.notes.symptoms' | translate}}: </label>
+                        </div>
+                        <div class="col-9">
+                            <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                                [(ngModel)]="currentConsultationNotes.symptoms"></textarea>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-2 text-right">
+                            <label>{{'consultations.notes.diagnosis' | translate}}: </label>
+                        </div>
+                        <div class="col-9">
+                            <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                                [(ngModel)]="currentConsultationNotes.diagnosis"></textarea>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-2 text-right">
+                            <label>{{'consultations.notes.recommandations' | translate}}: </label>
+                        </div>
+                        <div class="col-9">
+                            <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                                [(ngModel)]="currentConsultationNotes.recommandations"></textarea>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-2 text-right">
+                            <label>{{'consultations.notes.notes' | translate}}: </label>
+                        </div>
+                        <div class="col-9">
+                            <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                                [(ngModel)]="currentConsultationNotes.notes"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-6 offset-5">
+                    <button class="btn btn-outline-success my-2 my-sm-0"
+                        (click)="saveNotes()">{{'buttons.save' | translate}}
+                    </button>
+                </div>
+            </p-card>
+            <p-card *ngIf="investigations">
+                <p-fieldset [legend]="'patient.blood.analysis.new' | translate" [toggleable]="true"
+                    [(collapsed)]="collapsed">
+                    <div class="row form-group">
+                        <div class="col-2 text-right">
+                            <label>{{'consultations.notes.investigationTicket' | translate}}: </label>
+                        </div>
+                        <div class="col-9">
+                            <textarea pInputTextarea [rows]="5" [cols]="100" autoResize="autoResize"
+                                [(ngModel)]="investigations.investigationsList"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-6 offset-5"> <button type="button" class="btn btn-outline-success"
+                            (click)="saveTicket()">{{'buttons.save' | translate}}</button></div>
+                </p-fieldset>
+            </p-card>
+        </div>
+    </div>
+</div>

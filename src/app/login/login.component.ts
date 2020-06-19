@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
 
     this.usersApi.login(this.userDto).subscribe(role => {
       sessionStorage.setItem("loggedUsername", this.userDto.username);
+      sessionStorage.setItem("role", role);
       let permission = [];
       permission.push(role);
       this.permissionService.loadPermissions(permission);

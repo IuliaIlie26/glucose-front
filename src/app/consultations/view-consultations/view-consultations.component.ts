@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { ConsultationsApiService } from 'src/app/api/consultations-api.service';
+import { ConsultationDto } from 'src/app/shared/models/ConsultationDto';
 
 @Component({
   selector: 'app-view-consultations',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewConsultationsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private consultationApi: ConsultationsApiService) { }
+
+  specialities: Array<any>;
+  consultationList: ConsultationDto[];
 
   ngOnInit() {
+    let username= sessionStorage.getItem('loggedUsername')
+    this.consultationApi.getNextConsultationsForDoctor(username).subscribe(list => this.consultationList = list)
   }
-
 }

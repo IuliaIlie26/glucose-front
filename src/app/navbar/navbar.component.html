@@ -17,8 +17,7 @@
                             {{"menu.patients" | translate}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="nav-link" [routerLink]="['patient/patients-list']"
-                                routerLinkActive="current-item"
+                            <a class="nav-link" [routerLink]="['patient/patients-list']" routerLinkActive="current-item"
                                 [routerLinkActiveOptions]="{exact: false}">{{"menu.doctor.patients" | translate}}</a>
                             <a class="nav-link" [routerLink]="['patient/patient-alerts']"
                                 routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">
@@ -54,11 +53,21 @@
                     </li>
 
                     <!--Doctor: view consultations-->
-                    <li class=" nav-item active" *ngxPermissionsOnly="['DOCTOR']">
-                        <a class="nav-link" [routerLink]="['consultation/view-consultations']"
-                            routerLinkActive="current-item"
-                            [routerLinkActiveOptions]="{exact: false}">{{"menu.consultations.view" | translate}}<span
-                                class="sr-only">(current)</span></a>
+                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['DOCTOR']">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            {{"menu.consultations.title" | translate}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" [routerLink]="['consultation/current-consultation']"
+                                routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">{{"menu.consultations.current" | translate}}<span
+                                    class="sr-only">(current)</span></a>
+                            <a class="dropdown-item" [routerLink]="['consultation/view-consultations']"
+                                routerLinkActive="current-item"
+                                [routerLinkActiveOptions]="{exact: false}">{{"menu.consultations.view" | translate}}<span
+                                    class="sr-only">(current)</span></a>
+                        </div>
                     </li>
 
                     <!--Administrator: create and manage consultations-->

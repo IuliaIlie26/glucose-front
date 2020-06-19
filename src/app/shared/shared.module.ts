@@ -7,6 +7,7 @@ import { PanelModule, InputTextModule, AccordionModule, DropdownModule, Calendar
 import { FormsModule } from '@angular/forms';
 import { NumbersOnlyDirective } from './directive/numbers-only.directive';
 import { DoctorFormComponent } from './components/doctor-form/doctor-form.component';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { DoctorFormComponent } from './components/doctor-form/doctor-form.compon
         AccordionModule,
         DropdownModule,
         CalendarModule,
-        FormsModule
+        FormsModule,
+        NgxPermissionsModule.forRoot()
     ],
     exports: [
         HomeComponent,

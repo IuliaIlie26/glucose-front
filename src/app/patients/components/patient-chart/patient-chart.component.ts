@@ -104,6 +104,7 @@ export class PatientChartComponent implements OnInit {
   }
 
   viewNotes(consultationId: string) {
+    console.log(consultationId, 'din chart')
     this.consultationApi.getConsultationNote(consultationId).subscribe(() =>
       this.router.navigate(['consultation', 'consultation-notes', consultationId]))
   }

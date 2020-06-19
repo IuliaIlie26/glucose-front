@@ -3,6 +3,8 @@ import { ConsultationNotesDto } from 'src/app/shared/models/ConsultationNotesDto
 import { ConsultationsApiService } from 'src/app/api/consultations-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { InvestigationsTicketDto } from 'src/app/shared/models/InvestigationsTicketDto';
+import { InvestiagationsApiService } from 'src/app/api/investigations-api.service';
 
 @Component({
   selector: 'app-consultation-notes',
@@ -11,14 +13,16 @@ import { Location } from '@angular/common';
 })
 export class ConsultationNotesComponent implements OnInit {
 
-  consultationNotes: ConsultationNotesDto = new ConsultationNotesDto();
-  investigationList=""
+  consultationNotes: ConsultationNotesDto ;
+  investigationTicket: InvestigationsTicketDto;
   consultationId: string;
-  constructor(private consultationApi: ConsultationsApiService, private activatedRoute: ActivatedRoute, private _location: Location) { }
+  collapsed = true;
+  constructor(private consultationApi: ConsultationsApiService,private investigationsApi: InvestiagationsApiService, private activatedRoute: ActivatedRoute, private _location: Location) { }
 
   ngOnInit() {
-    this.consultationId = this.activatedRoute.snapshot.paramMap.get('consultationId');
+    this.consultationId = this.activatedRoute.snapshot.paramMap.get('id');
     this.consultationApi.getConsultationNote(this.consultationId).subscribe(note => this.consultationNotes = note)
+    this.investigationsApi.getInvestigationTicket(this.consultationId).subscribe(ticket => this.investigationTicket= ticket)
   }
 
   back() {

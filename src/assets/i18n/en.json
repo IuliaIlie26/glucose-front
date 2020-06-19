@@ -95,7 +95,8 @@
             "viewCharts":"View charts"
         },
         "glucose":{
-            "title": "Glucose values chart for {{patientName}}",
+            "line": "Glucose values line chart for {{patientName}}",
+            "pie": "Glucose values distribution pie chart for {{patientName}}",
             "table.view": "Table view",
             "timestamp": "Date and Time",
             "value": "Salivary glycemia value"
@@ -190,6 +191,12 @@
             "diagnosis":"Diagnosis",
             "notes": "Notes",
             "investigationTicket": "Investigations ticket"
+        },
+        "current":{
+            "not.open": "There is no ongoing consultation!",
+            "viewChart":"View chart",
+            "addNotes": "Add notes",
+            "title":"Consultation with {{patientName}}"
         }
     },
     "menu": {
@@ -200,7 +207,8 @@
             "title": "Consultations",
             "create": "Create a new consultation",
             "manage": "Manage consultations",
-            "view": "View consultations"
+            "view": "View consultations",
+            "current": "Current consultation"
         },
         "doctor": {
             "title": "Doctors",
@@ -259,6 +267,9 @@
         "search": "Search",
         "delete": "Delete",
         "back": "Back"
+    },
+    "home":{
+        "goToConsultations":"Go to consultation"
     },
     "info.required.fields": "Fields with * are required.",
     "datatable.no_data": "No data available!"

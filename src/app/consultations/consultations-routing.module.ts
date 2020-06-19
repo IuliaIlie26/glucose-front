@@ -4,6 +4,7 @@ import { CreateConsultationComponent } from './create-consultation/create-consul
 import { ManageConsultationsComponent } from './manage-consultations/manage-consultations.component';
 import { ViewConsultationsComponent } from './view-consultations/view-consultations.component';
 import { ConsultationNotesComponent } from './consultation-notes/consultation-notes.component';
+import { CurrentConsultationComponent } from './current-consultation/current-consultation.component';
 
 const routes: Routes = [{
   path: 'consultation/manage-consultations',
@@ -20,6 +21,10 @@ const routes: Routes = [{
 {
   path: 'consultation/consultation-notes/:id',
   component: ConsultationNotesComponent
+},
+{
+  path: 'consultation/current-consultation',
+  component: CurrentConsultationComponent
 }
 ];
 

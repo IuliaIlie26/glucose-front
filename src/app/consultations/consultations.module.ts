@@ -13,13 +13,15 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
 import { ConsultationNotesComponent } from './consultation-notes/consultation-notes.component';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import { CurrentConsultationComponent } from './current-consultation/current-consultation.component';
 
 @NgModule({
   declarations: [
     CreateConsultationComponent,
     ManageConsultationsComponent,
     ViewConsultationsComponent,
-    ConsultationNotesComponent
+    ConsultationNotesComponent,
+    CurrentConsultationComponent
   ],
   imports: [
     CommonModule,

@@ -95,7 +95,8 @@
             "viewCharts": "Vezi graficele"
         },
         "glucose":{
-            "title": "Grafic cu valorile glicemice pentru {{patientName}}",
+            "line": "Grafic liniar cu valorile glicemice pentru {{patientName}}",
+            "pie": "Distributia nivelului pentru {{patientName}}",
             "table.view": "Tabelul inregistrarilor",
             "timestamp": "Data si ora",
             "value": "Nivelul glicemic salivar"
@@ -189,6 +190,12 @@
             "diagnosis":"Diagnostic",
             "notes": "Notite",
             "investigationTicket": "Bilet de trimitere"
+        },
+        "current":{
+            "not.open": "Nu aveti nicio consultatie in desfasurare!",
+            "viewChart":"Vezi fisa",
+            "addNotes": "Adauga notite",
+            "title":"Consultatia cu {{patientName}}"
         }
     },
     "menu": {
@@ -199,7 +206,8 @@
             "title": "Consultatii",
             "create": "Creeaza o noua consultatie",
             "manage": "Administreaza consultatiile",
-            "view": "Vezi consultatiile"
+            "view": "Vezi consultatiile",
+            "current": "Consultatia curenta"
         },
         "doctor": {
             "title": "Doctori",
@@ -258,6 +266,9 @@
         "height.nan": "Inaltimea este numerica!",
         "weight.nan": "Greutatea este numerica!",
         "fields.required": "Completati toate campurile oblgatorii!"
+    },
+    "home":{
+        "goToConsultations":"Mergi la consultatie"
     },
     "info.required.fields": "Campurile cu * sunt obligatorii.",
     "datatable.no_data": "Nu exista date!"
