@@ -23,11 +23,12 @@ export class HomeComponent implements OnInit {
   consultationList = [];
   futureConsultationsForPatients = [];
   patient: PatientDto;
+  role = ''
   ngOnInit() {
     let username = sessionStorage.getItem('loggedUsername')
-    let role = sessionStorage.getItem('role')
+    this.role = sessionStorage.getItem('role')
 
-    switch (role) {
+    switch (this.role) {
       case 'ADMINISTRATOR': {
         this.usersApi.getAdminNameById(username).subscribe(name => this.name = name);
         break;

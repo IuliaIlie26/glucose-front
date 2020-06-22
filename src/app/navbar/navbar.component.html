@@ -11,7 +11,7 @@
                     </li>
 
                     <!--Doctor: view patients-->
-                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['DOCTOR']">
+                    <li class="nav-item dropdown active" *ngIf="role === 'DOCTOR' ">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             {{"menu.patients" | translate}}
@@ -26,7 +26,7 @@
                     </li>
 
                     <!--Administrator: Create and manage patients-->
-                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['ADMINISTRATOR']">
+                    <li class="nav-item dropdown active" *ngIf="role === 'ADMINISTRATOR' ">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             {{"menu.patients" | translate}}
@@ -45,7 +45,7 @@
                     </li>
 
                     <!--Administrator: view doctor list and schedule-->
-                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['ADMINISTRATOR']">
+                    <li class="nav-item dropdown active" *ngIf="role === 'ADMINISTRATOR' ">
                         <a class="nav-link" [routerLink]="['doctor/list']" routerLinkActive="current-item"
                             [routerLinkActiveOptions]="{exact: false}">
                             {{"menu.doctor.title" | translate}}
@@ -53,7 +53,7 @@
                     </li>
 
                     <!--Doctor: view consultations-->
-                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['DOCTOR']">
+                    <li class="nav-item dropdown active" *ngIf="role === 'DOCTOR' ">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             {{"menu.consultations.title" | translate}}
@@ -71,7 +71,7 @@
                     </li>
 
                     <!--Administrator: create and manage consultations-->
-                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['ADMINISTRATOR']">
+                    <li class="nav-item dropdown active" *ngIf="role === 'ADMINISTRATOR' ">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             {{"menu.consultations.title" | translate}}
@@ -88,14 +88,14 @@
 
                     <!--PATIENT-->
 
-                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['PATIENT']">
+                    <li class="nav-item dropdown active" *ngIf="role === 'PATIENT' ">
                         <a class="nav-link" [routerLink]="['patient/medical-chart', patientId]" routerLinkActive="current-item"
                             [routerLinkActiveOptions]="{exact: false}">
                             {{"menu.patient.mychart" | translate}}
                         </a>
                     </li>
                 
-                    <li class="nav-item dropdown active" *ngxPermissionsOnly="['PATIENT']">
+                    <li class="nav-item dropdown active" *ngIf="role === 'PATIENT' ">
                         <a class="nav-link" [routerLink]="['consultation/create-consultation']" routerLinkActive="current-item"
                             [routerLinkActiveOptions]="{exact: false}">
                             {{"menu.patient.consultation" | translate}}

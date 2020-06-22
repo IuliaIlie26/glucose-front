@@ -14,11 +14,12 @@ export class NavbarComponent implements OnInit {
   patientId;
 
   isLoggedIn$: Observable<boolean>;
-
+  role = '';
   constructor(private authService: AuthService, private translate: TranslateService) { }
 
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isLoggedIn;
+    this.role = sessionStorage.getItem('role')
     this.patientId = sessionStorage.getItem('patientId');
     if (this.patientId == null) {
       this.patientId = 0

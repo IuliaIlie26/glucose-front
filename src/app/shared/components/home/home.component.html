@@ -5,7 +5,7 @@
                 style="color: green; font-size: xx-large; font-weight: bold;">{{ "home.welcome" | translate:{'name': name} }}</span>
         </div>
 
-        <div class="col-12" *ngxPermissionsOnly="['PATIENT']">
+        <div class="col-12" *ngIf="role === 'PATIENT'">
             <div class="col-6 mt-10 mb-10" *ngIf="hasAlerts">
                 <span
                     style="color: indianred; font-size: larger; font-weight: bold;">{{'home.alerts.found.patients' | translate}}</span>
@@ -71,7 +71,7 @@
             </p-table>
         </div>
 
-        <div class="col-12" *ngxPermissionsOnly="['DOCTOR']">
+        <div class="col-12" *ngIf="role === 'DOCTOR'">
             <div class="col-6 mt-10 mb-10" *ngIf="hasAlerts">
                 <span
                     style="color: indianred; font-size: larger; font-weight: bold;">{{'home.alerts.found' | translate}}</span>
