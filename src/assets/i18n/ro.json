@@ -325,5 +325,29 @@
         "patient.edit": "Editeaza detaliile tale"
     },
     "info.required.fields": "Campurile cu * sunt obligatorii.",
-    "datatable.no_data": "Nu exista date!"
+    "datatable.no_data": "Nu exista date!",
+    "backend": {
+        "generic": "A aparut o problema, va rog contactati administratorul de sistem.",
+        "doctor": {
+            "not.found": "Doctorul nu a fost gasit in sistem!",
+            "schedule.error":{
+                "start.end.required":"Orele de inceput si de sfarsit sunt obligatorii pentru ziua selectata!",
+                "start.after.end": "Ora de inceput nu poate fi dupa ora de sfarsit!"
+            }
+        },
+        "patient": {
+            "not.found": "Pacientul nu a fost gasit in sistem!",
+            "sensor.not.found": "Pacientul nu are un senzor asignat!",
+            "cnp.exists": "Un pacient cu acest CNP este prezent in sistem!",
+            "email.exists": "Un pacient cu aceasta adresa de e-mail este prezent in sistem!"
+        },
+        "sensor":{
+            "not.active": "Senzorul nu este activ!"
+
+        },
+        "wrong.password.or.email": "Adresa de e-mail sau parola este gresita!",
+        "admin.not.found": "Niciun cont nu a fost gasit cu acest nume de utilizator!",
+        "consultation.consultation.not.found" : "Consultatia nu a fost gasita in sistem!",
+        "username.not.found": "Numele de utilizator nu exista in sistem!"
+    }
 }

@@ -325,5 +325,29 @@
         "patient.edit": "Edit your details"
     },
     "info.required.fields": "Fields with * are required.",
-    "datatable.no_data": "No data available!"
+    "datatable.no_data": "No data available!",
+    "backend": {
+        "generic": "An error occured. Please contact your system administrator.",
+        "doctor": {
+            "not.found": "Doctor was not found in the system!",
+            "schedule.error":{
+                "start.end.required":"Start and end time are required for selected day!",
+                "start.after.end": "Starting hour cannot be after ending hour!"
+            }
+        },
+        "patient": {
+            "not.found": "Patient was not found in the system!",
+            "sensor.not.found": "The patient has no sensor assigned!",
+            "cnp.exists": "A patient with this personal number is already registered in the system!",
+            "email.exists": "A patient with this e-mail is already registered in the system!"
+        },
+        "sensor":{
+            "not.active": "Sensor is not active!"
+
+        },
+        "wrong.password.or.email": "Wrong password or e-mail!",
+        "admin.not.found": "No account was found by this username!",
+        "consultation.consultation.not.found" : "The consultation was not found in the system!",
+        "username.not.found": "The username was not found in the system!"
+    }
 }
