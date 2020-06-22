@@ -8,7 +8,7 @@ import { ManageSensorComponent } from './components/manage-sensor/manage-sensor.
 import { PatientEditComponent } from './components/patient-edit/patient-edit.component';
 import { PatientsListComponent } from './components/patients-list/patients-list.component';
 import { PatientChartComponent } from './components/patient-chart/patient-chart.component';
-import { GlucoseChartsComponent } from './glucose-charts/glucose-charts.component';
+import { GlucoseChartsComponent } from './components/glucose-charts/glucose-charts.component';
 
 
 const routes: Routes = [

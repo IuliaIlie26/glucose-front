@@ -5,6 +5,9 @@ import { ConsultationDto } from '../../models/ConsultationDto';
 import { UsersApiService } from 'src/app/api/users-api.service';
 import { DoctorApiService } from 'src/app/api/doctor-api.service';
 import { PatientApiService } from 'src/app/api/patient-api.service';
+import { PatientDto } from '../../models/PatientDto';
+import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +17,12 @@ import { PatientApiService } from 'src/app/api/patient-api.service';
 export class HomeComponent implements OnInit {
 
   name: string;
-  constructor(private consultationApi: ConsultationsApiService, private patientApi: PatientApiService, private router: Router, private usersApi: UsersApiService, private doctorApi: DoctorApiService) { }
+  constructor(private consultationApi: ConsultationsApiService, private translateService: TranslateService, private toastr: ToastrService, private patientApi: PatientApiService, private router: Router, private usersApi: UsersApiService, private doctorApi: DoctorApiService) { }
   hasOpen = false;
   hasAlerts = false;
   consultationList = [];
+  futureConsultationsForPatients = [];
+  patient: PatientDto;
   ngOnInit() {
     let username = sessionStorage.getItem('loggedUsername')
     let role = sessionStorage.getItem('role')
@@ -36,12 +41,31 @@ export class HomeComponent implements OnInit {
         this.consultationApi.getTodaysConsultations(username).subscribe(cons => this.consultationList = cons);
         break;
       }
-      case 'PATIENT': { break; }
+      case 'PATIENT': {
+        this.patientApi.getPatientByEmail(username).subscribe(patient => {
+          this.patient = patient;
+          sessionStorage.setItem('patientId', this.patient.id)
+          this.name = this.patient.name + ' ' + this.patient.lastname;
+          this.getFutureConsultations();
+        })
+        break;
+      }
     }
+  }
+
+  private getFutureConsultations() {
+    this.consultationApi.getFutureConsultationForPatient(+this.patient.id).subscribe(cons => this.futureConsultationsForPatients = cons);
   }
 
   goToAlerts() {
     this.router.navigate(["patient", "patient-alerts"])
+  }
+
+  delete(consultation) {
+    this.consultationApi.delete(consultation).subscribe(() => {
+      this.toastr.success(this.translateService.instant("buttons.success"));
+      this.getFutureConsultations();
+    })
   }
 
   openNotes(consultation: ConsultationDto) {

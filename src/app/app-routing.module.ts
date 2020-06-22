@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './shared/components/home/home.component';
+import { SettingsComponent } from './shared/components/settings/settings.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -11,8 +12,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  }
-  ,
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent
+  },
   {
     path: 'home',
     component: HomeComponent

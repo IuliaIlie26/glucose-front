@@ -4,8 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { CalendarModule } from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -29,12 +27,15 @@ import { PasswordModule } from 'primeng/password';
 import { SharedModule } from './shared/shared.module';
 import { SensorDistributionApiService } from './api/sensor-distribution-api.service';
 import { MedicalChartApiService } from './api/medical-chart-api.service';
+import { AuthService } from './shared/service/authentication.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -70,6 +71,7 @@ import { MedicalChartApiService } from './api/medical-chart-api.service';
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestsInterceptor, multi: true },
     PatientApiService,
     DoctorApiService,
+    AuthService,
     UsersApiService,
     SensorDistributionApiService,
     MedicalChartApiService

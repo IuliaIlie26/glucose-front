@@ -4,7 +4,7 @@
             <p-card>
                 <h5>{{'consultations.create.title' | translate}}</h5>
                 <div class="col-12">
-                    <div class="row form-group ">
+                    <div class="row form-group" *ngIf="isAdmin">
                         <label class="text-right col-form-label col-2">
                             <sup>*</sup> {{"patient.create.cnp" | translate}}:
                         </label>

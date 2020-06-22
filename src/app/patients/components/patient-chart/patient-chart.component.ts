@@ -41,26 +41,41 @@ export class PatientChartComponent implements OnInit {
   riskScore: RiskScoreDto;
   sensorInfo: SensorDistributionDto;
   consultationList: ConsultationDto[];
-  alertsList: PatientAlertsDto[] =[];
-
+  alertsList: PatientAlertsDto[] = [];
+  isPatient = false;
   ngOnInit() {
+    this.setPermission();
     this.maxDate.setMonth(this.today.getMonth() + 10);
+
     sessionStorage.setItem("notesDisabled", "true")
+
     this.patientId = this.activatedRoute.snapshot.paramMap.get('patientId');
     this.patientApi.getPatientById(+this.patientId).subscribe(patient => this.selectedPatient = patient);
+
     this.patientApi.getFullFormatAgeById(+this.patientId).subscribe(age => this.age = age)
     this.patientApi.getAlertsListForPatient(+this.patientId).subscribe(list => this.alertsList = list)
-    this.medicalChartApi.getRiskFactors(+this.patientId).subscribe(risks => {
-      this.riskFactors = risks
-      let bmi = (this.riskFactors.weight / Math.pow((this.riskFactors.height / 100), 2)).toFixed(2);
-      if (!isNaN(+bmi)) {
-        this.bmi = bmi
-      }
-    })
+    this.calculateBmi();
     this.medicalChartApi.calculateRiskScore(+this.patientId).subscribe(scores => this.riskScore = scores)
     this.medicalChartApi.getPregancyInfo(+this.patientId).subscribe(info => this.setPregnancyInfoForm(info));
     this.sensorDistributionApi.getSensorStatus(+this.patientId).subscribe(sensorInfo => this.sensorInfo = sensorInfo)
     this.consultationApi.getPatientConsultations(+this.patientId).subscribe(list => this.consultationList = list)
+  }
+
+  private calculateBmi() {
+    this.medicalChartApi.getRiskFactors(+this.patientId).subscribe(risks => {
+      this.riskFactors = risks;
+      let bmi = (this.riskFactors.weight / Math.pow((this.riskFactors.height / 100), 2)).toFixed(2);
+      if (!isNaN(+bmi)) {
+        this.bmi = bmi;
+      }
+    });
+  }
+
+  private setPermission() {
+    let role = sessionStorage.getItem('role');
+    if (role == 'PATIENT') {
+      this.isPatient = true;
+    }
   }
 
   private setPregnancyInfoForm(info: PregnancyInfoDto) {

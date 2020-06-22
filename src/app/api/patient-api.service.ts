@@ -52,4 +52,8 @@ export class PatientApiService {
     return this.http.get<PatientDto[]>(endpoint + 'getAllPatientAlertsForDoctor?username=' + username);
   }
 
+  getPatientByEmail(username : string): Observable<PatientDto>{
+    return this.http.get<PatientDto>(endpoint + 'getPatientByEmail?username=' + username);
+  }
+
 }

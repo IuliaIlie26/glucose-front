@@ -28,8 +28,16 @@ export class CreateConsultationComponent implements OnInit, OnDestroy {
   today = new Date();
   rangeDates: Date[];
   pipe = new DatePipe('en-us');
+  isAdmin = false;
 
   ngOnInit() {
+    let role = sessionStorage.getItem('role')
+    if (role == "ADMINISTRATOR") {
+      this.isAdmin = true
+    } else if (role == 'PATIENT') {
+      let patientId = sessionStorage.getItem('patientId')
+      this.patientApi.getPatientById(+patientId).subscribe(pat => this.patientCnp = pat.cnp)
+    }
     this.translateMedicalSpeciality(this.translateService.defaultLang);
     this.langSubscription = this.translateService.onLangChange.subscribe(event => this.translateMedicalSpeciality(event.lang))
   }
@@ -61,7 +69,7 @@ export class CreateConsultationComponent implements OnInit, OnDestroy {
 
     if (!this.patientCnp || !this.selectedSpeciality || !this.rangeDates) {
       this.toastr.error(this.translateService.instant('error.fields.required'));
-    } else if (this.pacientName == '') {
+    } else if (this.pacientName == '' && this.isAdmin) {
       this.toastr.error(this.translateService.instant('consultations.create.checkCnp'));
     } else {
       this.consultationFilter.startDate = this.pipe.transform(this.rangeDates[0], 'yyyy-MM-dd');

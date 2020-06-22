@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
+import { AuthService } from '../shared/service/authentication.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,11 +11,19 @@ export class NavbarComponent implements OnInit {
 
   language = 'RO';
   browserLang = 'en';
-  
-  constructor(private translate: TranslateService) {
-  }
+  patientId;
+
+  isLoggedIn$: Observable<boolean>;
+
+  constructor(private authService: AuthService, private translate: TranslateService) { }
 
   ngOnInit() {
+    this.isLoggedIn$ = this.authService.isLoggedIn;
+    this.patientId = sessionStorage.getItem('patientId');
+    if (this.patientId == null) {
+      this.patientId = 0
+    }
+
   }
 
   changeLanguage() {

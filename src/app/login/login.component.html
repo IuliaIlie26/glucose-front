@@ -1,14 +1,20 @@
-<div class="col-md-4 offset-4 mt-10">
-    <h4>{{"login.login" | translate}}</h4>
-    <div class="row form-group">
-        <label class="text-right col-form-label col-2 mr-3 ">{{"login.username" | translate}} </label>
-        <input type="text" [(ngModel)]="userDto.username" />
-    </div>
-    <div class="row form-group">
-        <label class="text-right col-form-label col-2 mr-3 ">{{"login.password" | translate}} </label>
-        <input class="passwordStyle" type="password" [(ngModel)]="userDto.password"/>
-    </div>
-    <div>
-        <button class="btn btn-outline-success my-2 my-sm-0" (click)="onLogin()">{{"login.login" | translate}}</button>
+<div class="container-fluid">
+    <div class="col-11">
+        <div class="col-5 offset-4 mt 10">
+            <h3>{{"login.message" | translate}}</h3>
+            <div class="row form-group mt-10">
+                <label class="text-right col-form-label col-2 mr-3 ">{{"login.username" | translate}} </label>
+                <input type="text" [(ngModel)]="userDto.username" />
+            </div>
+            <div class="row form-group">
+                <label class="text-right col-form-label col-2 mr-3 ">{{"login.password" | translate}} </label>
+                <input class="passwordStyle" type="password" [(ngModel)]="userDto.password" />
+            </div>
+            <div class="offset-4"> 
+                <button class="btn btn-outline-success my-2 my-sm-0" [disabled]="!(userDto.username && userDto.password)"
+                    (click)="onLogin()">{{"login.button" | translate}}</button>
+
+            </div>
+        </div>
     </div>
 </div>

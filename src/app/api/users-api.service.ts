@@ -19,4 +19,8 @@ export class UsersApiService {
     return this.http.get<string>(endpoint + 'getAdminNameById?username=' + username, { responseType: 'text' as 'json' })
   }
 
+  changePassword(userDto: UserDto): Observable<void> {
+    return this.http.post<void>(endpoint + 'changePassword', userDto)
+  }
+
 }

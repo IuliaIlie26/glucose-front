@@ -10,6 +10,10 @@ const endpoint = 'http://localhost:8080/api/consultations/';
   providedIn: 'root'
 })
 export class ConsultationsApiService {
+  getFutureConsultationForPatient(patientId: number) : Observable<ConsultationDto[]> {
+    return this.http.get<ConsultationDto[]>(endpoint + 'getFutureConsultationForPatient?patientId=' + patientId)
+  }
+
 
   constructor(private http: HttpClient) { }
 

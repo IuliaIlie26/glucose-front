@@ -254,10 +254,16 @@
         },
         "settings": "Setari",
         "logout": "Delogare",
-        "patients.search.placeholder": "Cauta pacienti..."
+        "patients.search.placeholder": "Cauta pacienti...",
+        "patient": {
+            "mychart": "Fisa mea",
+            "alerts": "Alerte",
+            "consultation": "Consultatii"
+        }
     },
     "login": {
-        "login": "Logheaza-te",
+        "message": "Bun venit in aplicatia de monitorizare a glicemiei. Te rugam sa te loghezi pentru a continua.",,
+        "button": "Logheaza-te",
         "username": "Utilizator:",
         "password": "Parola:"
     },
@@ -293,8 +299,30 @@
         "welcome": "Bine ai venit, {{name}}!",
         "alert": {
             "found": "Aveti alerte de pacienti deschise!",
+            "found.patients": "Valorile tale glicemice sunt prea mari! Verifica-ti fisa si considera o programare cu doctorul tau.",
             "open": "Mergi la alerte"
         }
+    },
+    "settings": {
+        "password": {
+            "required": "Toate campurile sunt obligatorii!",
+            "change": "Schimbarea parolei",
+            "notMatch": "Parolele nu coincid!",
+            "tooShort": "Parola trebuie sa aiba cel putin 8 caractere!",
+            "withNumber": "Parola trebuie sa contina un numar!",
+            "withUppercase": "Parola trebuie sa contina o litera mare!",
+            "withLowercase": "Parola trebuie sa contina o litera mica!",
+            "username": "Utilizator",
+            "oldPassword": "Parola veche",
+            "newPassword": "Parola noua",
+            "newPasswordRepeat": "Repeta parola noua"
+        },
+        "required": {
+            "oldPassword": "Parola veche e obligatorie!",
+            "newPassword": "Parola noua e obligatorie!",
+            "newPasswordRepeat": "Repetarea parolei e obligatorie!"
+        },
+        "patient.edit": "Editeaza detaliile tale"
     },
     "info.required.fields": "Campurile cu * sunt obligatorii.",
     "datatable.no_data": "Nu exista date!"

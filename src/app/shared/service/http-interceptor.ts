@@ -15,6 +15,7 @@ export class HttpRequestsInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((err: any) => {
 
+        console.log(err)
         if (err instanceof HttpErrorResponse) {
           this.toasterService.error('An error occurred:' + err.error.errorCode);
 

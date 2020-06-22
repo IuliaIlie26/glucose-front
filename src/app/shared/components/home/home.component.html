@@ -4,14 +4,81 @@
             <span
                 style="color: green; font-size: xx-large; font-weight: bold;">{{ "home.welcome" | translate:{'name': name} }}</span>
         </div>
+
+        <div class="col-12" *ngxPermissionsOnly="['PATIENT']">
+            <div class="col-6 mt-10 mb-10" *ngIf="hasAlerts">
+                <span
+                    style="color: indianred; font-size: larger; font-weight: bold;">{{'home.alerts.found.patients' | translate}}</span>
+            </div>
+            <br />
+            <p-table #dt [value]="futureConsultationsForPatients" dataKey="id" styleClass="ui-table-consultations"
+                [rowHover]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]"
+                [paginator]="true" currentPageReportTemplate="{last}/{totalRecords}" [filterDelay]="0"
+                [globalFilterFields]="['doctorName','doctorLastname','speciality','date']">
+                <ng-template pTemplate="caption">
+                    <span style="color: green;">{{"consultations.view.title" | translate}}</span>
+                    <div class="ui-table-globalfilter-container">
+                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                            [placeholder]="'menu.search.global' | translate" />
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+
+                        <th>{{'consultations.manage.doctor.name'|translate}}
+                        </th>
+                        <th>{{'consultations.manage.doctor.lastname'|translate}}
+
+                        </th>
+                        <th>{{'consultations.manage.speciality'|translate}}
+                        </th>
+                        <th>{{'consultations.manage.date'|translate}}
+
+                        </th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-consultation>
+                    <tr class="ui-selectable-row">
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em"> {{consultation.doctorName}}</span>
+                        </td>
+                        <td>
+                            <span
+                                style="vertical-align: middle; margin-left: .5em">{{consultation.doctorLastName}}</span>
+                        </td>
+
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em">{{consultation.speciality}}</span>
+                        </td>
+                        <td>
+                            <span style="vertical-align: middle; margin-left: .5em">{{consultation.date}}</span>
+                        </td>
+                        <td>
+                            <button pButton type="button" class="ui-button-secondary" icon="fa fa-trash"
+                                [pTooltip]="'buttons.delete' | translate" tooltipPosition="top"
+                                (click)="delete(consultation)"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="5" style="text-align:center; color:indianred;">
+                            {{'datatable.no_data' | translate}}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+
         <div class="col-12" *ngxPermissionsOnly="['DOCTOR']">
             <div class="col-6 mt-10 mb-10" *ngIf="hasAlerts">
                 <span
                     style="color: indianred; font-size: larger; font-weight: bold;">{{'home.alerts.found' | translate}}</span>
-                    <button type="button" class="btn btn-outline-success ml-3"
+                <button type="button" class="btn btn-outline-success ml-3"
                     (click)="goToAlerts()">{{'home.alerts.open' | translate}}</button>
             </div>
-            <br/>
+            <br />
 
             <p-table #dt [value]="consultationList" dataKey="id" styleClass="ui-table-consultations" [rowHover]="true"
                 [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [paginator]="true"

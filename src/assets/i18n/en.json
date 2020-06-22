@@ -254,10 +254,16 @@
         },
         "settings": "Settings",
         "logout": "Logout",
-        "patients.search.placeholder": "Search for patients..."
+        "patients.search.placeholder": "Search for patients...",
+        "patient": {
+            "mychart": "My chart",
+            "alerts": "Alerts",
+            "consultation": " Consultations"
+        }
     },
     "login": {
-        "login": "Login",
+        "message": "Welcome to the Glucose Monitoring Application. Please log in to continue.",
+        "button": "Login",
         "username": "Username:",
         "password": "Password:"
     },
@@ -293,8 +299,30 @@
         "welcome": "Welcome to the Glucose Measure Application, {{name}}!",
         "alerts": {
             "found": "There are alerts about your patients!",
+            "found.patients": "Your glycemia values are too high! Please check your chart and consider an appointment with your doctor.",
             "open": "Go to alerts"
         }
+    },
+    "settings": {
+        "password": {
+            "required": "All fields are required!",
+            "change": "Change the password",
+            "notMatch": "Passwords do not match!",
+            "tooShort": "The password must have at least 8 characters!",
+            "withNumber": "The password must contain at least a number!",
+            "withUppercase": "The password must contain at least an uppercase!",
+            "withLowercase": "The password must contain at least a lowercase!",
+            "username": "Username",
+            "oldPassword": "Old password",
+            "newPassword": "New password",
+            "newPasswordRepeat": "Repeat the new password"
+        },
+        "required": {
+            "oldPassword": "Old password is required!",
+            "newPassword": "New password is required!",
+            "newPasswordRepeat": "Repeating the new password is required!"
+        },
+        "patient.edit": "Edit your details"
     },
     "info.required.fields": "Fields with * are required.",
     "datatable.no_data": "No data available!"

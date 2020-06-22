@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DoctorRoutingModule } from './doctor-routing.module';
-import { SettingsComponent } from './settings/settings.component';
 import { DoctorScheduleComponent } from './doctor-schedule/doctor-schedule.component';
 import { DoctorListComponent } from './doctor-list/doctor-list.component';
 import { TableModule, ButtonModule, TooltipModule, DropdownModule, InputTextModule, MessagesModule, MessageModule, ConfirmationService, ConfirmDialogModule, FieldsetModule, AccordionModule, RadioButtonModule, DialogModule, CalendarModule, CheckboxModule, PanelModule } from 'primeng';
@@ -11,10 +10,10 @@ import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import {CardModule} from 'primeng/card';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
-  declarations: [SettingsComponent, DoctorScheduleComponent, DoctorListComponent],
+  declarations: [DoctorScheduleComponent, DoctorListComponent],
   imports: [
     CommonModule,
     DialogModule,
@@ -41,7 +40,7 @@ import {CardModule} from 'primeng/card';
     MessagesModule,
     MessageModule,
     SharedModule
-    ],
+  ],
   providers: [ConfirmationService]
 })
 export class DoctorModule { }

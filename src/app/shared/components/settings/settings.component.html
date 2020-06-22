@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="col-12">
+        <p-card>
+            <h4 class="titleLabel">{{'settings.password.change' | translate}}</h4>
+            <div class="col-3 panel">
+                <div class="alert-danger" *ngIf="(oldPassword.invalid && (oldPassword.dirty || oldPassword.touched))">
+                    {{'settings.required.oldPassword' | translate}}
+                </div>
+                <div class="alert-danger" *ngIf="(newPassword.invalid && (newPassword.dirty || newPassword.touched))">
+                    {{'settings.required.newPassword' | translate}}
+                </div>
+                <div class="alert-danger"
+                    *ngIf="(newPasswordRepeat.invalid && (newPasswordRepeat.dirty || newPasswordRepeat.touched))">
+                    {{'settings.required.newPasswordRepeat' | translate}}
+                </div>
+            </div>
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"settings.password.username" | translate}}:
+                </label>
+                <div class="col-7 mt-1">
+                    <input type="text" disabled='true' [(ngModel)]="username" />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"settings.password.oldPassword" | translate}}:
+                </label>
+                <div class="col-7 mt-1">
+                    <input id="oldPassword" name="oldPassword" type="password" [(ngModel)]="oldPasswordText" required
+                        #oldPassword="ngModel" />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"settings.password.newPassword" | translate}}:
+                </label>
+                <div class="col-7 mt-1">
+                    <input id="newPassword" name="newPassword" type="password" [(ngModel)]="newPasswordText" required
+                        #newPassword="ngModel" />
+                </div>
+            </div>
+            <div class="row form-group ">
+                <label class="text-right col-form-label col-2">
+                    <sup>*</sup>{{"settings.password.newPasswordRepeat" | translate}}:
+                </label>
+                <div class="col-7 mt-1">
+                    <input id="newPasswordRepeat" name="newPasswordRepeat" type="password" [(ngModel)]="passwordRepeat"
+                        required #newPasswordRepeat="ngModel" />
+                </div>
+            </div>
+            <div class="col-3" *ngIf="errorMessage">
+                <span style="color:indianred; font-size: medium;font-weight: bold;">{{errorMessage}}</span>
+            </div>
+            <div class="row">
+                <div class="offset-5 mt-2">
+                    <button type="submit" class="btn btn-outline-success my-2 my-sm-0"
+                        (click)="changePassword()">{{"buttons.save" | translate}}
+                    </button>
+                </div>
+            </div>
+        </p-card>
+        <p-card *ngIf="role === 'PATIENT'" class="mt-20">
+            <h4 class="titleLabel">{{"settings.patient.edit" | translate}} </h4>
+            <app-patient-form *ngIf="patient" [patient]="patient" (onSave)="updatePatient($event)">
+            </app-patient-form>
+        </p-card>
+    </div>
+</div>
