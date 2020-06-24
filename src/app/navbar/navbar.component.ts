@@ -9,7 +9,7 @@ import { AuthService } from '../shared/service/authentication.service';
 })
 export class NavbarComponent implements OnInit {
 
-  language = 'RO';
+  language = 'Romana';
   browserLang = 'en';
   patientId;
 
@@ -31,11 +31,11 @@ export class NavbarComponent implements OnInit {
 
     if (this.browserLang === 'en') {
       this.translate.use('ro');
-      this.language = "EN";
+      this.language = "English";
       this.browserLang = 'ro';
     } else {
       this.translate.use('en');
-      this.language = "RO";
+      this.language = "Romana";
 
       this.browserLang = 'en';
     }

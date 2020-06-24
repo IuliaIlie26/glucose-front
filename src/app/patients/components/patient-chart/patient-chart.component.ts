@@ -49,7 +49,8 @@ export class PatientChartComponent implements OnInit {
 
     sessionStorage.setItem("notesDisabled", "true")
 
-    this.patientId = this.activatedRoute.snapshot.paramMap.get('patientId');
+    
+
     this.patientApi.getPatientById(+this.patientId).subscribe(patient => this.selectedPatient = patient);
 
     this.patientApi.getFullFormatAgeById(+this.patientId).subscribe(age => this.age = age)
@@ -75,6 +76,9 @@ export class PatientChartComponent implements OnInit {
     let role = sessionStorage.getItem('role');
     if (role == 'PATIENT') {
       this.isPatient = true;
+      this.patientId= sessionStorage.getItem("patientId")
+    }else{
+      this.patientId = this.activatedRoute.snapshot.paramMap.get('patientId');
     }
   }
 

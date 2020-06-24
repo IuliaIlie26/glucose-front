@@ -29,13 +29,11 @@ import { SensorDistributionApiService } from './api/sensor-distribution-api.serv
 import { MedicalChartApiService } from './api/medical-chart-api.service';
 import { AuthService } from './shared/service/authentication.service';
 import { NavbarComponent } from './navbar/navbar.component';
-import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    LoginComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxPermissionsService } from 'ngx-permissions';
 import { UsersApiService } from 'src/app/api/users-api.service';
-import { UserDto } from '../shared/models/UserDto';
-import { AuthService } from '../shared/service/authentication.service';
+import { UserDto } from '../../models/UserDto';
+import { AuthService } from '../../service/authentication.service';
 
 @Component({
   selector: 'app-login',

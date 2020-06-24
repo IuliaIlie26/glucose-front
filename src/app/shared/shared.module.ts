@@ -10,6 +10,8 @@ import { DoctorFormComponent } from './components/doctor-form/doctor-form.compon
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SettingsComponent } from './components/settings/settings.component';
+import { LoginComponent } from './components/login/login.component';
+import { SharedRoutingModule } from './shared-routing.module';
 
 @NgModule({
     declarations: [
@@ -17,6 +19,7 @@ import { SettingsComponent } from './components/settings/settings.component';
         PatientFormComponent,
         NumbersOnlyDirective,
         DoctorFormComponent,
+        LoginComponent,
         SettingsComponent
     ],
     imports: [
@@ -24,6 +27,7 @@ import { SettingsComponent } from './components/settings/settings.component';
         TranslateModule,
         InputTextModule,
         PanelModule,
+        SharedRoutingModule,
         AccordionModule,
         DropdownModule,
         CardModule,

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+   
+    <div style="float: right; padding-right: 20%; padding-top: 5%;">
+        <h3>{{"login.message" | translate}}</h3>
+        <div class="row form-group mt-10">
+            <label class="text-right col-form-label col-2 mr-3 ">{{"login.username" | translate}} </label>
+            <input type="text" [(ngModel)]="userDto.username" />
+        </div>
+        <div class="row form-group">
+            <label class="text-right col-form-label col-2 mr-3 ">{{"login.password" | translate}} </label>
+            <input class="passwordStyle" type="password" [(ngModel)]="userDto.password" />
+        </div>
+        <div class="offset-4">
+            <button class="btn btn-outline-success my-2 my-sm-0" [disabled]="!(userDto.username && userDto.password)"
+                (click)="onLogin()">{{"login.button" | translate}}</button>
+
+        </div>
+    </div>
+    <div style="padding-top: 5%; padding-left: 10%;" >
+        <img style="display: inline;" src="assets/img/logo2.png">
+    </div>
+</div>

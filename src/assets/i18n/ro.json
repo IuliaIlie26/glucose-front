@@ -254,7 +254,7 @@
         },
         "settings": "Setari",
         "logout": "Delogare",
-        "patients.search.placeholder": "Cauta pacienti...",
+        "patients.search.placeholder": "Cauta pacienti dupa nume...",
         "patient": {
             "mychart": "Fisa mea",
             "alerts": "Alerte",
@@ -262,7 +262,7 @@
         }
     },
     "login": {
-        "message": "Bun venit in aplicatia de monitorizare a glicemiei. Te rugam sa te loghezi pentru a continua.",,
+        "message": "Bun venit in aplicatia de monitorizare a glicemiei. Te rugam sa te loghezi pentru a continua.",
         "button": "Logheaza-te",
         "username": "Utilizator:",
         "password": "Parola:"
@@ -297,10 +297,23 @@
     },
     "home": {
         "welcome": "Bine ai venit, {{name}}!",
-        "alert": {
+        "alerts": {
             "found": "Aveti alerte de pacienti deschise!",
             "found.patients": "Valorile tale glicemice sunt prea mari! Verifica-ti fisa si considera o programare cu doctorul tau.",
             "open": "Mergi la alerte"
+        },
+        "admin": {
+            "quick": {
+                "links": "Linkuri rapide",
+                "create": {
+                    "patient": "Adauga un pacient in sistem",
+                    "consultation": "Programeaza o consultatie"
+                },
+                "manage": {
+                    "patient": "Administreaza pacientii",
+                    "consultation": "Administreaza consultatiile"
+                }
+            }
         }
     },
     "settings": {
@@ -330,8 +343,8 @@
         "generic": "A aparut o problema, va rog contactati administratorul de sistem.",
         "doctor": {
             "not.found": "Doctorul nu a fost gasit in sistem!",
-            "schedule.error":{
-                "start.end.required":"Orele de inceput si de sfarsit sunt obligatorii pentru ziua selectata!",
+            "schedule.error": {
+                "start.end.required": "Orele de inceput si de sfarsit sunt obligatorii pentru ziua selectata!",
                 "start.after.end": "Ora de inceput nu poate fi dupa ora de sfarsit!"
             }
         },
@@ -341,13 +354,12 @@
             "cnp.exists": "Un pacient cu acest CNP este prezent in sistem!",
             "email.exists": "Un pacient cu aceasta adresa de e-mail este prezent in sistem!"
         },
-        "sensor":{
+        "sensor": {
             "not.active": "Senzorul nu este activ!"
-
         },
         "wrong.password.or.email": "Adresa de e-mail sau parola este gresita!",
         "admin.not.found": "Niciun cont nu a fost gasit cu acest nume de utilizator!",
-        "consultation.consultation.not.found" : "Consultatia nu a fost gasita in sistem!",
+        "consultation.consultation.not.found": "Consultatia nu a fost gasita in sistem!",
         "username.not.found": "Numele de utilizator nu exista in sistem!"
     }
 }

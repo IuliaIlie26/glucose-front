@@ -48,7 +48,18 @@
         border: 0 none;
         text-align: left;
 
+        &:nth-child(3) {
+            width: 35em;
+            text-align: left;
+        }
+        
+
         &:nth-last-child(2) {
+            width: 5em;
+            text-align: left;
+        }
+
+        &:nth-last-child(3) {
             width: 5em;
             text-align: left;
         }
@@ -57,12 +68,6 @@
             width: 5em;
             text-align: left;
         }
-
-        &:nth-child(3) {
-            width: 35em;
-            text-align: left;
-        }
-
 
         &.ui-filter-column {
             border-top: 1px solid #c8c8c8;

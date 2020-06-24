@@ -7,3 +7,18 @@
   .flex {
     display: flex;
   }
+
+  .grid-container {
+    display: inline-grid;
+  }
+
+  .navbar-custom { 
+    height: 100px;
+    background-image: url('../../assets/img/logo.png') !important;
+    background-size: cover;
+  } 
+
+  .custom {
+    font-weight: bolder;
+    font-size: x-large; 
+  }

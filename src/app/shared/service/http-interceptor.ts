@@ -15,14 +15,18 @@ export class HttpRequestsInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((err: any) => {
+        console.log(err.error.errorCode)
         if (err instanceof HttpErrorResponse) {
-          if (err.error) {
-            let code = JSON.parse(err.error);
-            this.toasterService.error(this.translateService.instant(code.errorCode));
-          }
-          else{
-            this.toasterService.error(this.translateService.instant('backend.generic'))
-          }
+          if (err.error.errorCode) {
+            this.toasterService.error(this.translateService.instant(err.error.errorCode));
+          } else
+            if (err.error) {
+              let code = JSON.parse(err.error);
+              this.toasterService.error(this.translateService.instant(code.errorCode));
+            }
+            else {
+              this.toasterService.error(this.translateService.instant('backend.generic'))
+            }
 
         }
         return of(err);

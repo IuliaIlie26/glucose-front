@@ -1,25 +1,30 @@
 <ng-container *ngIf="isLoggedIn$ | async">
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand">GluM</a>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <!-- <div class="navbar-expand">
+                <a class="navbar-item">
+                  <img src="assets/img/logo.png">
+                </a>
+              </div>  -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" [routerLink]="['home']" routerLinkActive="current-item"
+                        <a class="nav-link custom" [routerLink]="['home']" routerLinkActive="current-item"
                             [routerLinkActiveOptions]="{exact: false}">{{"menu.home" | translate}} <span
                                 class="sr-only">(current)</span></a>
                     </li>
 
                     <!--Doctor: view patients-->
                     <li class="nav-item dropdown active" *ngIf="role === 'DOCTOR' ">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link custom dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             {{"menu.patients" | translate}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="nav-link" [routerLink]="['patient/patients-list']" routerLinkActive="current-item"
+                            <a class="dropdown-item" [routerLink]="['patient/patients-list']"
+                                routerLinkActive="current-item"
                                 [routerLinkActiveOptions]="{exact: false}">{{"menu.doctor.patients" | translate}}</a>
-                            <a class="nav-link" [routerLink]="['patient/patient-alerts']"
+                            <a class="dropdown-item" [routerLink]="['patient/patient-alerts']"
                                 routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">
                                 {{"menu.patients.alerts" | translate}}</a>
                         </div>
@@ -27,7 +32,7 @@
 
                     <!--Administrator: Create and manage patients-->
                     <li class="nav-item dropdown active" *ngIf="role === 'ADMINISTRATOR' ">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link custom dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             {{"menu.patients" | translate}}
                         </a>
@@ -46,7 +51,7 @@
 
                     <!--Administrator: view doctor list and schedule-->
                     <li class="nav-item dropdown active" *ngIf="role === 'ADMINISTRATOR' ">
-                        <a class="nav-link" [routerLink]="['doctor/list']" routerLinkActive="current-item"
+                        <a class="nav-link custom" [routerLink]="['doctor/list']" routerLinkActive="current-item"
                             [routerLinkActiveOptions]="{exact: false}">
                             {{"menu.doctor.title" | translate}}
                         </a>
@@ -54,7 +59,7 @@
 
                     <!--Doctor: view consultations-->
                     <li class="nav-item dropdown active" *ngIf="role === 'DOCTOR' ">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link custom dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             {{"menu.consultations.title" | translate}}
                         </a>
@@ -72,7 +77,7 @@
 
                     <!--Administrator: create and manage consultations-->
                     <li class="nav-item dropdown active" *ngIf="role === 'ADMINISTRATOR' ">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link custom dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             {{"menu.consultations.title" | translate}}
                         </a>
@@ -89,31 +94,27 @@
                     <!--PATIENT-->
 
                     <li class="nav-item dropdown active" *ngIf="role === 'PATIENT' ">
-                        <a class="nav-link" [routerLink]="['patient/medical-chart', patientId]" routerLinkActive="current-item"
-                            [routerLinkActiveOptions]="{exact: false}">
+                        <a class="nav-link custom" [routerLink]="['patient/medical-chart', patientId]"
+                            routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">
                             {{"menu.patient.mychart" | translate}}
                         </a>
                     </li>
-                
+
                     <li class="nav-item dropdown active" *ngIf="role === 'PATIENT' ">
-                        <a class="nav-link" [routerLink]="['consultation/create-consultation']" routerLinkActive="current-item"
-                            [routerLinkActiveOptions]="{exact: false}">
+                        <a class="nav-link custom" [routerLink]="['consultation/create-consultation']"
+                            routerLinkActive="current-item" [routerLinkActiveOptions]="{exact: false}">
                             {{"menu.patient.consultation" | translate}}
                         </a>
                     </li>
                 </ul>
-                <fa-icon class="fa fa-globe fa-lg"></fa-icon>
-                <button class="btn mr-1" (click)="changeLanguage()">{{language}}</button>
 
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search"
-                        [placeholder]="'menu.patients.search.placeholder' | translate" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0"
-                        type="submit">{{"buttons.search" | translate}}</button>
-                </form>
+                <button class="btn btn-secondary mr-1" (click)="changeLanguage()">
+                    <fa-icon class="fa fa-globe fa-lg"></fa-icon> {{language}}
+                </button>
+
                 <ul class="navbar-nav my-2 my-sm-0">
                     <li class="nav-item dropdown active">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link custom dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             {{"menu.settings" | translate}}
                         </a>

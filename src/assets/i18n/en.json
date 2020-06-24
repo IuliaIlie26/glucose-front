@@ -254,7 +254,7 @@
         },
         "settings": "Settings",
         "logout": "Logout",
-        "patients.search.placeholder": "Search for patients...",
+        "patients.search.placeholder": "Search for patients by lastname...",
         "patient": {
             "mychart": "My chart",
             "alerts": "Alerts",
@@ -301,6 +301,19 @@
             "found": "There are alerts about your patients!",
             "found.patients": "Your glycemia values are too high! Please check your chart and consider an appointment with your doctor.",
             "open": "Go to alerts"
+        },
+        "admin": {
+            "quick": {
+                "links": "Quick links",
+                "create": {
+                    "patient": "Add a new patient to the system",
+                    "consultation": "Appoint a consultation"
+                },
+                "manage": {
+                    "patient": "Manage patients",
+                    "consultation": "Manage consultations"
+                }
+            }
         }
     },
     "settings": {
@@ -330,8 +343,8 @@
         "generic": "An error occured. Please contact your system administrator.",
         "doctor": {
             "not.found": "Doctor was not found in the system!",
-            "schedule.error":{
-                "start.end.required":"Start and end time are required for selected day!",
+            "schedule.error": {
+                "start.end.required": "Start and end time are required for selected day!",
                 "start.after.end": "Starting hour cannot be after ending hour!"
             }
         },
@@ -341,13 +354,12 @@
             "cnp.exists": "A patient with this personal number is already registered in the system!",
             "email.exists": "A patient with this e-mail is already registered in the system!"
         },
-        "sensor":{
+        "sensor": {
             "not.active": "Sensor is not active!"
-
         },
         "wrong.password.or.email": "Wrong password or e-mail!",
         "admin.not.found": "No account was found by this username!",
-        "consultation.consultation.not.found" : "The consultation was not found in the system!",
+        "consultation.consultation.not.found": "The consultation was not found in the system!",
         "username.not.found": "The username was not found in the system!"
     }
 }

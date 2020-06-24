@@ -55,6 +55,14 @@ export class DoctorListComponent implements OnInit, OnDestroy {
     this.router.navigate(['doctor', 'schedule', id])
   }
 
+  delete(id: string) {
+    this.doctorApi.deleteDoctorById(+id).subscribe(() => {
+      this.toastr.success(this.translateService.instant('buttons.success'))
+      this.getAllDoctors();
+    })
+  }
+
+
   updateDoctor(doctor: DoctorDto) {
     let successMessage = this.translateService.instant('doctor.edit.success');
     this.doctorApi.updateDoctor(doctor).subscribe(() => {
