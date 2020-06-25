@@ -10,6 +10,7 @@ import { familyHistoryOfDiabetes } from './family-history.model'
 import { Subscription } from 'rxjs';
 import { SelectItem } from 'primeng/primeng';
 import { MedicalChartApiService } from 'src/app/api/medical-chart-api.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-risk-factors',
@@ -18,7 +19,7 @@ import { MedicalChartApiService } from 'src/app/api/medical-chart-api.service';
 })
 export class RiskFactorsComponent implements OnInit, OnDestroy {
 
-  constructor(private patientApi: PatientApiService, private medicalChartApi: MedicalChartApiService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, public translateService: TranslateService, private router: Router) { }
+  constructor(private patientApi: PatientApiService,private _location: Location, private medicalChartApi: MedicalChartApiService, private activatedRoute: ActivatedRoute, private toastr: ToastrService, public translateService: TranslateService, private router: Router) { }
 
   riskFactors: RiskFactorsDto;
   patientId: string; 
@@ -27,12 +28,14 @@ export class RiskFactorsComponent implements OnInit, OnDestroy {
   conceptions: Array<any> = [];
   familyHistory: Array<any> = [];
   languageSubscription: Subscription;
+  role;
 
   selectedConceptionMethod: SelectItem;
   selectedRacialOrigin: SelectItem;
   selectedFamilyHistory: SelectItem;
 
   ngOnInit() {
+    this.role= sessionStorage.getItem('role')
     this.patientId = this.activatedRoute.snapshot.paramMap.get('patientId');
     this.patientApi.getFullFormatAgeById(+this.patientId).subscribe(age => this.age = age);
     this.medicalChartApi.getRiskFactors(+this.patientId).subscribe(risk => {
@@ -97,7 +100,7 @@ export class RiskFactorsComponent implements OnInit, OnDestroy {
   }
 
   back() {
-    this.router.navigate(['patient', 'medical-chart', this.patientId])
+    this._location.back();
   }
 
   ngOnDestroy() {

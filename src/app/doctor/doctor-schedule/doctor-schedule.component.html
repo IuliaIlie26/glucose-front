@@ -26,6 +26,8 @@
                     </div>
 
                     <div class="col-5 offset-4">
+                        <button *ngIf="!editMode" class="btn btn-outline-success my-2 my-sm-0 mr-2" (click)="back()">{{'buttons.back' | translate}}
+                        </button>
                         <button (click)="onEdit()" *ngIf="!editMode"
                             class="btn btn-outline-success my-2 my-sm-0">{{'doctor.schedule.edit' | translate}}</button>
                         <button type="submit" (click)="saveSchedule()" *ngIf="editMode"

@@ -99,7 +99,8 @@
             "pie": "Glucose values distribution pie chart for {{patientName}}",
             "table.view": "Table view",
             "timestamp": "Date and Time",
-            "value": "Salivary glycemia value"
+            "value": "Salivary glycemia value",
+            "chooseDate": "Choose the date for display"
         },
         "consultation.history": {
             "title": "Consultation history",

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { SensorDistributionDto } from '../patients/model/SensorDistributionDto';
 import { MessageDto } from '../shared/models/MessageDto';
 import { GlycemiaValuesDto } from '../shared/models/GlycemiaValuesDto';
+import { GlucoseFilterDto } from '../shared/models/GlucoseFilterDto';
 
 const endpoint = 'http://localhost:8080/api/sensor-distribution/';
 
@@ -26,15 +27,19 @@ export class SensorDistributionApiService {
         return this.http.get<SensorDistributionDto[]>(endpoint + 'getSensorDistribution');
     }
 
-    activateSensor(dto: SensorDistributionDto): Observable<SensorDistributionDto>{
+    activateSensor(dto: SensorDistributionDto): Observable<SensorDistributionDto> {
         return this.http.post<SensorDistributionDto>(endpoint + 'activateSensor', dto);
     }
 
-    deactivateSensor(dto: SensorDistributionDto): Observable<SensorDistributionDto>{
+    deactivateSensor(dto: SensorDistributionDto): Observable<SensorDistributionDto> {
         return this.http.post<SensorDistributionDto>(endpoint + 'deactivateSensor', dto);
     }
 
-    getGlycemiaForPatient(patientId: number): Observable<GlycemiaValuesDto[]>{
+    getGlycemiaForPatient(patientId: number): Observable<GlycemiaValuesDto[]> {
         return this.http.get<GlycemiaValuesDto[]>(endpoint + 'getGlycemiaForPatient?patientId=' + patientId)
+    }
+
+    getGlycemiaForPatientAndDate(filter: GlucoseFilterDto): Observable<GlycemiaValuesDto[]> {
+        return this.http.post<GlycemiaValuesDto[]>(endpoint + 'getGlycemiaForPatientAndDate', filter)
     }
 }

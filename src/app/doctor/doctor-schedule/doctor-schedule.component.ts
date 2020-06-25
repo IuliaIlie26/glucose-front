@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { daysOfWeek } from '../../shared/models/days-of-week.model';
 import { Subscription } from 'rxjs';
 import { DailyScheduleDto } from '../model/DailyScheduleDto';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-doctor-schedule',
@@ -15,7 +16,7 @@ import { DailyScheduleDto } from '../model/DailyScheduleDto';
 })
 export class DoctorScheduleComponent implements OnInit, OnDestroy {
 
-  constructor(private activatedRoute: ActivatedRoute, private doctorApi: DoctorApiService, private toastr: ToastrService, private translateService: TranslateService) { }
+  constructor(private activatedRoute: ActivatedRoute,private _location: Location, private doctorApi: DoctorApiService, private toastr: ToastrService, private translateService: TranslateService) { }
 
   languageSubscription: Subscription;
   doctorId: string;
@@ -44,6 +45,10 @@ export class DoctorScheduleComponent implements OnInit, OnDestroy {
     })
     this.daysOfWeek = daysOfWeek[this.translateService.defaultLang];
     this.languageSubscription = this.translateService.onLangChange.subscribe(event => this.translateDaysOfWeek(event.lang))
+  }
+
+  back() {
+    this._location.back();
   }
 
 

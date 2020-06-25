@@ -4,7 +4,8 @@ import { SensorDistributionApiService } from 'src/app/api/sensor-distribution-ap
 import { GlycemiaValuesDto } from 'src/app/shared/models/GlycemiaValuesDto';
 import { ActivatedRoute } from '@angular/router';
 import { PatientApiService } from 'src/app/api/patient-api.service';
-import { Location } from '@angular/common';
+import { Location, DatePipe } from '@angular/common';
+import { GlucoseFilterDto } from 'src/app/shared/models/GlucoseFilterDto';
 
 @Component({
   selector: 'app-glucose-charts',
@@ -17,14 +18,24 @@ export class GlucoseChartsComponent implements OnInit {
   dataPie: any;
   patientName = ''
   patientId: number;
+  glDate = new Date();
   glycemiaValues: GlycemiaValuesDto[] = [];
+  filter = new GlucoseFilterDto();
+  pipe = new DatePipe('en-us');
   constructor(private messageService: MessageService, private sensorApi: SensorDistributionApiService, private activatedRoute: ActivatedRoute, private patientApi: PatientApiService, private _location: Location) { }
 
   ngOnInit() {
     this.patientId = +this.activatedRoute.snapshot.paramMap.get('patientId');
     this.patientApi.getPatientById(this.patientId).subscribe(res => this.patientName = res.lastname + ' ' + res.name)
 
-    this.sensorApi.getGlycemiaForPatient(this.patientId).subscribe(values => {
+    this.search();
+  }
+
+  search() {
+    let dateAsString = this.pipe.transform(this.glDate, 'yyyy-MM-dd');
+    this.filter.patientId = this.patientId;
+    this.filter.glDate = dateAsString
+    this.sensorApi.getGlycemiaForPatientAndDate(this.filter).subscribe(values => {
       this.glycemiaValues = values;
       this.populateCharts();
     });
@@ -51,20 +62,20 @@ export class GlucoseChartsComponent implements OnInit {
     });
 
     this.dataPie = {
-      labels: ['Ok','Above'],
+      labels: ['Ok', 'Above'],
       datasets: [
-          {
-              data: [ok, above],
-              backgroundColor: [
-                  "#228B22",
-                  "#8B0000"
-              ],
-              hoverBackgroundColor: [
-                "#228B22",
-                "#8B0000"
-              ]
-          }]    
-      };
+        {
+          data: [ok, above],
+          backgroundColor: [
+            "#228B22",
+            "#8B0000"
+          ],
+          hoverBackgroundColor: [
+            "#228B22",
+            "#8B0000"
+          ]
+        }]
+    };
 
     this.data = {
       labels: timeStampList,
@@ -89,13 +100,13 @@ export class GlucoseChartsComponent implements OnInit {
     this.messageService.add({ severity: 'info', summary: 'Data Selected', 'detail': this.data.datasets[event.element._datasetIndex].data[event.element._index] });
   }
 
-  cellColour(value){
-    if(+value>8.0){
+  cellColour(value) {
+    if (+value > 8.0) {
     }
   }
 
   back() {
-  
+
     this._location.back();
   }
 }

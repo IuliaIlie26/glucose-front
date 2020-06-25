@@ -99,7 +99,8 @@
             "pie": "Distributia nivelului pentru {{patientName}}",
             "table.view": "Tabelul inregistrarilor",
             "timestamp": "Data si ora",
-            "value": "Nivelul glicemic salivar"
+            "value": "Nivelul glicemic salivar",
+            "chooseDate": "Alege data pentru afisaj"
         },
         "consultation.history": {
             "title": "Istoricul consultatiilor",

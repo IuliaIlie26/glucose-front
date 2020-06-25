@@ -82,7 +82,7 @@
                             </li>
                         </ul>
                         <div>
-                            <button *ngIf="!isPatient" type="button" class="btn btn-outline-success mt 3"
+                            <button type="button" class="btn btn-outline-success mt 3"
                                 (click)="openRiskFactorsChart()">{{'patient.pregnancy.chart.addrisk' | translate}}</button>
                         </div>
                     </div>
@@ -98,13 +98,13 @@
                         <label>{{'patient.pregnancy.chart.sensor' | translate}}:</label>
                     </div>
                     <span *ngIf="sensorInfo">{{sensorInfo.status}}</span>
-                    <div *ngIf="!isPatient">
+                    <div >
                         <span *ngIf="sensorInfo && sensorInfo.status != 'ACTIVE' ">
-                            <button type="button" class="btn btn-outline-success ml-3"
+                            <button *ngIf="!isPatient"type="button" class="btn btn-outline-success ml-3"
                                 (click)="activate()">{{'patient.pregnancy.chart.activateSensor' | translate}}</button>
                         </span>
                         <span *ngIf="sensorInfo && sensorInfo.status == 'ACTIVE'">
-                            <button type="button" class="btn btn-outline-success ml-3"
+                            <button *ngIf="!isPatient" type="button" class="btn btn-outline-success ml-3"
                                 (click)="deactivate()">{{'patient.pregnancy.chart.deactivateSensor' | translate}}</button>
                             <button type="button" class="btn btn-outline-success ml-3"
                                 (click)="viewCharts()">{{'patient.pregnancy.chart.viewCharts' | translate}}</button>

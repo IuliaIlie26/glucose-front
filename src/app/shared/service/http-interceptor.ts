@@ -15,7 +15,7 @@ export class HttpRequestsInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((err: any) => {
-        console.log(err.error.errorCode)
+        console.log(err.error.errorCode, "traka", err.error)
         if (err instanceof HttpErrorResponse) {
           if (err.error.errorCode) {
             this.toasterService.error(this.translateService.instant(err.error.errorCode));

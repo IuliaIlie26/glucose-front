@@ -137,7 +137,7 @@
                 <div class="offset-5 mt-2 mb-5">
                     <button class="btn btn-outline-success my-2 my-sm-0" (click)="back()">{{'buttons.back' | translate}}
                     </button>
-                    <button class="btn btn-success my-2 my-sm-0 ml-3"
+                    <button *ngIf="role === 'DOCTOR'" class="btn btn-success my-2 my-sm-0 ml-3"
                         (click)="saveRiskFactors()">{{'buttons.save' | translate}}
                     </button>
                 </div>
