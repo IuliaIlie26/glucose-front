@@ -99,7 +99,7 @@
                     </div>
                     <span *ngIf="sensorInfo">{{sensorInfo.status}}</span>
                     <div >
-                        <span *ngIf="sensorInfo && sensorInfo.status != 'ACTIVE' ">
+                        <span *ngIf="sensorInfo && sensorInfo.status != 'ACTIVE' &&  sensorInfo.status != 'NOT_ASSIGNED'">
                             <button *ngIf="!isPatient"type="button" class="btn btn-outline-success ml-3"
                                 (click)="activate()">{{'patient.pregnancy.chart.activateSensor' | translate}}</button>
                         </span>
